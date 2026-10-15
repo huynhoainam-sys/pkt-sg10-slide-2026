@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0b315c">
+<title>Họp PKT SG10 | Tháng 10/2026</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:Inter,Arial,sans-serif;background:#0a1b32;color:#eef6ff}body{display:grid;place-items:center}
+main{width:min(540px,calc(100% - 36px));background:#102e4f;border:1px solid #31516d;padding:34px;border-radius:20px;box-shadow:0 20px 80px #0005}
+.small{letter-spacing:2px;font-size:12px;color:#79dce5;font-weight:bold}h1{font-size:27px;margin:16px 0 8px}p{color:#bcd0e4;line-height:1.5;font-size:14px}progress{width:100%;height:12px;accent-color:#F37021;margin:18px 0 8px}#state{font-size:13px;color:#9fcae3}a{color:#80dce8}
+</style></head>
+<body><main><div class="small">FPT TELECOM / PKT SG10</div><h1>HỌP PHÒNG KỸ THUẬT · 10/2026</h1><p>Đang tải bài trình chiếu 13 slide và dữ liệu chi tiết. Vui lòng giữ trang mở trong giây lát.</p><progress id="bar" value="0" max="14"></progress><div id="state">Chuẩn bị nội dung…</div></main>
+<script src="./cldv-sync-20261013.js?v=31"></script>
+<script src="./operations-sync-20261015.js?v=privacy-v27b"></script>
+<script>
+(async()=>{
+ const total=14, buildVersion='sg10-private-text-v27b-20261015', bar=document.getElementById('bar'), status=document.getElementById('state');
+ try{
+  const parts=new Array(total);let completed=0;
+  const jobs=Array.from({length:total},(_,i)=>i);
+  const concurrency=4;
+  async function worker(){
+   while(jobs.length){
+    const i=jobs.shift();
+    const name=String(i).padStart(3,'0');
+    const response=await fetch('./parts/'+name+'.txt?v='+buildVersion,{cache:'default'});
+    if(!response.ok)throw Error('Không tải được phần '+(i+1)+' (HTTP '+response.status+')');
+    parts[i]=await response.text();
+    completed++;bar.value=completed;status.textContent='Đã tải '+completed+'/'+total+' phần…';
+   }
+  }
+  await Promise.all(Array.from({length:concurrency},()=>worker()));
+  status.textContent='Đang ghép và kiểm tra nội dung…';
+   let html=window.applySG10Oct15(window.applyCLDV13(parts.join('')));
+  const recoveryResponse=await fetch('./recovery.js?v=20261015-tv26');
+  if(!recoveryResponse.ok)throw Error('Không tải được phần điều hướng');
+  const recoveryScript=window.applyCLDV13Index(await recoveryResponse.text());
+  if(!html.startsWith('<!doctype html>')||!html.includes('PKT SG10')||html.length<5700000)throw Error('Dữ liệu trình chiếu chưa hoàn chỉnh');
+  html=html.replace('</head>', '<link rel="stylesheet" href="./recovery.css?v=20261012-3"><link rel="stylesheet" href="./am-guide.css?v=20261013-3"><link rel="stylesheet" href="./visual-qa-v22.css?v=20261014-22"><link rel="stylesheet" href="./gsafe-slide.css?v=20261014-3"><link rel="stylesheet" href="./gsafe-maintenance.css?v=20261014-2"><link rel="stylesheet" href="./meeting-approved-20261014.css?v=1"><link rel="stylesheet" href="./meeting-toc-v3.css?v=1"><link rel="stylesheet" href="./tv-display-20261015.css?v=2"><link rel="stylesheet" href="./tv-text-v27.css?v=2"></head>');
+  html=html.replace(/<\/body>\s*<\/html>\s*$/i, '<script>'+recoveryScript+'<\/script><script src="./am-guide.js?v=20261014-4"><\/script><script src="./october-posters.js?v=20261014-3"><\/script><script src="./deck-home.js?v=1"><\/script><script src="./gsafe-maintenance.js?v=20261014-2"><\/script><script src="./meeting-approved-20261014.js?v=1"><\/script><script src="./meeting-toc-v3.js?v=1"><\/script><script src="./tv-display-20261015.js?v=27"><\/script></body></html>');
+  status.textContent='Đang dựng giao diện trình chiếu…';
+   document.open();document.write(html);document.close();
+ }catch(err){status.textContent='Không thể tải slide: '+err.message; status.style.color='#ffab9d';console.error(err);}
+})();
+</script></body></html>

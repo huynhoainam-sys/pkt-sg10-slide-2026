@@ -1,0 +1,7 @@
+/* Direct image layers survive missing CSS custom-property URL resolution. */
+.slide.photo-scene{--scene-img:none!important}
+.slide.photo-scene .scene-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-3;pointer-events:none;user-select:none;display:block!important;opacity:0!important}
+.slide.photo-scene[data-photo="ready"] .scene-image{opacity:1!important}
+.slide.photo-scene:before{z-index:-2}
+.slide.photo-scene:after{z-index:-1}
+@media(max-width:760px){.slide.photo-scene .scene-image{object-position:65% center}}

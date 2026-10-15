@@ -1,0 +1,55 @@
+/* SG10 Visual QA V22 — image-first while preserving data readability, 1600×900 */
+.scene-sales,.scene-staff,.scene-kickoff,.scene-csat,.scene-alerts,.scene-close{isolation:isolate}
+.scene-sales .photo.soft,.scene-staff .photo.soft,.scene-kickoff .photo.soft,.scene-csat .photo.soft,.scene-alerts .photo.soft{top:0!important;right:0!important;width:88%!important;height:100%!important;object-fit:cover!important;object-position:center!important;opacity:.78!important;filter:brightness(1.055) saturate(1.12) contrast(1.02)!important;mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.4) 13%,#000 28%)!important;-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.4) 13%,#000 28%)!important}
+.scene-sales::after,.scene-staff::after,.scene-kickoff::after,.scene-csat::after,.scene-alerts::after,.scene-close::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;background:linear-gradient(90deg,rgba(251,254,255,.98) 0%,rgba(251,254,255,.94) 19%,rgba(251,254,255,.79) 33%,rgba(251,254,255,.36) 49%,rgba(251,254,255,.1) 62%,rgba(251,254,255,0) 73%)}
+.scene-sales .sales-head,.scene-sales .sales-layout,.scene-staff .staff-head,.scene-staff .staff-kpis,.scene-staff .staff-layout,.scene-kickoff .campaign-layout,.scene-csat .csat-layout,.scene-alerts .alerts-head,.scene-alerts .alerts-layout,.scene-close .close-head,.scene-close .close-steps,.scene-close .close-message{z-index:2}
+.scene-sales .card,.scene-staff .card,.scene-kickoff .card,.scene-csat .card{border-color:rgba(205,225,240,.95);box-shadow:0 11px 28px rgba(35,87,139,.1)}
+.scene-sales .sales-mini .card,.scene-kickoff .campaign-metrics .card,.scene-csat .csat-mini .card,.scene-staff .staff-kpis .card{background:rgba(255,255,255,.94);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+.scene-sales .team-panel,.scene-staff .staff-team,.scene-kickoff .poster-preview,.scene-csat .csat-team{background:rgba(255,255,255,.96)}
+.scene-sales .photo.soft{width:87%!important;opacity:.76!important;object-position:58% center!important}
+.scene-sales .sales-layout{gap:20px}.scene-sales .sales-mini .kpi{padding:18px 22px}
+.scene-staff .photo.soft{width:92%!important;opacity:.66!important}
+.scene-staff::after{background:linear-gradient(90deg,rgba(251,254,255,.97) 0%,rgba(251,254,255,.92) 26%,rgba(251,254,255,.62) 47%,rgba(251,254,255,0) 78%)}
+.scene-staff .staff-team{backdrop-filter:blur(8px)}
+.scene-kickoff .photo.soft{opacity:.63!important;object-position:60% center!important}
+.scene-kickoff .campaign-metrics .kpi{min-height:0}
+.scene-kickoff .poster-preview,.scene-kickoff .campaign-main{backdrop-filter:blur(8px)}
+.scene-csat .photo.soft{opacity:.65!important}
+.scene-csat .csat-primary{height:290px}
+.scene-csat .csat-primary,.scene-csat .csat-team{backdrop-filter:blur(9px)}
+/* Slide 6 — keep image fully visible at right, move two smaller cards left */
+.scene-alerts{background:linear-gradient(110deg,#f9fdff,#e9f6ff)}
+.scene-alerts .photo.soft{width:93%!important;opacity:1!important;object-position:65% center!important;filter:brightness(1.04) saturate(1.13) contrast(1.02)!important}
+.scene-alerts::after{background:linear-gradient(90deg,rgba(253,254,255,.98) 0%,rgba(253,254,255,.95) 20%,rgba(253,254,255,.8) 35%,rgba(253,254,255,.3) 51%,rgba(253,254,255,0) 69%)}
+.scene-alerts .alerts-head{top:126px;right:72px}.scene-alerts .alerts-head .sub{max-width:850px!important}
+.scene-alerts .alerts-layout{top:303px;bottom:auto;left:76px;right:auto;width:1030px;display:grid;grid-template-columns:minmax(0,505px) minmax(0,505px);justify-content:start;align-items:start;gap:20px}
+.scene-alerts .alert-box{display:flex;flex-direction:column;justify-content:flex-start;gap:14px;min-width:0;min-height:0;height:auto;padding:22px 23px 20px;border:1px solid rgba(197,221,237,.94);border-radius:19px;background:rgba(255,255,255,.86);box-shadow:0 13px 32px rgba(21,81,133,.13);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px)}
+.scene-alerts .alert-box .bigalert{font-size:60px;line-height:1}
+.scene-alerts .alert-box h3{font-size:21px;line-height:1.2;margin:9px 0 5px}
+.scene-alerts .alert-box p{font-size:15.5px;line-height:1.43;margin:7px 0 0}
+.scene-alerts .alert-mini-list{gap:5px}
+.scene-alerts .alert-mini-list .person{font-size:14px;padding:7px 0}
+.scene-alerts .alert-box .tap{align-self:flex-start;margin-top:4px}
+.scene-alerts .alert-box>div[style*="padding:16px"]{padding:11px 12px!important;gap:10px!important;background:rgba(255,245,229,.92)!important;border-radius:10px!important}
+.scene-alerts .alert-box>div[style*="padding:16px"] span{font-size:22px!important}
+.scene-alerts .alert-box>div[style*="padding:16px"] b{font-size:13px!important;line-height:1.35}
+/* Conclusion: smaller action panels, clear background image */
+.scene-close .photo.slim{top:0!important;right:0!important;width:74%!important;height:100%!important;object-fit:cover!important;object-position:62% center!important;opacity:.96!important;filter:saturate(1.08) brightness(1.03)!important;mask-image:linear-gradient(90deg,transparent 0%,#000 28%)!important;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 28%)!important}
+.scene-close .close-steps{grid-template-columns:repeat(2,426px);gap:14px}
+.scene-close .close-step{min-height:116px;padding:15px 18px;gap:12px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px)}
+.scene-close .close-step h3{font-size:18px}.scene-close .close-step p{font-size:14.5px}
+/* Recovery slides use external photos; fade left-to-right but protect all table text */
+.scene-recall{background:linear-gradient(90deg,rgba(247,252,255,.93) 0%,rgba(247,252,255,.84) 35%,rgba(247,252,255,.42) 65%,rgba(247,252,255,0) 100%),url('./assets/recall-summary.jpg') center center/cover no-repeat!important}
+.scene-recall-people{background:linear-gradient(90deg,rgba(247,252,255,.94) 0%,rgba(247,252,255,.86) 39%,rgba(247,252,255,.43) 67%,rgba(247,252,255,0) 100%),url('./assets/recall-followup.jpg') center center/cover no-repeat!important}
+.scene-recall .card,.scene-recall-people .card{background:rgba(255,255,255,.91);border-color:rgba(211,229,242,.95);box-shadow:0 10px 27px rgba(35,92,143,.11)}
+/* Cover, Thank You, popup tables and AM tutorial: unchanged. */
+@media(prefers-reduced-motion:reduce){.scene-alerts .alert-box,.scene-close .close-step{transition:none!important}}
+
+/* Visual QA follow-up: recovery people (slide 8) translucent panels;
+   table headings and numeric columns remain fully legible. */
+.scene-recall-people .recall-people-panel{background:linear-gradient(135deg,rgba(255,255,255,.86),rgba(255,255,255,.77));border:1px solid rgba(203,223,238,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.scene-recall-people .recall-slide-table{background:transparent}
+.scene-recall-people .recall-slide-table tbody tr{background:rgba(255,255,255,.13)}
+.scene-recall-people .recall-slide-table tbody tr[role=button]:hover{background:rgba(223,241,255,.87)}
+.scene-recall-people .recall-slide-table th{background:rgba(231,243,251,.88);color:#305776}
+.scene-recall-people .recall-slide-table td{color:#193d62}

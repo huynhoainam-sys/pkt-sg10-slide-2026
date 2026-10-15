@@ -1,0 +1,51 @@
+/* Ranking — clarity QA after original PPT comparison. Preserve approved V22.2 layout. */
+#canvas .slide.rank-dt .rank-verdict{
+  gap:14px!important;
+  padding:17px 19px!important;
+  align-items:stretch!important;
+}
+#canvas .slide.rank-dt .rank-verdict .rank-pill:nth-child(1){flex:0 1 21%!important}
+#canvas .slide.rank-dt .rank-verdict .rank-pill:nth-child(2){flex:0 1 17%!important}
+#canvas .slide.rank-dt .rank-verdict .rank-pill:nth-child(3){flex:1 1 43%!important}
+#canvas .slide.rank-dt .rank-verdict .rank-pill strong{
+  font-size:clamp(16px,1.42vw,22px)!important;
+  line-height:1.25!important;
+  letter-spacing:-.3px!important;
+  text-transform:none!important;
+}
+#canvas .slide.rank-dt .rank-verdict .rank-pill span{
+  font-size:15px!important;
+  line-height:1.5!important;
+}
+#canvas .slide.rank-dt .rank-verdict .rank-pill span b{
+  color:#ffb778!important;
+  font-weight:850!important;
+}
+#canvas .slide.rank-dt .rank-verdict .rank-open{
+  max-width:192px!important;
+  align-self:center!important;
+  padding:12px 15px!important;
+}
+#canvas .slide.rank-pro .rank-verdict .rank-pill strong{
+  font-size:clamp(17px,1.35vw,22px)!important;
+  line-height:1.25!important;
+  text-transform:none!important;
+}
+#canvas .slide.rank-pro .rank-verdict .rank-pill span{line-height:1.5!important}
+#canvas .slide.rank-wifi .rank-wifi-compare strong{
+  font-size:clamp(22px,1.8vw,27px)!important;
+  line-height:1.4!important;
+}
+#canvas .slide.rank-wifi .rank-bands .rank-tile h3{
+  line-height:1.25!important;
+  text-wrap:balance;
+}
+@media(max-width:760px){
+ #canvas .slide.rank-dt .rank-verdict .rank-pill,
+ #canvas .slide.rank-dt .rank-verdict .rank-pill:nth-child(1),
+ #canvas .slide.rank-dt .rank-verdict .rank-pill:nth-child(2),
+ #canvas .slide.rank-dt .rank-verdict .rank-pill:nth-child(3){
+  flex:1 1 auto!important;
+ }
+ #canvas .slide.rank-dt .rank-verdict .rank-open{align-self:stretch!important;max-width:none!important}
+}

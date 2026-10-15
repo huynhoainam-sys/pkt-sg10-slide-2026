@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="deck-version" content="V22.2-PREVIEW-REV2">
+  <meta name="review-copy" content="Bản kiểm duyệt V22.2 cập nhật đầy đủ theo PPT gốc, có đối chiếu ảnh nguồn">
+  <meta name="theme-color" content="#071b3d">
+  <meta name="description" content="Trình chiếu Ranking 2027: KTV, Đội trưởng, Pro, cách tính RM và WiFi xấu">
+  <title>Ranking 2027 — V22.2 | Tiêu đề rõ trên ảnh nền</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=7">
+  <link rel="stylesheet" href="css/contrast-v8.css?v=8.3">
+  <link rel="stylesheet" href="css/palette-v10.css?v=10">
+  <link rel="stylesheet" href="css/backgrounds-v11.css?v=11">
+  <link rel="stylesheet" href="css/visual-qa-v12.css?v=14">
+  <link rel="stylesheet" href="css/extension-v14.css?v=14">
+  <link rel="stylesheet" href="css/extension-v15.css?v=15">
+  <link rel="stylesheet" href="css/semantic-visual-v18.css?v=18">
+  <link rel="stylesheet" href="css/visual-assets-v19.css?v=19">
+  <link rel="stylesheet" href="css/qa-review-v20.css?v=20.1">
+  <link rel="preload" as="image" href="../assets/cover-4people.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="css/scene-images-v13.css?v=14">
+  <link rel="stylesheet" href="css/targeted-qa-v17.css?v=17">
+  <link rel="stylesheet" href="css/review-layout-v21.css?v=21">
+  <link rel="stylesheet" href="css/review-visual-v22.css?v=22">
+  <link rel="stylesheet" href="css/review-heading-glass-v22-2.css?v=22.2">
+</head>
+<body>
+  <div class="app" id="app">
+    <div class="viewport" id="viewport" aria-label="Khung trình chiếu Ranking KTV 2027">
+      <div class="canvas" id="canvas" role="main"></div>
+    </div>
+    <nav class="transport" aria-label="Điều khiển trình chiếu">
+      <div class="transport-brand"><span class="mark">F<span>P</span>T</span><span class="transport-title">RANKING KTV <b>2027</b></span></div>
+      <div class="transport-center">
+        <button type="button" class="nav-btn" id="prevBtn" aria-label="Slide trước" title="Slide trước (←)"><span aria-hidden="true">←</span></button>
+        <button type="button" class="progress-button" id="outlineBtn" title="Mở mục lục" aria-label="Mở mục lục">
+          <span class="progress-track"><span id="progressFill"></span></span>
+          <span class="page-count" id="pageCount">01 / 18</span>
+        </button>
+        <button type="button" class="nav-btn" id="nextBtn" aria-label="Slide tiếp theo" title="Slide tiếp theo (→)"><span aria-hidden="true">→</span></button>
+      </div>
+      <div class="transport-right">
+        <button type="button" class="plain-btn" id="sourceBtn" title="Xem nội dung tham chiếu gốc" aria-label="Xem slide tài liệu gốc">Tài liệu gốc <span aria-hidden="true">↗</span></button>
+        <button type="button" class="icon-btn" id="menuBtn" title="Mục lục (M)" aria-label="Mở mục lục">☷</button>
+        <button type="button" class="icon-btn" id="fullBtn" title="Toàn màn hình (F)" aria-label="Toàn màn hình">⛶</button>
+      </div>
+    </nav>
+  </div>
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Mục lục bài trình chiếu" aria-hidden="true">
+    <header class="drawer-head"><div><span class="eyebrow">NỘI DUNG ĐÀO TẠO</span><h2>18 slide<br>Ranking 2027</h2></div><button type="button" class="dialog-x" data-close aria-label="Đóng mục lục">×</button></header>
+    <div class="outline-list" id="outlineList"></div>
+    <div class="drawer-note">Chuyển slide bằng phím ← → · Nhấn F để toàn màn hình · Esc để đóng</div>
+  </aside>
+  <aside class="detail" id="detail" role="dialog" aria-modal="true" aria-labelledby="detailTitle" aria-hidden="true">
+    <header class="detail-top"><span class="eyebrow" id="detailEyebrow">NỘI DUNG CHI TIẾT</span><button type="button" class="dialog-x" data-close aria-label="Đóng chi tiết">×</button></header>
+    <div class="detail-scroll"><h2 id="detailTitle"></h2><div id="detailContent"></div></div>
+    <footer class="detail-bottom"><span>SG10 · FTEL | RANKING 2027</span><button type="button" class="detail-close" data-close>Quay lại slide <span>↗</span></button></footer>
+  </aside>
+  <div class="image-viewer" id="imageViewer" role="dialog" aria-modal="true" aria-label="Xem ảnh tài liệu gốc" aria-hidden="true" hidden>
+    <header class="viewer-topbar">
+      <div class="viewer-title"><span class="viewer-kicker">TÀI LIỆU THAM CHIẾU</span><strong id="viewerTitle">Slide gốc</strong></div>
+      <div class="viewer-toolbar" aria-label="Điều khiển phóng ảnh">
+        <button type="button" id="zoomOut" title="Thu nhỏ (-)" aria-label="Thu nhỏ">−</button>
+        <span id="zoomLabel" aria-live="polite">100%</span>
+        <button type="button" id="zoomIn" title="Phóng to (+)" aria-label="Phóng to">+</button>
+        <button type="button" id="zoomReset" title="Vừa màn hình (0)">Vừa khung</button>
+        <button type="button" class="viewer-close" id="closeViewer" title="Quay lại nội dung chi tiết (Esc)">✕</button>
+      </div>
+    </header>
+    <div class="viewer-stage" id="viewerStage"><img src="" alt="Slide PowerPoint gốc ở kích thước lớn" id="viewerImage" draggable="false"></div>
+    <footer class="viewer-footer">Cuộn chuột để phóng to / thu nhỏ · Giữ và kéo ảnh để di chuyển · Nhấn Esc quay về chi tiết</footer>
+  </div>
+  <script src="js/content.js?v=7"></script>
+  <script src="js/extension-v14.js?v=14"></script>
+  <script src="js/extension-v15.js?v=15"></script>
+  <script src="js/content-focus-v16.js?v=16"></script>
+  <script src="js/semantic-visual-v18.js?v=18"></script>
+  <script src="js/popup-explain-v20.js?v=20.2"></script>
+  <script src="js/visual-assets-v19.js?v=19"></script>
+  <script src="js/review-content-v21.js?v=21"></script>
+  <script src="js/review-backgrounds-v22.js?v=22"></script>
+  <script src="js/review-source-fidelity-v22-3.js?v=22.2.2"></script>
+  <script src="js/app-v13.js?v=20.2"></script>
+  <script src="js/refinement-v9.js?v=9"></script>
+  <script src="../deck-home.js?v=1"></script>
+</body>
+</html>

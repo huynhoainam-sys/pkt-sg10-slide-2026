@@ -1,0 +1,21 @@
+/* PKT SG10 approved 14/10/2026: background shared ONLY by the two GSafe slides. */
+.scene.scene-gsafe,.scene.scene-gsafe-maintenance{
+  background:linear-gradient(90deg,rgba(248,252,255,.97) 0%,rgba(247,252,255,.94) 25%,rgba(246,251,255,.82) 44%,rgba(246,251,255,.18) 68%,rgba(247,252,255,0) 84%),url("./assets/gsafe-shared-bg.jpg") 68% center/cover no-repeat!important;color:#103461!important}
+.scene.scene-gsafe::before,.scene.scene-gsafe-maintenance::before{background:linear-gradient(90deg,rgba(255,255,255,.40) 0%,rgba(255,255,255,.17) 55%,transparent 79%)!important}
+.scene-gsafe .photo,.scene-gsafe .gsafe-art,.scene-gsafe-maintenance .g6-visual,.scene-gsafe-maintenance .g6-photo,.scene-gsafe-maintenance .gsafe-art{display:none!important}
+.scene-gsafe-maintenance .g6-main{inset:115px 68px 54px 76px!important}
+.scene-gsafe-maintenance .g6-grid{width:995px!important}
+.scene-gsafe-maintenance .g6-tile{background:rgba(255,255,255,.9)!important;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);box-shadow:0 12px 24px rgba(33,84,126,.09)!important}
+.scene-gsafe-maintenance .g6-alert{width:995px!important;background:linear-gradient(100deg,rgba(255,245,229,.95),rgba(255,249,239,.91))!important}
+.scene-gsafe-maintenance .g6-heading,.scene-gsafe-maintenance .g6-deck{text-shadow:none!important}
+/* Keep scene-close's ORIGINAL background and slide 12's ORIGINAL thank-you layout. */
+.scene-close .close-head{left:82px;top:168px;width:1080px;position:absolute;z-index:4}
+.scene-close .close-head .slide-title{font-size:55px!important;line-height:1.08!important;letter-spacing:-1.5px!important;color:#103461!important;max-width:1050px}
+.scene-close .close-steps{position:absolute;left:82px;top:338px;display:grid;grid-template-columns:repeat(2,490px);grid-template-rows:repeat(2,144px);gap:16px;z-index:4}
+.scene-close .close-step{min-height:0!important;height:144px!important;padding:19px 20px 16px!important;display:flex;align-items:flex-start;gap:15px;border-radius:12px!important;background:rgba(255,255,255,.91)!important;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 10px 22px rgba(33,84,126,.12)!important;border-left:5px solid #1778C0}
+.scene-close .close-step:nth-child(2){border-left-color:#D95770}.scene-close .close-step:nth-child(3){border-left-color:#00A859}.scene-close .close-step:nth-child(4){border-left-color:#F37021}
+.scene-close .close-step strong{font-size:22px;line-height:1.12;min-width:32px;flex:0 0 32px;color:#F37021!important}
+.scene-close .close-step h3{font-size:18px!important;line-height:1.24;color:#103461!important;margin:0 0 6px!important;font-weight:900}
+.scene-close .close-step p{font-size:14.5px!important;line-height:1.38!important;color:#4e6d85!important;margin:0;font-weight:550;max-width:100%}
+.scene-close .close-message{position:absolute;left:82px;right:82px;bottom:98px;z-index:5!important;color:#136eaf;font-size:18px!important;font-weight:900;background:rgba(243,248,252,.88);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);border:1px solid rgba(204,225,239,.95);border-radius:12px;padding:11px 16px;box-sizing:border-box}
+@media(prefers-reduced-motion:reduce){.scene-close .close-step,.scene-gsafe-maintenance .g6-tile{animation:none!important}}

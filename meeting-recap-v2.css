@@ -1,0 +1,42 @@
+/* Meeting recap slide 12 + dynamic index; all content remains selectable HTML. */
+.scene.scene-recap{background:#0d2848!important;overflow:hidden;color:#fff}
+.scene-recap .photo.thanks-bg{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;opacity:.91!important;filter:brightness(.8) saturate(1.1)!important}
+.scene-recap .thanks-veil{position:absolute!important;inset:0!important;background:linear-gradient(105deg,rgba(4,22,43,.92) 0%,rgba(5,27,50,.84) 44%,rgba(7,26,50,.65) 73%,rgba(5,22,43,.58) 100%)!important;pointer-events:none}
+.scene-recap .hero-glow{pointer-events:none}
+.scene-recap .topbar{z-index:8!important}
+.scene-recap .recap-wrap{position:absolute;z-index:4;left:78px;right:78px;top:120px;bottom:70px;font-family:"Be Vietnam Pro",Inter,"Segoe UI",Arial,sans-serif}
+.scene-recap .recap-topline{display:flex;gap:13px;align-items:center;font-size:14px;font-weight:850;letter-spacing:1.8px;color:#87ddff}
+.scene-recap .recap-label{background:rgba(243,112,33,.20);border:1px solid rgba(253,168,95,.54);color:#ffc191;padding:5px 11px;border-radius:999px;letter-spacing:.35px;font-size:12px}
+.scene-recap .recap-title{font-size:52px;line-height:1.10;font-weight:950;letter-spacing:-1.65px;margin:9px 0 3px;text-shadow:0 5px 15px rgba(0,10,24,.18);color:#fff}
+.scene-recap .recap-title em{font-style:normal;color:#ff9a53}
+.scene-recap .recap-subtitle{font-size:16px;line-height:1.4;font-weight:540;margin:0;color:#daebf9}
+.scene-recap .recap-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:16px;height:466px;margin-top:19px}
+.scene-recap .recap-card{min-width:0;min-height:0;display:flex;flex-direction:column;text-align:left;position:relative;border-radius:17px;border:1px solid rgba(167,205,231,.32);border-top:4px solid var(--recap-accent,#58bbef);background:linear-gradient(132deg,rgba(11,42,72,.89),rgba(8,35,65,.83));padding:17px 21px 15px;box-shadow:0 10px 26px rgba(0,11,25,.25);backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px);color:#fff;font-family:inherit;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s,border-color .2s;overflow:hidden}
+.scene-recap .recap-card:hover{transform:translateY(-3px);background:rgba(18,57,94,.95);box-shadow:0 16px 26px rgba(0,11,29,.38);border-color:rgba(161,216,249,.65)}
+.scene-recap .recap-card:focus-visible{outline:3px solid #ff9e57;outline-offset:3px}
+.scene-recap .recap-card-head{display:flex;align-items:center;gap:12px;min-height:34px}
+.scene-recap .recap-card-icon{width:34px;height:34px;border-radius:9px;flex:none;display:grid;place-items:center;background:color-mix(in srgb,var(--recap-accent) 21%,transparent);color:var(--recap-accent)}
+.scene-recap .recap-card-icon svg{width:21px;height:21px;stroke:currentColor;stroke-width:2.1;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.scene-recap .recap-card-number{font-size:13px;color:#b7cddd;font-weight:820;letter-spacing:.65px}
+.scene-recap .recap-card-title{font-size:19px;line-height:1.25;font-weight:900;color:#f5faff;letter-spacing:-.2px}
+.scene-recap .recap-metric{font-size:27px;font-weight:950;line-height:1.18;letter-spacing:-.65px;color:var(--recap-accent);margin:11px 0 7px;white-space:nowrap}
+.scene-recap .recap-description{font-size:16px;line-height:1.45;font-weight:510;color:#ebf3fc;margin:0;max-width:99%}
+.scene-recap .recap-hint{margin-top:auto;padding-top:8px;font-size:12px;line-height:1.2;color:#a5d9f3;font-weight:750}
+.scene-recap .recap-action{margin-top:16px;min-height:62px;border-radius:13px;border:1px solid rgba(255,193,135,.64);border-left:5px solid #ff913f;background:linear-gradient(100deg,rgba(243,112,33,.20),rgba(11,52,86,.87));display:flex;gap:20px;padding:11px 20px;align-items:center;box-shadow:0 9px 22px rgba(0,17,33,.12)}
+.scene-recap .recap-action strong{flex:0 0 auto;font-size:17px;color:#ffd1a6;font-weight:950;letter-spacing:.3px}
+.scene-recap .recap-action span{font-size:16px;line-height:1.38;color:#f1f8ff;font-weight:660}
+.scene-recap .footer{z-index:7!important}
+.sg10-menu-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:13px!important;padding:4px 1px 8px!important}
+.sg10-menu-item{border-radius:13px;border:1px solid #cddfed;background:linear-gradient(155deg,#fff,#f3f8fc);padding:15px 16px;text-align:left;display:flex;flex-direction:column;gap:6px;min-width:0;min-height:119px;color:#173b62;cursor:pointer;font-family:"Be Vietnam Pro",Inter,Arial,sans-serif;transition:background .17s,box-shadow .17s,transform .17s}
+.sg10-menu-item:hover{background:#e9f5ff;box-shadow:0 9px 18px rgba(23,92,148,.13);transform:translateY(-2px);border-color:#7dbde5}
+.sg10-menu-item:focus-visible{outline:3px solid #f37021;outline-offset:2px}
+.sg10-menu-item.sg10-menu-active{border-color:#f37021;background:linear-gradient(135deg,#fff2e6,#f5fbff);box-shadow:0 0 0 2px rgba(243,112,33,.13)}
+.sg10-menu-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.sg10-menu-number{font-size:23px;line-height:1;font-weight:950;color:#0072bc}
+.sg10-menu-active .sg10-menu-number{color:#e46711}
+.sg10-menu-current{font-size:11px;color:#b85c16;font-weight:900;letter-spacing:.1px}
+.sg10-menu-item b{font-size:15.5px;line-height:1.25;letter-spacing:-.1px;overflow-wrap:anywhere;color:#103461}
+.sg10-menu-item small{color:#597a96;font-size:12.5px;line-height:1.38;font-weight:580}
+@media(max-width:930px){.sg10-menu-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media(max-width:640px){.sg10-menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}.sg10-menu-item{min-height:108px;padding:11px}.sg10-menu-item b{font-size:13.5px}.sg10-menu-item small{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.scene-recap .recap-card,.sg10-menu-item{transition:none!important}}

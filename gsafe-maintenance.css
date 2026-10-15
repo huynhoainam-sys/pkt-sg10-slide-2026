@@ -1,0 +1,48 @@
+/* SG10 / GSafe G6: maintenance and acceptance rules, 15 Oct 2026. */
+.scene.scene-gsafe-maintenance{color:#103461;background:radial-gradient(ellipse at 87% 20%,#d2ebfa 0%,transparent 44%),linear-gradient(112deg,#f9fdff 0%,#ebf6fd 62%,#d8eafa 100%)!important;font-family:"Be Vietnam Pro",Inter,"Segoe UI",Arial,sans-serif;isolation:isolate}
+.scene-gsafe-maintenance::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,.43),rgba(255,255,255,.11) 60%,transparent 82%)}
+.scene-gsafe-maintenance .topbar{position:absolute;z-index:6}
+.g6-main{position:absolute;inset:115px 68px 54px 76px;z-index:2}
+.g6-eyebrow{display:flex;align-items:center;gap:12px;color:#0475b3;font-weight:850;letter-spacing:1.45px;font-size:15px}
+.g6-live-date{display:inline-flex;align-items:center;background:#fff0db;border:1px solid #f4d09e;color:#ad5a00;border-radius:20px;padding:6px 12px;letter-spacing:.1px;font-size:13px;font-weight:900}
+.g6-heading{font-size:53px;line-height:1.11;letter-spacing:-1.7px;font-weight:950;margin:11px 0 9px;color:#103461;max-width:1080px;text-shadow:none}
+.g6-heading strong{color:#e66a1a;font-weight:950}
+.g6-deck{font-size:18px;line-height:1.5;max-width:1050px;color:#315471;margin:0;font-weight:575}
+.g6-grid{position:absolute;left:0;top:188px;width:1005px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.g6-tile{position:relative;text-align:left;display:block;min-height:212px;padding:24px 25px 20px;background:rgba(255,255,255,.90);border:1px solid rgba(192,218,235,.94);border-top:4px solid #0072bc;border-radius:17px;box-shadow:0 12px 26px rgba(34,84,128,.095);color:#193e63;font:inherit;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s;overflow:hidden}
+.g6-tile:hover,.g6-tile:focus-visible{transform:translateY(-3px);box-shadow:0 19px 30px rgba(28,84,135,.17);border-color:#96c7e8;outline:none}
+.g6-tile:focus-visible{outline:3px solid #0072bc;outline-offset:2px}
+.g6-tile.g6-install{border-top-color:#0072bc}.g6-tile.g6-standard{border-top-color:#f37021}.g6-tile.g6-tests{grid-column:1/-1;border-top-color:#00a859;min-height:224px;padding-right:25px}
+.g6-card-head{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:900;line-height:1.22;color:#103461;margin-bottom:15px}
+.g6-icon{display:grid;place-items:center;flex:none;width:39px;height:39px;border-radius:12px;background:#e4f1fb;color:#0072bc}
+.g6-icon svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2.05;stroke-linejoin:round;stroke-linecap:round}
+.g6-standard .g6-icon{background:#fff0e4;color:#c45a0c}.g6-tests .g6-icon{background:#e5f6eb;color:#07844c}
+.g6-card-number{font-size:13px;letter-spacing:.35px;font-weight:900;opacity:.64;margin-right:auto}
+.g6-tile p{color:#355674;font-size:17px;line-height:1.45;margin:7px 0;font-weight:555}
+.g6-tile p b{font-weight:875;color:#103b62}
+.g6-tile .g6-no{color:#b72835;font-weight:950}
+.g6-note{font-size:14px;line-height:1.35;font-weight:800;color:#0072bc;padding-top:7px}
+.g6-standard .g6-note{color:#af540a}.g6-tests .g6-note{color:#087c49}
+.g6-test-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.g6-test-cols>div+div{border-left:1px solid #dae9f2;padding-left:24px}
+.g6-test-cols b{color:#0f4871}
+.g6-test-cols p{font-size:17px;line-height:1.42}
+.g6-alert{position:absolute;left:0;top:663px;width:1005px;min-height:64px;padding:13px 18px;display:flex;align-items:center;gap:14px;border:1px solid #ffcc8f;background:linear-gradient(100deg,rgba(255,245,229,.96),rgba(255,250,238,.93));border-left:6px solid #f37021;border-radius:13px;box-shadow:0 8px 19px rgba(178,103,35,.07)}
+.g6-alert-mark{font-size:25px;color:#d35b09;font-weight:900}.g6-alert strong{font-size:17px;color:#984408;white-space:nowrap}.g6-alert span:last-child{font-size:16px;color:#634a36;line-height:1.38;font-weight:640}
+.g6-visual{position:absolute;right:0;top:45px;width:400px;display:flex;flex-direction:column;gap:14px}
+.g6-photo{overflow:hidden;border:1px solid rgba(178,211,233,.97);border-radius:18px;background:rgba(255,255,255,.93);box-shadow:0 15px 34px rgba(19,70,117,.15);position:relative}
+.g6-photo-main{height:360px;padding:10px}
+.g6-photo-main img{width:100%;height:100%;object-fit:contain;border-radius:12px;display:block}
+.g6-photo-secondary{height:189px}
+.g6-photo-secondary img{width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block}
+.g6-photo-label{position:absolute;bottom:11px;left:12px;padding:8px 12px;border-radius:8px;background:rgba(11,50,83,.88);font-size:14px;color:#fff;font-weight:900;letter-spacing:.15px}
+.g6-visual-source{font-size:12px;line-height:1.4;color:#4f7088;padding:0 5px;font-weight:630}
+.g6-visual-source a{color:#0b659f;text-decoration:underline;text-underline-offset:2px}
+.g6-dialog{font-family:"Be Vietnam Pro",Inter,Arial,sans-serif;color:#214464;font-size:17px;line-height:1.55}
+.g6-dialog h3{font-size:20px;color:#103461;margin:14px 0 8px}
+.g6-dialog ul{padding-left:22px;margin:8px 0 16px}.g6-dialog li{margin:8px 0}
+.g6-dialog strong{color:#0c5687}
+.g6-dialog .g6-modal-warning{background:#fff2e4;border:1px solid #f6d3ab;border-left:5px solid #f37021;color:#90430b;padding:14px 18px;border-radius:12px;margin:16px 0;font-weight:760}
+.g6-dialog .g6-modal-positive{background:#e8f6ee;border:1px solid #bde7cf;color:#075e3a;padding:13px 18px;border-radius:12px;margin:15px 0;font-weight:720}
+@media(prefers-reduced-motion:no-preference){.scene-gsafe-maintenance.active .g6-tile{animation:g6-rise .42s ease both}.scene-gsafe-maintenance.active .g6-tile:nth-child(2){animation-delay:.09s}.scene-gsafe-maintenance.active .g6-tile:nth-child(3){animation-delay:.17s}@keyframes g6-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}}
+@media(prefers-reduced-motion:reduce){.scene-gsafe-maintenance .g6-tile{animation:none!important;transition:none!important}}

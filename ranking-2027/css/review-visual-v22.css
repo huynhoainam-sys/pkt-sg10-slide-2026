@@ -1,0 +1,113 @@
+/* Ranking V22 | Preview only | 2026-10-14
+   Brighter, readable headings over gently darkened photographic artwork.
+   Reuse relevant existing images without remaking content or old layouts. */
+
+/* Tone down intense highlights behind cards without blurring subject detail. */
+#canvas .slide.v22-tone-art.photo-scene .scene-image {
+  opacity:1!important;
+  filter:brightness(.78) saturate(.79) contrast(1.04)!important;
+}
+#canvas .slide.v22-legacy-art.photo-scene .scene-image{
+  opacity:1!important;
+  filter:brightness(.89) saturate(.88) contrast(1.025)!important;
+}
+#canvas .slide.photo-scene.v22-tone-art::after,
+#canvas .slide.photo-scene.v22-legacy-art::after{
+  opacity:0!important;
+}
+/* Keep the left text-safe region clean; more atmospheric photo remains on right.
+   The gradients do not bleach the artwork or tint the content tiles. */
+#canvas .slide.light.v22-tone-art::before,
+#canvas .slide.light.v22-legacy-art::before{
+  background:linear-gradient(90deg,
+    rgba(246,251,255,.96) 0%,
+    rgba(247,251,255,.90) 15%,
+    rgba(245,251,255,.59) 38%,
+    rgba(235,244,253,.20) 55%,
+    rgba(12,45,79,.04) 77%,
+    rgba(7,31,61,.08) 100%)!important;
+}
+#canvas .slide.dark.v22-tone-art::before,
+#canvas .slide.dark.v22-legacy-art::before{
+  background:linear-gradient(90deg,
+    rgba(4,20,45,.95) 0%,
+    rgba(4,24,50,.86) 22%,
+    rgba(7,34,70,.60) 47%,
+    rgba(8,35,71,.23) 67%,
+    rgba(6,26,54,.12) 100%)!important;
+}
+
+/* Readable, visibly brighter brand blue on light canvases: ≈6.4:1 on white. */
+#canvas .slide.light:not(.cover):not(.closing) .slide-header h1,
+#canvas .slide.light.ranking-extension .rank-head h1,
+#canvas .slide.light.qa-source .qa-title h1{
+  color:#07639D!important;
+  -webkit-text-fill-color:currentColor!important;
+  text-shadow:none!important;
+}
+/* Keep the orange part separately, instead of turning it blue through inherited fill. */
+#canvas .slide.light :is(.slide-header h1,.qa-title h1,.rank-head h1) .accent-orange{
+  color:#BD4F0D!important;
+  -webkit-text-fill-color:#BD4F0D!important;
+}
+/* Dark slide: bright ivory title, higher contrast against toned navy scenery. */
+#canvas .slide.dark:not(.cover):not(.closing) .slide-header h1,
+#canvas .slide.dark :is(.dark-header h1,.closing-top h1){
+  color:#F2FAFF!important;
+  -webkit-text-fill-color:#F2FAFF!important;
+  text-shadow:none!important;
+}
+#canvas .slide.dark :is(.slide-header h1,.dark-header h1) .accent-orange{
+  color:#FFB579!important;
+  -webkit-text-fill-color:#FFB579!important;
+}
+#canvas .slide.light :is(.eyebrow,.rank-kicker,.qa-title .eyebrow,.rank-head .eyebrow){
+  color:#006398!important;
+}
+#canvas .slide.dark :is(.eyebrow,.eyebrow.light,.micro-title){
+  color:#D6EEFF!important;
+}
+#canvas .slide.light :is(.slide-header>p,.qa-title>p,.rank-head>p){
+  color:#355674!important;
+}
+
+/* Keep tile backgrounds crisp while allowing pictures to show through around them. */
+#canvas .slide.v22-tone-art :is(.qa-issue,.qa-goal,.rank-tile,.rank-panel,.qa-riskpanel,.qa-formulacards>section),
+#canvas .slide.v22-legacy-art :is(.qa-issue,.qa-goal,.rank-tile,.rank-panel,.qa-riskpanel,.qa-formulacards>section){
+  background:rgba(250,253,255,.90)!important;
+  border-color:rgba(187,215,234,.92)!important;
+  box-shadow:0 9px 21px rgba(4,36,70,.10)!important;
+}
+#canvas .slide.light :is(.qa-issue h3,.qa-goal h3,.rank-tile h3,.rank-panel h3,.qa-formulacards h3){
+  color:#124A77!important;
+  text-shadow:none!important;
+}
+#canvas .slide.light :is(.qa-issue p,.qa-goal p,.rank-tile p,.rank-panel p,.qa-formulacards p){
+  color:#36536D!important;
+}
+#canvas .slide .v18-glyph{
+  filter:none!important;
+  box-shadow:none!important;
+}
+#canvas .slide .v21-milestone{
+  color:#235B45!important;
+  background:rgba(236,250,243,.94)!important;
+}
+/* Some card/status panels on dark slides explicitly need their original dark treatment. */
+#canvas .slide.dark :is(.rm-risk,.rm-explain,.rm-action-strip>div,.daily-card,.risk-control){
+  background:rgba(7,29,58,.79)!important;
+  border-color:rgba(98,158,203,.32)!important;
+  color:#EAF7FF!important;
+}
+#canvas .slide.dark :is(.rm-risk,.rm-explain,.rm-action-strip>div,.daily-card,.risk-control)
+ :is(h2,h3,p,b,strong,small){
+  color:#EAF7FF!important;
+}
+@media(max-width:760px){
+  #canvas .slide.v22-tone-art.photo-scene .scene-image{filter:brightness(.73) saturate(.77)!important}
+  #canvas .slide.v22-legacy-art.photo-scene .scene-image{filter:brightness(.86) saturate(.85)!important}
+  #canvas .slide.light.v22-tone-art::before,
+  #canvas .slide.light.v22-legacy-art::before{
+    background:linear-gradient(180deg,rgba(247,252,255,.95) 0%,rgba(247,252,255,.75) 56%,rgba(247,252,255,.16) 100%)!important
+  }
+}

@@ -1,0 +1,68 @@
+/* V8 visual QA: readable foregrounds on light glass, dark glass and numeric cards. */
+.slide.light{color:#102f50}
+.slide.light :is(.metric-card,.flow-card,.wifi-definition,.wifi-actions,.action-card,.role-card,.rule-bar,.benchmark,.roles-result,.combo-stats>div){color:#102f50!important}
+.slide.light :is(.metric-card,.flow-card,.wifi-definition,.wifi-actions,.action-card,.role-card,.rule-bar,.benchmark,.roles-result,.combo-stats>div) :is(p,small){color:#36526b!important}
+.slide.light :is(.metric-label,.micro-title,.role-flag,.benchmark span,.benchmark small,.flow-no){color:#15527d!important}
+.slide.light :is(.metric-card,.flow-card,.action-card,.role-card,.wifi-actions) :is(h2,h3,h4){color:#102f50!important}
+.slide.light :is(.slide-header p,.rule-warning,.self-rule-hint,.self-note){color:#36526b!important}
+.slide.light :is(.mini-number,.roles-number,.role-large,.combo-stats b){color:#103764!important}
+.slide.light .wifi-definition{background:rgba(255,255,255,.90)!important;color:#103764!important}
+.slide.light .wifi-definition :is(.definition-head,.definition-head span,.big-risk,.risk-bands strong){color:#103764!important;-webkit-text-fill-color:currentColor!important}
+.slide.light .wifi-definition .definition-head .icon{color:#0072bc!important}
+.slide.light .wifi-definition .big-risk span{color:#bb4f0a!important}
+.slide.light .wifi-definition :is(p,p b,.risk-bands small){color:#36526b!important}
+.slide.light .wifi-definition .detail-link{color:#005d9a!important}
+.slide.light .wifi-definition .risk-bands>div:nth-child(1) strong{color:#a52e37!important}
+.slide.light .wifi-definition .risk-bands>div:nth-child(2) strong{color:#845900!important}
+.slide.light .wifi-definition .risk-bands>div:nth-child(3) strong{color:#086c48!important}
+.slide.light .accent-orange{color:#b84d0c!important}
+.slide.dark .rm-bottom{background:#a8490c!important}
+.slide.light .roles-result{grid-template-columns:74px minmax(190px,max-content) minmax(0,1fr)!important;gap:20px!important}
+.slide.light .roles-result>div{min-width:0}
+.slide.light .metric-card .metric-label{color:#15527d!important}
+.slide.self .self-item small{color:#36526b!important}
+.slide.self .self-status-kicker{color:#36526b!important}
+.slide.self .self-status-card small{color:#36526b!important}
+.slide.self .self-status-card.pass b{color:#086c48!important}
+.slide.self .self-status-card.fail b{color:#98380b!important}
+.slide.self .self-state.on{color:#086c48!important;background:#eaf9f1!important}
+.slide.self .self-state.off{color:#98380b!important;background:#fff3ec!important}
+.slide.self .progress-giant b{color:#103764!important;-webkit-text-fill-color:currentColor!important;background:none!important}
+.slide.self .progress-giant span{color:#005d9a!important}
+.slide.self .self-progress>p{color:#36526b!important;background:rgba(255,255,255,.92);padding:0 6px!important;border-radius:9px}
+.slide.self .self-note{color:#36526b!important}
+.slide.self .self-progress{gap:8px!important}
+.slide.self .reset-checks{margin-top:0!important}
+.slide.dark :is(.rm-risk,.rm-explain,.rm-action-strip>div,.daily-card,.risk-control,.closing-grid>div){background:rgba(7,29,57,.84)!important;color:#fff!important}
+.slide.dark :is(.daily-card p,.rm-explain p,.rm-action-strip p,.risk-control p,.closing-grid p){color:#e0edf8!important}
+.slide.dark :is(.micro-title,.eyebrow.light,.ring-label){color:#c5e7ff!important}
+.slide.dark :is(.slide-header h1,.slide-header p,.closing-top h1,.closing-top p,.closing-manifesto){text-shadow:0 1px 3px #031329,0 0 12px #031329b3}
+.slide.dark .benchmark{background:rgba(255,255,255,.94)!important;color:#103764!important}
+.slide.dark .benchmark :is(span,small){color:#36526b!important}
+.slide.dark .benchmark strong{color:#086c48!important}
+.slide.dark .benchmark-blue strong{color:#005d9a!important}
+.detail :is(.hero-copy p,.detail-box-body p,.detail-box-body li,.detail-step p,.micro-copy,.mini-illus small,.criteria-list span,.source-caption){color:#36526b!important}
+.detail :is(.hero-metric span,.band-row span){color:#36526b!important}
+.detail .detail-chip.tone-orange{color:#98380b}
+.detail .detail-chip.tone-green{color:#086c48}
+.detail .detail-chip.tone-purple{color:#573ca4}
+@media(max-width:760px){.slide.light .roles-result{grid-template-columns:42px minmax(0,1fr)!important;gap:12px!important}.slide.light .roles-result>div:last-child{grid-column:1/-1}}
+
+.slide.self .self-status-card{padding:14px 18px!important}
+.slide.self .self-note{padding:8px 14px!important}
+/* Keep the full right-hand explanation within the desktop 16:9 stage. */
+@media(min-width:761px){
+  .slide.self{padding-top:48px!important;padding-bottom:38px!important}
+  .slide.self .slide-header{margin-bottom:16px!important}
+  .slide.self .self-grid{min-height:0!important}
+  .slide.self .self-progress{gap:6px!important}
+  .slide.self .self-progress .micro-title{padding:7px 16px!important}
+  .slide.self .self-status-card{padding:10px 18px!important}
+  .slide.self .progress-giant{padding:12px 20px!important}
+  .slide.self .progress-giant b{font-size:64px!important}
+  .slide.self .self-progress-track{margin-top:0!important}
+  .slide.self .self-rule-hint{padding:10px 16px!important}
+  .slide.self .reset-checks{padding:8px 14px!important}
+  .slide.self .self-note{padding:6px 14px!important}
+  .slide.self .self-bottom{margin-top:12px!important}
+}

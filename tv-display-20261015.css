@@ -1,0 +1,65 @@
+/* Dense spreadsheet-style details, rendered at the display's native text scale. */
+html,body,button,input,select{font-family:"Segoe UI",Arial,sans-serif;text-rendering:optimizeLegibility}
+#stage,#modalback{font-synthesis:none}
+#stage .slide-title,#stage h1,#stage h2,#stage h3,#stage .knumber,#stage .giant,
+#modal-title,#modal-body .data-table{filter:none!important;text-shadow:none!important;-webkit-text-stroke:0!important}
+#stage .slide-title{font-weight:800}
+#stage .photo{image-rendering:auto}
+/* Backdrop effects remain on background layers; table surfaces are opaque. */
+#modalback{padding:12px!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(9,32,62,.64)}
+#modalback .modal{width:min(2400px,98vw)!important;max-height:96vh!important;border-radius:10px!important;background:#fff;filter:none;transform:none}
+#modalback .modal-top{padding:12px 18px 10px!important;gap:14px}
+#modalback .modal-top small{font-size:10px;letter-spacing:.7px}
+#modal-title{font-size:22px!important;line-height:1.2!important;margin:3px 0!important}
+#modal-sub{font-size:13px!important;line-height:1.35!important}
+#modal-close{width:34px!important;height:34px!important}
+#modalback .detail-controls{padding:7px 18px;gap:10px}
+#modalback #detailSearch{padding:6px 10px;font-size:14px;border-radius:5px}
+#modal-body{padding:10px 18px 12px!important;scrollbar-gutter:stable}
+#modal-body .modal-toolbar{gap:6px;margin:0 0 8px!important}
+#modal-body .pill{padding:6px 10px!important;font-size:13px!important;line-height:18px;border-radius:5px!important}
+#modal-body .info-row{gap:8px;margin-bottom:8px}
+#modal-body .info-chip{padding:7px 12px;min-width:125px}
+#modal-body .info-chip b{font-size:20px}
+#modal-body .note,#modal-body .table-note,#modal-body .sales-note,#modal-body .detail-description{font-size:12px!important;line-height:1.35!important;margin:6px 0 8px!important}
+#modal-body .table-shell{max-height:calc(96vh - 240px)!important;border-radius:4px!important;overscroll-behavior:contain;scrollbar-gutter:stable;isolation:isolate;background:#fff}
+#modal-body .data-table,#modal-body .data-table.balanced-columns,
+#modal-body .sales-detail-board .data-table,#modal-body .recovery-detail-board .data-table{table-layout:auto!important;width:max-content!important;min-width:100%!important;border-collapse:separate!important;border-spacing:0!important}
+#modal-body .data-table col{width:auto!important}
+#modal-body .data-table thead th,#modal-body .data-table.balanced-columns thead th{height:34px!important;padding:0!important;min-width:0!important;width:auto!important;white-space:nowrap!important;vertical-align:middle!important;background:#164c7b!important}
+#modal-body .data-table .col-sort,#modal-body .balanced-columns .col-sort{display:flex!important;gap:8px!important;min-height:34px!important;padding:6px 9px!important;font-size:13px!important;line-height:20px!important;white-space:nowrap!important;align-items:center!important}
+#modal-body .balanced-columns .sort-label{white-space:nowrap!important;line-height:20px!important;text-wrap:nowrap}
+#modal-body .data-table tbody tr{height:30px!important}
+#modal-body .data-table tbody td,#modal-body .data-table.balanced-columns tbody td,
+#modal-body .data-table tbody td.num,#modal-body .data-table tbody td.num.strong{padding:4px 9px!important;height:30px!important;font-size:14px!important;line-height:21px!important;white-space:nowrap!important;vertical-align:middle!important;border-right:1px solid #e0e8ef!important;border-bottom:1px solid #e0e8ef!important;font-weight:500;color:#173954;max-width:none!important}
+#modal-body .data-table td:not(.metric-tone){background:#fff}
+#modal-body .data-table tr:nth-child(even) td:not(.metric-tone){background:#f5f8fb}
+#modal-body .data-table .team-mark{display:inline!important;min-width:0!important;height:auto!important;padding:2px 6px!important;font-size:12px!important;line-height:19px!important;font-weight:700!important;border-radius:3px}
+#modal-body .data-table td b{font-weight:700}
+#modal-body .data-table td .recall-account,#modal-body .data-table td .recall-leader,
+#modal-body .data-table td .mini-note,#modal-body .data-table td .line-action,
+#modal-body .data-table td .action-copy,#modal-body .data-table td .result-wrap,
+#modal-body .data-table td .v11-delta,#modal-body .data-table td .result-chip,
+#modal-body .data-table td .award-name,#modal-body .data-table td .award-sub,
+#modal-body .data-table td .statusbadge{display:inline!important;margin:0!important;font-size:inherit!important;line-height:21px!important;white-space:nowrap!important;max-width:none!important}
+#modal-body .data-table td .mini-note{font-size:11px!important;color:#587189;margin-left:6px!important}
+#modal-body .data-table td .recall-account{display:none!important}
+#modal-body .data-table td .recall-leader{font-size:12px!important;margin-left:7px!important;color:#587189}
+#modal-body .data-table td .award-sub{margin-left:7px!important;font-size:12px!important}
+#modal-body .data-table .result-chip,#modal-body .data-table .statusbadge{padding:2px 6px!important;border-radius:3px!important}
+#modal-body .data-table td br{display:none}
+#modal-body .data-table td:has(.line-action) .statusbadge{margin-left:8px!important}
+#modal-body .data-table tbody tr:hover td{box-shadow:inset 0 1px #64a5cc,inset 0 -1px #64a5cc}
+#modal-body .data-table tbody tr:hover td.metric-tone{background:var(--value-bg)!important;color:var(--value-ink)!important}
+#modal-body .data-table th:first-child,#modal-body .data-table td:first-child{position:sticky;left:0;z-index:2;border-right:2px solid #afc6d8!important}
+#modal-body .data-table thead th:first-child{z-index:6}
+#modal-body .data-table td.num{font-variant-numeric:tabular-nums}
+@media(min-width:2200px){
+ #modal-body .data-table tbody td,#modal-body .data-table.balanced-columns tbody td,#modal-body .data-table tbody td.num,#modal-body .data-table tbody td.num.strong{font-size:18px!important;line-height:25px!important;height:34px!important}
+ #modal-body .data-table .col-sort,#modal-body .balanced-columns .col-sort{font-size:17px!important;line-height:25px!important}
+ #modal-body .data-table tbody tr{height:34px!important}
+ #modal-body .data-table .team-mark{font-size:16px!important}
+ #modal-title{font-size:28px!important}
+ #modal-sub,#modal-body .pill{font-size:17px!important}
+}
+@media(max-width:700px){#modalback{padding:5px!important}#modalback .modal{width:100%!important;max-height:98vh!important}#modal-body{padding:8px!important}#modalback .detail-controls{padding:6px 10px}.detail-controls>label{display:none}#modal-body .table-shell{max-height:calc(98vh - 255px)!important}}

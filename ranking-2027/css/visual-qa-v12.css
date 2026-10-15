@@ -1,0 +1,32 @@
+/* Ranking V12: quiet presenter copy, reliable contrast and softly merging scene masks. */
+.slide.photo-scene:before{transition:none!important;background-size:cover!important;background-repeat:no-repeat!important}
+.slide.photo-scene:after{opacity:0!important}
+.slide.light .slide-header h1{color:#082e5b!important;text-shadow:0 1px 0 rgba(255,255,255,.68),0 3px 16px rgba(255,255,255,.5)}
+.slide.dark :is(.slide-header h1,.closing-top h1,.cover-title){color:#fff!important;text-shadow:0 3px 20px #00122df2,0 1px 3px #00122d!important}
+.slide.dark .accent-orange,.slide.cover .cover-title em,.slide.closing .accent-orange{color:#ff9b4c!important;-webkit-text-fill-color:currentColor!important}
+.slide.light .accent-orange{color:#dd5b00!important;-webkit-text-fill-color:currentColor!important}
+.slide.light :is(.metric-card,.flow-card,.wifi-actions,.wifi-definition,.action-card,.role-card,.self-item,.self-progress,.rule-bar,.benchmark,.roles-result,.combo-stats>div){background:rgba(255,255,255,.90)!important;border-color:rgba(190,215,232,.9)!important}
+.slide.dark :is(.rm-risk,.rm-explain,.rm-action-strip>div,.daily-card,.risk-control,.closing-grid>div){background:rgba(5,26,54,.79)!important}
+.slide:not(.self) .slide-header p,.slide.cover .cover-copy>p,.slide.closing .closing-top>p{display:none!important}
+.slide .card-more{font-size:12px;letter-spacing:.01em}
+.slide .slide-header{margin-bottom:22px}
+.slide.light .slide-header :is(.eyebrow,h1){position:relative;z-index:2}
+.slide[data-index="0"]:before{background-image:linear-gradient(90deg,#06162ef7 0%,#06162ee6 27%,#06162ebc 45%,#06162e56 71%,transparent 95%),var(--scene-img)!important}
+.slide[data-index="1"]:before,.slide[data-index="2"]:before,.slide[data-index="3"]:before,.slide[data-index="5"]:before,.slide[data-index="7"]:before,.slide[data-index="8"]:before{background-image:linear-gradient(90deg,#f8fcfff7 0%,#f8fcffe8 20%,#f8fcffbb 37%,#f8fcff59 55%,transparent 82%),linear-gradient(180deg,rgba(248,252,255,.44),transparent 29%),var(--scene-img)!important}
+.slide[data-index="4"]:before,.slide[data-index="6"]:before,.slide[data-index="9"]:before{background-image:linear-gradient(90deg,#06162ef5 0%,#06162edf 24%,#06162ea4 43%,#06162e4c 65%,transparent 90%),linear-gradient(180deg,#06162e55,transparent 38%),var(--scene-img)!important}
+.slide.self .self-note{display:none!important}
+.slide.self .self-progress{gap:9px!important}
+.slide.self .self-progress .self-rule-hint{font-size:13px!important}
+@media(max-width:760px){.slide:not(.self) .slide-header p{display:none!important}.slide .slide-header{margin-bottom:20px}}
+
+/* V12 motion audit — single composited stage transition, gentle content cadence. */
+@keyframes rankingStageIn{from{opacity:0;transform:translate3d(0,12px,0) scale(.994)}to{opacity:1;transform:translate3d(0,0,0) scale(1)}}
+@keyframes rankingElementIn{from{opacity:0;transform:translate3d(0,11px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@media(min-width:761px) and (prefers-reduced-motion:no-preference){
+.slide.active{animation:rankingStageIn .46s cubic-bezier(.22,1,.36,1) both!important;will-change:opacity,transform}
+.slide.active :is(.slide-header,.cover-copy,.closing-top){animation:rankingElementIn .42s cubic-bezier(.22,1,.36,1) .075s both}
+.slide.active :is(.metric-grid,.wifi-main,.four-steps,.rm-grid,.combo-process,.daily-track,.self-grid,.role-grid,.closing-grid){animation:rankingElementIn .46s cubic-bezier(.22,1,.36,1) .13s both}
+.slide.active :is(.rule-bar,.bottom-callout,.cll-bottom,.rm-bottom,.combo-bottom,.risk-control,.self-bottom,.roles-result,.closing-manifesto){animation:rankingElementIn .42s cubic-bezier(.22,1,.36,1) .20s both}
+}
+@media(prefers-reduced-motion:reduce){.slide.active,.slide.active *{animation:none!important;transition:none!important}}
+.viewport.scene-pending{cursor:progress}

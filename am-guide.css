@@ -1,0 +1,90 @@
+
+/* Slide hướng dẫn Link AM – cùng hệ thiết kế PKT SG10 */
+.scene-am-guide{background:#f2f9ff;overflow:hidden}
+.scene-am-guide .am-bg{position:absolute;inset:0;background:linear-gradient(90deg,rgba(249,253,255,.95),rgba(244,250,255,.88)),url("./assets/cover-4people.jpg") center/cover;opacity:.96}
+.am-header{position:absolute;top:117px;left:75px;right:75px;z-index:2;display:flex;justify-content:space-between;align-items:end;gap:25px}
+.am-eyebrow{color:#086ebc;font-weight:900;letter-spacing:2px;font-size:15px}
+.am-header h1{color:#0e3466;font-size:48px;line-height:1.1;letter-spacing:-1.3px;margin:10px 0 10px;font-weight:950}
+.am-header h1 em{color:#f37021;font-style:normal}
+.am-header p{font-size:17px;font-weight:600;color:#50718e;margin:0}
+.am-tag{padding:12px 16px;border:1px solid #c7e0ee;background:#fffdf8ee;border-radius:15px;color:#245985;font-size:15px;font-weight:850;white-space:nowrap;box-shadow:0 9px 25px #174e7820}
+.am-tag strong{color:#eb681e;font-size:22px}
+.am-cards{position:absolute;top:282px;left:69px;right:69px;bottom:133px;z-index:2;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.am-card{background:#fffffff7;border:1px solid #d3e4f0;border-radius:17px;box-shadow:0 10px 28px #183d681b;padding:0;display:flex;flex-direction:column;color:#173b65;text-align:left;cursor:pointer;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.am-card:hover,.am-card:focus-visible{outline:0;transform:translateY(-4px);box-shadow:0 16px 35px #183d682f;border-color:#80b6dd}
+.am-card-head{min-height:65px;display:flex;gap:10px;align-items:center;padding:11px 13px}
+.am-num{width:35px;height:35px;flex:none;display:grid;place-items:center;border-radius:50%;background:linear-gradient(145deg,#178de8,#1852b4);color:white;font-size:19px;font-weight:950}
+.am-card-head b{font-size:16px;line-height:1.22;font-weight:900}
+.am-screen{height:255px;min-height:255px;margin:0 11px 11px;border:1px solid #cfdeec;background:#f5f7fc;border-radius:11px;overflow:hidden;box-shadow:0 0 0 3px #f2f7fb}
+.am-screen .phone{background:#fff;height:100%;font-family:Arial,sans-serif;font-size:10px;color:#21354d;line-height:1.24;overflow:hidden}
+.am-phone-head{background:white;text-align:center;border-bottom:1px solid #e8edf5;display:grid;place-items:center;height:31px;font-weight:800;color:#183254;font-size:11px}
+.am-phone-head.blue{background:#3666e9;color:white}
+.am-phone-tabs{background:white;display:flex;justify-content:space-around;color:#808fa3;height:28px;align-items:center;border-bottom:1px solid #e4eaf4;font-size:10px}
+.am-phone-tabs b{color:#3263df;border-bottom:2px solid #3263df;padding:6px 2px}
+.am-phone-body{padding:8px;background:#f3f6fb;height:calc(100% - 59px)}
+.am-app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:12px 0}
+.am-app{height:61px;border-radius:8px;background:white;border:1px solid #e5eefa;display:flex;align-items:center;flex-direction:column;justify-content:center;gap:5px;text-align:center;font-size:8.5px;font-weight:700;color:#385174}
+.am-app i{display:grid;place-items:center;font-style:normal;color:#3e6ce5;background:#e0e9ff;border-radius:6px;width:30px;height:28px;font-size:19px}
+.am-select{background:#fff;border:1px solid #e4ebf2;border-radius:6px;padding:8px;margin-bottom:7px;font-size:10px;line-height:1.3;font-weight:700;display:flex;align-items:center;gap:7px}
+.am-square{width:22px;height:22px;background:linear-gradient(135deg,#0f70d6,#f37021,#22ae5b);border-radius:5px;flex:none}
+.am-focus{outline:2px solid #f37021!important;outline-offset:-2px;background:#fff8f0!important}
+.am-input{border-radius:5px;background:#fff;border:1px solid #d9e4ef;padding:9px 7px;margin:6px 0;color:#74879d;font-size:10px}
+.am-plan{display:flex;gap:6px;align-items:center;border-bottom:1px solid #e3ebf4;padding:9px 5px;font-size:9px;color:#344b61;background:#fff}
+.am-plan .am-square{background:#14b65d;width:20px;height:20px}
+.am-plan small{display:block;color:#77889c;font-size:8px;padding-top:3px}
+.am-plan i{width:14px;height:14px;border:1px solid #9aa8b9;border-radius:3px;margin-left:auto;flex:none}
+.am-panel{background:#fff;border:1px solid #e8edf3;border-radius:7px;padding:9px;margin:7px 0;font-size:9px;font-weight:700}
+.am-field{background:#f9fbff;border:1px solid #e1e6ef;border-radius:5px;margin:5px 0;padding:8px;color:#46617e}
+.am-save{display:block;background:#3267e9;border-radius:6px;color:white;font-weight:800;text-align:center;padding:10px;margin:10px 0 0}
+.am-dimmer{height:100%;background:linear-gradient(#8791a277,#79889b9f);position:relative;padding:12px}
+.am-modal-choice{position:absolute;bottom:0;left:0;right:0;background:white;border-radius:13px 13px 0 0;padding:15px 13px;box-shadow:0 -8px 24px #3454}
+.am-modal-choice div{padding:12px 8px;font-size:12px;font-weight:800}
+.am-modal-choice div:last-child{border:2px solid #f37021;border-radius:8px;color:#175a9d}
+.am-card-desc{font-size:13.4px;line-height:1.46;font-weight:650;color:#466887;padding:0 13px 6px;flex:1}
+.am-card-desc strong{color:#0b69b4}
+.am-card-more{color:#317cac;font-size:11px;font-weight:850;padding:1px 13px 12px}
+.am-bottom-note{position:absolute;bottom:72px;left:69px;right:69px;height:50px;z-index:2;border:1px solid #d8e8f1;border-radius:13px;background:#ffffffed;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 15px;color:#436584;font-size:14px;font-weight:700}
+.am-bottom-note b{color:#ec6e24}
+.am-bottom-note a{color:#095faf;font-weight:850;text-decoration:none}
+.am-modal-content{display:grid;grid-template-columns:330px 1fr;gap:24px;padding:12px}
+.am-modal-content .am-screen{width:320px;height:420px;margin:0}
+.am-modal-content .am-instructions{font-size:18px;color:#315c80;line-height:1.7}
+.am-modal-content .am-instructions b{color:#ef6d25}
+
+/* Genuine SOP app screenshots cropped from user-supplied material */
+.am-screen .am-real-photo{width:100%;height:100%;display:grid;place-items:center;overflow:hidden;background:linear-gradient(180deg,#f9fcff,#ebf1f8)}
+.am-screen .am-real-photo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;filter:none}
+.am-card .am-screen{background:#eff5fa}
+.am-card .am-screen img{transition:transform .2s ease}
+.am-card:hover .am-screen img{transform:scale(1.035)}
+.am-modal-content .am-real-photo img{object-fit:contain}
+.am-extra-example{margin-top:10px;display:flex;align-items:center;gap:10px;padding:8px;background:#f4f9fd;border:1px solid #d8e8f2;border-radius:12px}
+.am-extra-example img{height:115px;max-width:115px;object-fit:contain;border-radius:7px}
+.am-extra-example small{font-size:13px;color:#436b89}
+
+/* QA 13.10.2026 · khớp hình thao tác SOP / AM và focus đúng bước */
+.am-card .am-screen{position:relative;height:258px;min-height:258px;margin:0 11px 10px;background:#f2f7fb}
+.am-screen .am-real-photo{width:100%;height:100%;overflow:hidden;position:relative;background:#eff4f8}
+.am-card .am-photo-step-1 img{object-fit:cover;object-position:50% 26%}
+.am-card .am-photo-step-2 img{object-fit:cover;object-position:50% 32%}
+.am-card .am-photo-step-3 img{object-fit:cover;object-position:50% 5%}
+.am-card .am-photo-step-4 img{object-fit:contain;object-position:50% 40%}
+.am-card .am-photo-step-5 img{object-fit:cover;object-position:50% 100%}
+.am-card-step-1 .am-screen:after,.am-card-step-2 .am-screen:after,.am-card-step-3 .am-screen:after,.am-card-step-4 .am-screen:after,.am-card-step-5 .am-screen:after{
+ position:absolute;z-index:1;bottom:6px;left:6px;right:6px;display:block;padding:7px 8px;border-radius:8px;
+ background:rgba(7,41,73,.86);color:#fff;font-weight:850;font-size:11px;line-height:1.25;text-align:center;
+ box-shadow:0 4px 14px #071c2e44;pointer-events:none
+}
+.am-card-step-1 .am-screen:after{content:"1 · LINK BÁN HÀNG AM"}
+.am-card-step-2 .am-screen:after{content:"2 · MENU CÁ NHÂN HÓA"}
+.am-card-step-3 .am-screen:after{content:"3 · TÌM 1 CAM → THÊM"}
+.am-card-step-4 .am-screen:after{content:"4 · KIỂM TRA GÓI → LƯU"}
+.am-card-step-5 .am-screen:after{content:"5 · SAO CHÉP LINK"}
+.am-card:focus-visible{outline:3px solid #f37021;outline-offset:3px}
+.am-modal-content{grid-template-columns:minmax(350px,410px) minmax(380px,1fr);align-items:start;gap:26px}
+.am-modal-content .am-screen{width:100%;height:535px;max-height:65vh;min-height:420px}
+.am-modal-content .am-screen img{object-fit:contain!important;object-position:center!important;max-height:100%;width:100%;height:100%;transform:none!important}
+.am-modal-content .am-instructions{max-width:700px;font-size:17px;line-height:1.6}
+.am-modal-content .am-instructions p{margin:10px 0 16px}
+.am-card-more{color:#155f9b;font-size:11px;letter-spacing:.05px}
+.am-extra-example img{height:150px;max-width:145px}

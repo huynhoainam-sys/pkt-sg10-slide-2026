@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#081d37">
+  <meta name="description" content="Trình chiếu Họp PKT SG10 tháng 10/2026.">
+  <title>PKT SG10 | Chọn nội dung trình chiếu</title>
+  <style>
+    :root{color-scheme:dark;--ink:#eef7ff;--muted:#a5bed5;--orange:#f37021;--line:#accdeb23}
+    *{box-sizing:border-box}body{margin:0;min-height:100svh;background:#081a31;color:var(--ink);font-family:"Segoe UI",Arial,sans-serif;display:flex;flex-direction:column;background-image:radial-gradient(ellipse at 10% 5%,#11678935,transparent 52%),radial-gradient(ellipse at 95% 100%,#f3702113,transparent 50%)}
+    header,main,footer{width:min(1080px,calc(100% - 48px));margin-inline:auto}header{padding:35px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:16px;font-weight:700;font-size:13px;letter-spacing:1px}.logo{display:flex;gap:3px;font-style:italic;font-size:21px;letter-spacing:0;color:white}.logo i{width:28px;height:29px;border-radius:5px;display:grid;place-items:center;font-style:inherit}.logo i:nth-child(1){background:#0072bc}.logo i:nth-child(2){background:#f37021}.logo i:nth-child(3){background:#00a859}.header-note{color:#87a4be;font-size:12px}
+    main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:54px 0 64px}.eyebrow{color:#7fd3f0;font-size:12px;font-weight:700;letter-spacing:2px;margin:0 0 17px}h1{font-size:clamp(30px,4.7vw,50px);line-height:1.16;letter-spacing:-1.1px;margin:0 0 17px;max-width:750px}h1 span{color:#ff994f}.intro{font-size:16px;line-height:1.7;color:var(--muted);margin:0 0 36px}.decks{display:grid;grid-template-columns:minmax(0,640px);gap:22px}.deck{position:relative;display:flex;flex-direction:column;min-height:300px;border:1px solid #a3d3f22b;border-radius:22px;padding:30px;color:inherit;text-decoration:none;background:linear-gradient(135deg,#173754a8,#0b243dae);box-shadow:0 20px 45px #0000001c;transition:transform .22s,border-color .22s,background .22s;overflow:hidden}.deck:after{content:"";position:absolute;width:180px;height:180px;right:-85px;top:-80px;border-radius:50%;background:#63c8ff0c;pointer-events:none}.deck:hover{transform:translateY(-5px);border-color:#64c9ed94;background:#153750}.deck:focus-visible{outline:3px solid var(--orange);outline-offset:5px}.deck.ranking{background:linear-gradient(135deg,#213348b3,#14233eb0)}.deck.ranking:hover{border-color:#f5a66699;background:#24374d}.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.icon{width:48px;height:48px;padding:11px;border-radius:14px;background:#259bd52a;color:#78d5ff}.ranking .icon{background:#f3702125;color:#ffb074}.badge{font-size:11px;color:#a8c4db;border:1px solid #a8c4db30;border-radius:30px;padding:6px 10px}.deck h2{font-size:27px;line-height:1.3;margin:0 0 13px;letter-spacing:-.5px}.deck p{font-size:14px;color:#a7bed4;line-height:1.7;max-width:380px;margin:0 0 25px}.open{display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700;color:#8ddeff;margin-top:auto;padding-top:18px;border-top:1px solid var(--line)}.ranking .open{color:#ffb578}.open svg{width:21px;height:21px}.hint{display:flex;align-items:center;gap:8px;color:#7998b2;font-size:12px;margin-top:25px;line-height:1.6}.hint svg{flex-shrink:0;width:15px;height:15px}footer{border-top:1px solid var(--line);padding:22px 0;display:flex;justify-content:space-between;color:#607f99;font-size:11px}.signature{opacity:.55}
+    @media(max-width:650px){header,main,footer{width:calc(100% - 32px)}header{padding:22px 0}.header-note{display:none}main{padding:35px 0 30px}.decks{grid-template-columns:1fr;gap:15px}.deck{padding:23px;min-height:260px}.deck h2{font-size:24px}.intro{font-size:14px;margin-bottom:25px}.card-top{margin-bottom:17px}footer{gap:14px}.signature{white-space:nowrap}}
+    @media(prefers-reduced-motion:reduce){.deck{transition:none}.deck:hover{transform:none}}
+
+    /* SG10 homepage: use existing meeting cover as a cinematic backdrop, without hiding the two navigation cards. */
+    body{
+      background-color:#081a31;
+      background-image:
+        linear-gradient(90deg,rgba(4,20,42,.94) 0%,rgba(5,24,48,.88) 34%,rgba(5,27,52,.64) 66%,rgba(5,24,47,.77) 100%),
+        url("./assets/cover-4people.jpg");
+      background-size:cover,cover;
+      background-position:center,right center;
+      background-repeat:no-repeat,no-repeat;
+      background-attachment:fixed,fixed;
+      isolation:isolate;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-1;
+      background:
+        radial-gradient(ellipse at 81% 19%,rgba(29,132,219,.18),transparent 47%),
+        linear-gradient(180deg,rgba(4,17,37,.08),transparent 43%,rgba(4,16,32,.31));
+    }
+    .deck{
+      background:linear-gradient(135deg,rgba(16,48,79,.88),rgba(8,33,57,.90));
+      border-color:rgba(148,203,238,.24);
+      box-shadow:0 18px 46px rgba(0,11,28,.25);
+      backdrop-filter:blur(7px);
+      -webkit-backdrop-filter:blur(7px);
+    }
+    .deck:hover{
+      background:linear-gradient(135deg,rgba(23,59,90,.92),rgba(11,39,65,.94));
+      box-shadow:0 22px 50px rgba(0,11,28,.32);
+    }
+    .deck.ranking{
+      background:linear-gradient(135deg,rgba(29,47,74,.88),rgba(18,32,58,.92));
+    }
+    .deck.ranking:hover{
+      background:linear-gradient(135deg,rgba(38,57,83,.94),rgba(22,37,63,.96));
+    }
+    .deck .card-top,.deck h2,.deck p,.deck .open{position:relative;z-index:1}
+    .deck .badge{color:#d5eafa;border-color:rgba(183,219,243,.22);background:rgba(10,35,61,.33)}
+    @media(max-width:650px){
+      body{background-attachment:scroll,scroll;background-position:center,65% center}
+      .deck{backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+    }
+  </style>
+</head>
+<body>
+  <header><div class="brand"><span class="logo" aria-label="FPT"><i>F</i><i>P</i><i>T</i></span><span>TELECOM · PKT SG10</span></div><span class="header-note">KHÔNG GIAN TRÌNH CHIẾU</span></header>
+  <main>
+    <p class="eyebrow">PKT SG10 / PRESENTATIONS</p>
+    <h1>Chọn nội dung<br><span>trình chiếu.</span></h1>
+    <p class="intro">Báo cáo và nội dung họp PKT SG10 tháng 10/2026.</p>
+    <div class="decks">
+      <a class="deck" href="./meeting.html?v=20261015-v27b" aria-label="Mở slide họp PKT SG10 tháng 10/2026">
+        <div class="card-top"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="13" rx="2"/><path d="M7 21l5-5 5 5M7 12V11m5 3V6m5 6V11"/></svg><span class="badge">13 SLIDE · 10/2026</span></div>
+        <h2>Họp PKT SG10</h2>
+        <p>Bán hàng, CLDV & CSAT, thu hồi thiết bị và kế hoạch hành động.</p>
+        <div class="open"><span>Mở slide họp</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></div>
+      </a>
+    </div>
+    <p class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Trong mỗi bộ slide, bấm “Chọn nội dung” để quay về đây.</p>
+  </main>
+  <footer><span>FPT TELECOM / PHÒNG KỸ THUẬT SG10</span><span class="signature">by SG10 – NamHH</span></footer>
+</body>
+</html>

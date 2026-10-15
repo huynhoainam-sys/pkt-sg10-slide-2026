@@ -1,0 +1,28 @@
+/* Local ChatGPT artwork; every composition reserves the existing text zones. */
+.slide[data-index="1"]{--scene-img:url('../assets/backgrounds-v11/slide-02.webp')!important}
+.slide[data-index="2"]{--scene-img:url('../assets/backgrounds-v11/slide-03.webp')!important}
+.slide[data-index="3"]{--scene-img:url('../assets/backgrounds-v11/slide-04.webp')!important}
+.slide[data-index="4"]{--scene-img:url('../assets/backgrounds-v11/slide-05.webp')!important}
+.slide[data-index="5"]{--scene-img:url('../assets/backgrounds-v11/slide-06.webp')!important}
+.slide[data-index="7"]{--scene-img:url('../assets/backgrounds-v11/slide-08.webp')!important}
+.slide[data-index="8"]{--scene-img:url('../assets/backgrounds-v11/slide-09.webp')!important}
+.slide:is([data-index="1"],[data-index="2"],[data-index="3"],[data-index="4"],[data-index="5"],[data-index="7"],[data-index="8"]):before{background-position:center,center!important;background-size:cover,100% 100%!important;transform:none!important}
+/* Unified result surface, with color reserved for the live state. */
+.slide.self .self-progress{background:#fff!important;border:1px solid #cce0ef!important;border-radius:26px;box-shadow:0 15px 35px #163b601a!important;padding:20px!important;gap:8px!important;align-self:start;min-width:0;box-sizing:border-box}
+.slide.self .self-progress>*{max-width:none!important;width:100%;box-sizing:border-box}
+.slide.self .self-progress .micro-title{padding:0!important;border:0!important;border-radius:0!important;background:none!important;box-shadow:none!important;color:#0072bc!important;font-size:14px}
+.slide.self .self-status-card{padding:12px 14px!important;border-radius:14px!important;box-shadow:none!important}
+.slide.self .self-status-card.fail{background:#fff1e7!important;border-color:#f2cba9!important}
+.slide.self .self-status-card.pass{background:#e5f8ef!important;border-color:#b8e3ce!important}
+.slide.self .self-status-card b{font-size:27px!important}
+.slide.self .self-status-card.fail b{color:#c65300!important}
+.slide.self .self-status-card.pass b{color:#008451!important}
+.slide.self .progress-giant{background:none!important;box-shadow:none!important;min-width:0!important;padding:4px 0 0!important;justify-content:center;border-radius:0!important}
+.slide.self .self-progress>p{background:none!important;padding:0!important;margin:0!important;text-align:center;font-size:14px}
+.slide.self #checkedCaption{background:none!important;padding:0!important;color:#36526b!important}
+.slide.self .self-progress-track{height:12px!important;background:#e4edf5!important;box-shadow:none!important;margin:0!important}
+.slide.self .self-progress-track span{background:linear-gradient(90deg,#0072bc,#00a859)!important}
+.slide.self .self-rule-hint{background:none!important;border:0!important;border-top:1px solid #dce8f1!important;border-radius:0!important;padding:10px 0 0!important;line-height:1.55!important}
+.slide.self .reset-checks{background:#eef6fc!important;border:1px solid #ccdfed!important;color:#005d9a!important;border-radius:10px!important;padding:9px 12px!important}
+.slide.self .self-note{background:none!important;box-shadow:none!important;border-radius:0!important;border-top:1px solid #dce8f1!important;padding:8px 0 0!important;font-size:11px!important;line-height:1.5!important}
+@media(max-width:760px){.slide.self .self-progress{padding:18px!important;border-radius:20px}.slide.self .self-status-card b{font-size:23px!important}}

@@ -1,0 +1,59 @@
+/* Ranking V19: targeted visual QA. This intentionally does NOT replace V17's colour system. */
+.transport-brand .v18-logo-nav{
+  box-sizing:content-box;
+  display:block;
+  flex:0 0 auto;
+  width:135px;
+  height:39px;
+  max-width:135px;
+  padding:4px 8px;
+  background:#fff;
+  border:1px solid rgba(210,229,242,.85);
+  border-radius:9px;
+  object-fit:contain;
+  box-shadow:none!important;
+}
+.transport-brand .v19-brand-backup{
+  font:800 17px/1 'Be Vietnam Pro',Arial,sans-serif;
+  letter-spacing:-.6px;
+  color:#fff;
+}
+/* Show the illustration, not a heavily whitened or heavily darkened copy. */
+#canvas .slide.v19-curated-art .scene-image{
+  object-fit:cover;
+  object-position:center;
+  filter:none!important;
+}
+#canvas .slide.v19-curated-art.light::before{
+  background:linear-gradient(90deg,
+    rgba(248,252,255,.91) 0%,
+    rgba(248,252,255,.83) 19%,
+    rgba(248,252,255,.45) 34%,
+    rgba(248,252,255,.08) 53%,
+    rgba(248,252,255,0) 68%)!important;
+}
+/* Content boxes stay readable while keeping a subtle photographic context. */
+#canvas .slide.v19-curated-art :is(.qa-issue,.qa-goal,.rank-tile,.rank-panel,
+  .qa-riskpanel,.qa-formulacards section,.rank-wifi-result>div){
+  background:rgba(255,255,255,.87);
+  -webkit-backdrop-filter:blur(4px);
+  backdrop-filter:blur(4px);
+  box-shadow:0 11px 26px rgba(19,65,99,.095);
+}
+#canvas .slide.v19-curated-art :is(.qa-issue h3,.qa-goal h3,
+ .rank-panel h3,.rank-tile h3,.qa-formulacards h3){color:#0e3964}
+#canvas .slide.v19-curated-art :is(.qa-issue p,.qa-goal p,
+ .rank-tile p,.qa-formulacards p){color:#34536e}
+/* Never apply text glow to labels. Background icon glows remain part of the image. */
+#canvas .slide.v19-curated-art *{text-shadow:none!important}
+@media(max-width:760px){
+ .transport-brand .v18-logo-nav{width:64px;max-width:64px;height:24px;padding:3px 4px;border-radius:6px}
+ #canvas .slide.v19-curated-art.light::before{
+  background:linear-gradient(180deg,
+   rgba(248,252,255,.88) 0%,
+   rgba(248,252,255,.58) 46%,
+   rgba(248,252,255,.08) 100%)!important
+ }
+ #canvas .slide.v19-curated-art :is(.qa-issue,.qa-goal,.rank-tile,.rank-panel,
+   .qa-riskpanel,.qa-formulacards section){background:rgba(255,255,255,.92)}
+}

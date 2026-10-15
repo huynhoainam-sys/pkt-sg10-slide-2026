@@ -1,0 +1,46 @@
+/* Detail structure: fixed title and search, scrollable table, readable evidence. */
+#modalback{padding:20px!important}
+#modalback .modal{width:min(1450px,96vw)!important;max-height:92vh!important;border-radius:18px!important}
+#modalback .modal-top{padding:21px 25px 16px!important;gap:20px;flex-shrink:0;background:#f7fbff!important}
+#modal-title{font-size:25px!important;line-height:1.25!important;color:#103461}
+#modal-sub{font-size:14px!important;line-height:1.5!important;color:#617b94}
+#modal-close{width:40px;height:40px;border:1px solid #d5e4ef;background:white;border-radius:10px;color:#244c78;flex-shrink:0;font-size:25px!important}
+.detail-controls{display:flex;align-items:center;gap:12px;padding:14px 25px;border-bottom:1px solid #e0ebf4;background:#fff;flex-shrink:0}
+.detail-controls[hidden]{display:none!important}
+.detail-controls>label{font-size:14px;color:#345875;font-weight:800;white-space:nowrap}
+#detailSearch{min-width:250px;width:min(440px,42vw);padding:11px 14px;border:1px solid #cbdfea;border-radius:10px;background:#fafcfe;font-size:15px;color:#153b63}
+#detailSearch:focus{outline:2px solid #5ba5d5;outline-offset:2px;background:white}
+#detail-count{font-size:13px;color:#315f89;font-weight:800;white-space:nowrap}
+.detail-sort-note{font-size:12px;color:#74899e;margin-left:auto}
+#modal-body{padding:18px 25px 22px!important;overflow:auto!important;min-height:0}
+#modal-body .modal-toolbar{margin:0 0 14px!important;gap:8px;flex-wrap:wrap}
+#modal-body .pill{padding:9px 13px!important;border-radius:8px!important;font-size:13px!important;font-weight:750!important;background:#f5f9fc!important;border:1px solid #d9e6f0!important;color:#355b80!important}
+#modal-body .pill.selected,#modal-body .pill.active{background:#195fa3!important;color:white!important;border-color:#195fa3!important}
+#modal-body .table-shell{border:1px solid #d6e3ed!important;border-radius:12px!important;overflow:auto!important;max-height:60vh!important;box-shadow:none!important;margin:0!important}
+#modal-body .data-table{width:100%!important;min-width:720px;table-layout:auto!important;border-collapse:separate!important;border-spacing:0!important}
+#modal-body .data-table thead{position:sticky;top:0;z-index:3}
+#modal-body .data-table th{padding:0!important;vertical-align:middle!important;background:#235d92!important;color:white!important;border:0!important;border-right:1px solid #ffffff22!important;white-space:nowrap}
+#modal-body .col-sort{font-size:13px!important;font-weight:800!important;padding:15px 13px!important;line-height:1.25!important;display:flex!important;align-items:center;justify-content:space-between;gap:12px!important;width:100%!important;border:0!important;border-radius:0!important;background:transparent!important;color:white!important;text-align:left!important}
+#modal-body .col-sort:after{display:none!important}
+#modal-body .col-sort:hover,#modal-body .col-sort:focus-visible{background:#3572a9!important}
+#modal-body .sort-indicator{font-size:16px;opacity:.66}
+#modal-body .col-sort.asc .sort-indicator,#modal-body .col-sort.desc .sort-indicator{font-size:0;opacity:1}
+#modal-body .col-sort.asc .sort-indicator:after{content:'↑';font-size:16px;color:#ffbf85}
+#modal-body .col-sort.desc .sort-indicator:after{content:'↓';font-size:16px;color:#ffbf85}
+#modal-body .data-table td{font-size:14px!important;line-height:1.5!important;padding:13px!important;border:0!important;border-bottom:1px solid #e5edf4!important;vertical-align:middle!important;color:#24425e}
+#modal-body .data-table .num{font-variant-numeric:tabular-nums;white-space:nowrap}
+#modal-body .data-table td.num.strong{font-size:17px!important;line-height:1.3!important}
+#modal-body .data-table tr:nth-child(even){background:#f7fafc}
+#modal-body .data-table tbody tr:hover td{background:#e9f3fc!important}
+#modal-body .data-table .team-mark{font-size:12px!important;min-width:80px!important;padding:5px 8px!important;white-space:nowrap}
+#modal-body .data-table .danger{color:#b5364c!important;font-weight:800}
+#modal-body .data-table .ok{color:#147247!important;font-weight:800}
+#modal-body .data-table .recall-orange{color:#ad641b!important;font-weight:800}
+#modal-body .sales-detail-board .data-table{min-width:1060px!important}
+#modal-body .recovery-detail-board .data-table{min-width:1160px!important}
+#modal-body .table-note,#modal-body .note,#modal-body .sales-note,#modal-body .detail-description{font-size:13px!important;line-height:1.55!important;color:#6b8095!important;margin:10px 0 14px!important}
+.recall-account,.recall-leader{display:block;font-size:11px;color:#7d90a2;margin-top:3px}
+.recall-row-note{max-width:145px;color:#6a8197!important;font-size:12px!important}
+.detail-empty:after{content:'Không có dòng phù hợp. Hãy thử tên KTV, đội hoặc mã hợp đồng khác.';display:block;color:#71859a;font-size:14px;padding:18px 0}
+@media(max-width:800px){.detail-controls{flex-wrap:wrap;padding:12px 16px}.detail-controls>label{display:none}#detailSearch{width:100%;flex:1;min-width:170px}.detail-sort-note{display:none}#modalback .modal-top{padding:16px!important}#modal-body{padding:14px 16px!important}#modal-title{font-size:20px!important}.recall-index-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(prefers-reduced-motion:reduce){.recall-metric{transition:none}}

@@ -1,0 +1,1 @@
+October 2026 campaign poster assets. Original images supplied in slide HTML.

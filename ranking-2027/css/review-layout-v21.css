@@ -1,0 +1,198 @@
+/* RANKING V21 — REVIEW ONLY.
+   Surgical visual QA: larger headings, vertically balanced content, correct contrast,
+   visible right-side artwork, and frameless FPT wordmark. No redesign of V17-V20. */
+
+/* A high-contrast wordmark on the existing dark transport. No white sticker. */
+body .transport .transport-brand .v18-logo-nav{
+  box-sizing:border-box!important;
+  width:153px!important;
+  max-width:153px!important;
+  height:44px!important;
+  flex:0 0 153px!important;
+  display:block!important;
+  padding:0!important;
+  margin:0!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  filter:none!important;
+  object-fit:contain!important;
+}
+body .transport .transport-brand{gap:15px}
+body .transport .transport-title{color:#d6e8fb;letter-spacing:.03em}
+
+/* Restore vertical optical balance. Fixed logical layout is 1600×900. */
+#canvas .slide.qa-source,
+#canvas .slide.ranking-extension{
+  padding-top:56px!important;
+  padding-bottom:51px!important;
+  display:none;
+  flex-direction:column!important;
+  justify-content:space-evenly!important;
+  gap:9px!important;
+}
+#canvas .slide.qa-source.active,
+#canvas .slide.ranking-extension.active{display:flex!important}
+
+#canvas .slide:not(.cover):not(.closing).metrics,
+#canvas .slide:not(.cover):not(.closing).wifi,
+#canvas .slide:not(.cover):not(.closing).cll,
+#canvas .slide:not(.cover):not(.closing).rm,
+#canvas .slide:not(.cover):not(.closing).combo,
+#canvas .slide:not(.cover):not(.closing).daily,
+#canvas .slide:not(.cover):not(.closing).self,
+#canvas .slide:not(.cover):not(.closing).roles{
+  display:none;
+  flex-direction:column!important;
+  justify-content:space-evenly!important;
+  gap:9px!important;
+}
+#canvas .slide:not(.cover):not(.closing).active:is(.metrics,.wifi,.cll,.rm,.combo,.daily,.self,.roles){display:flex!important}
+
+/* Increase headline and eyebrow size without forcing third-line wrapping.
+   Individual content clusters keep their original grids and card styling. */
+#canvas .slide.qa-source .qa-title,
+#canvas .slide.ranking-extension .rank-head{
+  flex:0 0 auto!important;
+  width:100%!important;
+  max-width:1410px!important;
+  margin:0 0 10px!important;
+}
+#canvas .slide.qa-source .qa-title h1,
+#canvas .slide.ranking-extension .rank-head h1{
+  color:#0c315e!important;
+  font-size:56px!important;
+  line-height:1.19!important;
+  letter-spacing:-1.5px!important;
+  font-weight:900!important;
+  margin:8px 0 7px!important;
+  max-width:1390px!important;
+  text-shadow:none!important;
+}
+#canvas .slide:not(.cover):not(.closing) .slide-header h1{
+  font-size:56px!important;
+  line-height:1.18!important;
+  letter-spacing:-1.45px!important;
+  font-weight:900!important;
+  text-shadow:none!important;
+}
+#canvas .slide.qa-source .qa-title .eyebrow,
+#canvas .slide.ranking-extension .rank-head .eyebrow{
+  font-size:18px!important;
+  letter-spacing:1.05px!important;
+  font-weight:850!important;
+  color:#075989!important;
+  line-height:1.38!important;
+}
+#canvas .slide.qa-source .qa-title p,
+#canvas .slide.ranking-extension .rank-head p{
+  display:block!important;
+  font-size:17px!important;
+  line-height:1.48!important;
+  margin:0!important;
+  max-width:1330px!important;
+  color:#385873!important;
+}
+#canvas .slide:not(.cover):not(.closing) .slide-header{
+  flex:0 0 auto!important;
+  margin-bottom:9px!important;
+}
+
+/* Legacy (dark) pages must retain white headlines; status group text is not white on white. */
+#canvas .slide.dark .slide-header h1,
+#canvas .slide.dark .dark-header h1{color:#f8fcff!important}
+#canvas .slide.light .slide-header h1,
+#canvas .slide.light .qa-title h1,
+#canvas .slide.light .rank-head h1{color:#0e3158!important}
+#canvas .slide.light .accent-orange{color:#bd4e0f!important}
+#canvas .slide.dark .accent-orange{color:#ffa25b!important}
+#canvas .slide.light :is(.eyebrow,.rank-kicker,.qa-riskpanel h2,.qa-formulacards>section>span){
+  color:#00609a!important;
+}
+#canvas .slide.dark :is(.eyebrow,.eyebrow.light,.micro-title){color:#cfebff!important}
+#canvas .slide.light :is(.metric-card p,.flow-card p,.action-card p,.qa-goal p,
+   .qa-issue p,.rank-panel p,.rank-tile p,.qa-riskrow p,.qa-formulacards p){
+  color:#35536c!important;
+}
+
+/* Spread dense slide groups across the space instead of clustering at top. */
+#canvas .slide.qa-source :is(.qa-six,.qa-four,.qa-riskcolumns,.qa-formulacards),
+#canvas .slide.ranking-extension :is(.rank-triple,.rank-pro-grid,.rank-bands,.rank-duo){
+  flex:0 0 auto!important;
+  width:100%!important;
+  margin-top:0!important;
+  margin-bottom:0!important;
+}
+#canvas .slide.qa-source :is(.qa-footer,.qa-riskaction,.qa-formularesult,.qa-combo-equation),
+#canvas .slide.ranking-extension :is(.rank-verdict,.rank-math,.rank-footstrip,.rank-wifi-result,.v21-milestone){
+  flex-shrink:0!important;
+  margin-top:0!important;
+  margin-bottom:0!important;
+}
+/* Content cards need readable text and avoid whitewashing the photographs. */
+#canvas .slide.qa-source :is(.qa-goal,.qa-issue,.qa-riskpanel,.qa-formulacards section),
+#canvas .slide.ranking-extension :is(.rank-tile,.rank-panel){
+  background:rgba(255,255,255,.89)!important;
+  border-color:#c6dbe9!important;
+  box-shadow:0 10px 24px rgba(19,60,97,.09)!important;
+  -webkit-backdrop-filter:blur(3px)!important;
+  backdrop-filter:blur(3px)!important;
+}
+/* Individual labels: blue = data, amber = at risk, green = outcomes. */
+#canvas .slide .rank-state.pass :is(strong,span){color:#066c45!important}
+#canvas .slide .rank-state.fail :is(strong,span){color:#a74411!important}
+#canvas .slide .rank-orange .rank-tile-no{color:#c65712!important}
+#canvas .slide .rank-blue .rank-tile-no{color:#006aa9!important}
+#canvas .slide .rank-green .rank-tile-no{color:#08744e!important}
+
+/* Cumulative percentile group is a valid explanation; no warning badge/alert. */
+#canvas .slide .v21-milestone{
+  padding:10px 17px!important;
+  color:#29536f!important;
+  font-size:15px!important;
+  line-height:1.43!important;
+  border-left:4px solid #008a56!important;
+  border-radius:9px!important;
+  background:rgba(242,252,247,.94)!important;
+}
+#canvas .slide .v21-milestone b{color:#076841!important}
+
+/* Fix right-side scene/photo mismatches by loading context-selected scenes.
+   Preserve large visual breathing space on right (not a full-frame white overlay). */
+#canvas .slide.v21-curated-art.light::before{
+  background:linear-gradient(90deg,
+    rgba(249,252,255,.94) 0%,rgba(249,252,255,.81) 20%,
+    rgba(249,252,255,.36) 40%,rgba(249,252,255,.05) 60%,
+    transparent 77%)!important;
+}
+#canvas .slide.v21-curated-art.dark::before{
+  background:linear-gradient(90deg,
+    rgba(5,19,39,.96) 0%,rgba(5,19,39,.83) 22%,
+    rgba(5,19,39,.48) 44%,rgba(5,19,39,.07) 69%,
+    transparent 82%)!important;
+}
+#canvas .slide.v21-curated-art .scene-image{
+  object-position:58% center!important;
+  opacity:1!important;
+  filter:none!important;
+}
+#canvas .slide.v21-curated-art .slide-header,
+#canvas .slide.v21-curated-art .qa-title{position:relative;z-index:2}
+
+/* Keep all full-frame photo backgrounds visible rather than graying them out. */
+#canvas .slide.photo-scene .scene-image{filter:none!important}
+#canvas .slide.photo-scene:after{opacity:0!important}
+
+/* Constrained popup styling inherited from V20: no change to its content layout. */
+body #detail.detail .v20-example .v20-example-label{font-weight:850!important}
+body #detail.detail .v20-example p{color:#3a576f!important}
+
+/* Navigation bar on phones: show a compact FPT mark without white card. */
+@media(max-width:760px){
+  body .transport .transport-brand .v18-logo-nav{height:26px!important;width:88px!important;max-width:88px!important;flex-basis:88px!important}
+  body .transport .transport-brand{gap:6px!important}
+  #canvas .slide.qa-source .qa-title h1,
+  #canvas .slide.ranking-extension .rank-head h1,
+  #canvas .slide:not(.cover):not(.closing) .slide-header h1{font-size:50px!important;line-height:1.18!important}
+}
