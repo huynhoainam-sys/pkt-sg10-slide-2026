@@ -187,3 +187,12 @@
 .scene-close .close-step h3{font-size:20px;line-height:1.25}
 .scene-close .close-step p{font-size:16px;line-height:1.45;margin-top:8px}
 .scene-close .close-message{bottom:125px;font-size:18px}
+
+/* Recovery source freshness: show snapshot plainly without implying a live feed. */
+.scene-recall .recall-snapshot-status,.scene-recall-people .recall-snapshot-status{position:absolute;z-index:12;right:75px;top:91px;display:flex;align-items:center;gap:11px;padding:8px 13px;border:1px solid rgba(192,108,29,.34);border-radius:12px;background:rgba(255,245,230,.95);box-shadow:0 3px 15px rgba(34,62,96,.09);color:#8b460b;font-family:Inter,Arial,sans-serif;pointer-events:none}
+.recall-status-dot{width:11px;height:11px;flex:none;border-radius:50%;background:#df8727;box-shadow:0 0 0 4px rgba(223,135,39,.14)}
+.recall-snapshot-status span:last-child{display:flex;flex-direction:column;gap:1px;white-space:nowrap}
+.recall-snapshot-status b{font-size:13px;line-height:17px;font-weight:850;letter-spacing:.15px}
+.recall-snapshot-status small{font-size:10px;line-height:13px;font-weight:780;letter-spacing:.9px}
+.recall-sync-note{padding:10px 14px;margin:0 0 12px;border-radius:9px;border:1px solid #f3d2a5;background:#fff5e6;color:#804509;font-size:13px;line-height:1.4}
+.recall-sync-note strong{font-weight:850}
