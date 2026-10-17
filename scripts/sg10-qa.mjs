@@ -30,7 +30,7 @@ function walk(dir) {
   if (!exists(dir)) return;
   for (const item of fs.readdirSync(path.join(root,dir), { withFileTypes: true })) {
     const p = path.posix.join(dir, item.name);
-    if (item.isDirectory()) walk(p);
+    if (item.isDirectory() && !['.git', 'node_modules', '.cache', 'dist'].includes(item.name)) walk(p);
     else if (item.name.endsWith('.js')) {
       try { new vm.Script(read(p), { filename: p }); }
       catch (e) { errors.push(p + ': ' + e.message); }
