@@ -30,6 +30,15 @@ render=function(type){
  return oldRender(type);
 };
 
+
+const renderBeforeRMUpdate=render;
+render=function(type){
+ if(type==="rm")return '<div class="cards">'+card('TỔNG RỜI MẠNG T10','1.001 HĐ','T9: 953 · tăng 48 (+5,04%)')+card('RM DƯỚI 3T','47 HĐ','4,70% tổng RM · T9: 52')+card('ĐÃ CHẤM DỨT','632 HĐ','63,14% tổng RM')+card('CTBDV','369 HĐ','36,86% tổng RM')+'</div>'+panel('CƠ CẤU TUỔI THUÊ BAO RỜI MẠNG · THÁNG 10',realRows(['Dưới 3T','3–6T','6–12T','Trên 12T','Tổng'],[['47 · 4,70%','109 · 10,89%','187 · 18,68%','658 · 65,73%','1.001']]))+panel('RM THEO NHÂN SỰ · CHỜ NGUỒN PHÂN BỔ', '<div class="empty">File follow RM T10 tổng hợp theo HĐ và nhóm tuổi thuê bao; chưa có phép gán RM chính xác theo KTV và mẫu số AU/HĐ để tính tỷ lệ cá nhân. Không suy diễn từ số triển khai TKM.</div>');
+ if(type==="common")return '<div class="cards">'+card('CLL2','5,29%','283 / 5.345 CLBT · CLL3: 20')+card('RM THÁNG 10','1.001','Tăng 48 HĐ so với T9')+card('ĐÁNH GIÁ CLDV','4,47%','267 / 5.972 lượt gửi')+card('CSAT 1–2','5,24%','14 / 267 · mục tiêu < 3%')+'</div>'+panel('CÁC KPI CẦN ĐỐI SOÁT THÊM','<p class="rule">PTTB Online tháng 10, đúng hẹn triển khai/bảo trì, thu hồi tháng 10 và kết quả Ranking đã chốt theo kỳ.</p><p class="muted">CSAT 1–2 chưa giải trình: 1 trường hợp. Tỷ lệ đánh giá phải dùng mẫu số lượt gửi; CSAT 1–2 dùng mẫu số đã đánh giá.</p>');
+ if(type==="overview")return '<div class="grid5">'+card('PTTB','Chờ đối soát','Online KTV tháng 10')+card('ĐÚNG HẸN','Chờ T10','Triển khai / Bảo trì')+card('CLL','5,29%','283 / 5.345 · CLL3: 20')+card('RANKING','25 / 83','Snapshot 2027, không phải T10 chốt')+card('THU HỒI','Chờ T10','Không lấy tháng 11 thay tháng 10')+'</div>'+panel('CHẤT LƯỢNG DỊCH VỤ & DUY TRÌ THUÊ BAO','<div class="grid2">'+card('Rời mạng T10','1.001 HĐ','Tăng 48 so với tháng 9 · dưới 3T: 47')+card('CSAT 1–2','5,24%','14 / 267 đánh giá · chưa giải trình: 1')+'</div><p class="muted">Nguồn: SG10 follow rời mạng T10; BC Đánh giá CLDV & CSAT 1–2 SG10 lũy kế T10. Đây là số lượng RM, không phải tỷ lệ RM trên tổng AU.</p>');
+ return renderBeforeRMUpdate(type);
+};
+
 const stage=document.getElementById('stage');
 stage.innerHTML=slides.map((s,i)=>'<section class="'+(i===0?'active':'')+'" aria-label="Slide '+(i+1)+'"><div class="eyebrow">PKT SG10 · '+s.tag+' <span class="pill" style="float:right">'+String(i+1).padStart(2,'0')+' / 07</span></div><h1>'+s.title+'</h1><p class="sub">'+s.desc+'</p>'+render(s.type)+'<div class="foot"><span>FPT TELECOM · PHÒNG KỸ THUẬT SG10</span><span>REVIEW 02.11.2026 · CHƯA PUBLISH</span></div></section>').join('');
 let current=0;function show(n){current=(n+slides.length)%slides.length;document.querySelectorAll('section').forEach((x,i)=>x.classList.toggle('active',i===current));document.getElementById('count').textContent=String(current+1).padStart(2,'0')+' / 07'};document.getElementById('prev').onclick=()=>show(current-1);document.getElementById('next').onclick=()=>show(current+1);document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')show(current+1);if(e.key==='ArrowLeft')show(current-1)});
