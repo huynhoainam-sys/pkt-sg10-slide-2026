@@ -1,6 +1,19 @@
 # PKT SG10 · Họp tháng 10/2026
 
-Bộ trình chiếu HTML tương tác gồm **11 slide**, thống kê PTTB, đội/KTV, Kickoff tháng 9 và CLDV/CSAT, thu hồi thiết bị 01–12/10, kèm các popup chi tiết có lọc và sắp xếp.
+Bộ trình chiếu HTML tương tác gồm **13 slide**, PTTB chốt tháng 10, đội/KTV, Kickoff tháng 9 và CLDV/CSAT, thu hồi thiết bị 01–31/10, kèm các popup chi tiết có lọc và sắp xếp.
+
+## Cập nhật V28 — 02/11/2026
+
+Giữ bộ họp cũ tại `meeting.html`, khung hình, nền, thứ tự slide, Kickoff, CLDV/CSAT, AM và GSafe. Bản review 7 slide được giữ nguyên và không thay thế bài họp.
+
+- PTTB tháng 10: **229/308 = 74,35%**; 80/81 KTV có Online, 24 KTV đạt kế hoạch, 1 KTV chưa Online, 9 HĐ chờ Online. Roster hiện tại 227 Online; 2 PTTB ngoài roster vẫn nằm trong tổng SG10 và tổng đội nguồn. T9 đủ tháng 266; T10 giảm 37 (13,91%). DATA_MASTER được khử trùng theo mã hợp đồng trước so sánh.
+- Thu hồi theo ngày tạo 01–31/10: **3.558 = 877 đã TH + 1.245 chưa TH + 1.436 không thành công**. Đã TH **877 = 840 đã nhập kho + 37 chờ nhập kho**. WiFi 6+7: **354/867 = 40,83%**. Tổng nguồn gồm 17 thiết bị Chưa PC; năm đội cộng 3.541.
+- Nguồn PTTB: file đính kèm `PKT10 - PTTB 2026 - Master Report.xlsx`, BAO_CAO_THANG/LUY_KE_2026/DATA_MASTER. Nguồn thu hồi: `Báo Cáo Thu Hồi  - PKT SG10.xlsx`, **TH_TONG_HOP!X:AF** (gói lịch sử tháng 10). A:I và tab Báo Cáo Thu Hồi đang là tháng 11 nên không sử dụng để thay tháng 10. Cột AH là helper song song của kỳ hiện tại, không ghép theo hàng với X:AF.
+- Các bảng thu hồi mặc định xếp tỷ lệ đã TH thấp → cao; nhóm không thành công giữ chiều cảnh báo cao → thấp. Cập nhật tổng, đội, KTV, WiFi, kho và nhãn kỳ từ cùng dataset.
+- Cache loader và script cập nhật sang V28. `slide-manifest.json` ghi nguồn, phạm vi và phần giữ nguyên.
+- Đã kiểm tra partition/tổng đội, tỷ lệ, khử trùng HĐ PTTB, 14 phần HTML nguyên bản khớp SHA GitHub, biên dịch 2 script ghép và 7 script chức năng. Chưa xác nhận QA thị giác vì trình duyệt không kết nối được máy chủ preview. GitHub Pages hiện 404: repo Private, giao diện Pages yêu cầu nâng cấp hoặc chuyển Public.
+
+Các phần bên dưới ghi lại lịch sử phiên bản trước V28.
 
 ## Truy cập website
 
@@ -42,3 +55,4 @@ Vùng dữ liệu slide thu hồi kết thúc ở y=788, nguồn y=809–827, fo
 - Ranking tải/giải mã ảnh trước khi hiện layer, preload slide kề và tải nền các slide khác tuần tự khi rảnh; CSS giảm chuyển động không xóa transform bố cục.
 - Trang chủ bỏ số phiên bản Ranking khai báo thủ công; sửa query cache của các tập tin thay đổi.
 - Snapshot CLDV/CSAT: 13/10/2026, 141 đánh giá / 3.185 lượt gửi, CSAT 1–2 là 8. Snapshot thu hồi: 01–13/10/2026, 1.516 thiết bị. Chưa đối chiếu với bảng nguồn mới hơn.
+

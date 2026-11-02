@@ -1,0 +1,66 @@
+{
+  "version": "V28",
+  "updated": "2026-11-02",
+  "entry": "meeting.html",
+  "template": "Original SG10 meeting, preserved 13 scenes",
+  "sources": {
+    "pttb": {
+      "file": "PKT10 - PTTB 2026 - Master Report.xlsx",
+      "sheets": [
+        "BAO_CAO_THANG",
+        "LUY_KE_2026",
+        "DATA_MASTER"
+      ],
+      "period": "2026-10",
+      "total": {
+        "total": 229,
+        "plan": 308,
+        "active": 80,
+        "pending": 9,
+        "roster": 227,
+        "prev": 266
+      },
+      "staffCount": 81
+    },
+    "recovery": {
+      "file": "Báo Cáo Thu Hồi  - PKT SG10.xlsx",
+      "range": "TH_TONG_HOP!X:AF",
+      "dateField": "Ngày tạo",
+      "period": "2026-10-01/2026-10-31",
+      "unit": "thiết bị",
+      "summary": {
+        "pending": 1245,
+        "failed": 1436,
+        "total": 3558,
+        "recovered": 877,
+        "warehouse": 840,
+        "waiting": 37,
+        "wifiRecovered": 354,
+        "wifiAssigned": 867,
+        "wifiRate": "40,83%"
+      },
+      "unassigned": 17
+    }
+  },
+  "unchanged": [
+    "Kickoff September and October posters",
+    "CLDV/CSAT snapshot 13/10/2026",
+    "GSafe procedures",
+    "Navigation and detail dialogs"
+  ],
+  "scenes": [
+    "Mở đầu",
+    "Kết quả PTTB",
+    "Báo cáo KTV",
+    "Kickoff",
+    "CLDV/CSAT",
+    "Cảnh báo CLDV",
+    "Thu hồi tổng quan",
+    "Theo dõi thu hồi",
+    "GSafe nhập trả",
+    "Hướng dẫn AM",
+    "GSafe lắp đặt/bảo trì",
+    "Kế hoạch hành động",
+    "Cảm ơn"
+  ]
+}
