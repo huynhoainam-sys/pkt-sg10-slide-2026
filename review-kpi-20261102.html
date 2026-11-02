@@ -55,6 +55,17 @@ if(type==="common")return '<div class="cards">'+card('PTTB ONLINE','229 / 308','
 return renderBeforePTTB(type);
 };
 
+
+const RM_AU_AUDIT=[["DUYDS",1175,7],["TINHVX",548,3],["ANTT6",553,3],["TINHTT2",835,4],["THANGNQ5",885,4],["LOCNTT",1341,6],["HIEULT10",1126,5],["NGOCDLB",913,4],["HIEUHT8",914,4],["TIENTV1",937,4],["SAUVP",954,4],["THAONC1",1236,5],["TAINTD",1240,5],["SANGNT5",1254,5],["TOANLC",1268,5],["LINHLT",1270,5],["VYTN1",1272,5],["DUCDT1",1290,5]];
+const previousRMRender=render;
+render=function(type){
+if(type==="rm"){
+const display=RM_AU_AUDIT.map((r,i)=>[i+1,r[0],r[1].toLocaleString('vi-VN'),r[2],(100*r[2]/r[1]).toFixed(3).replace(".",",")+"%"]);
+return '<div class="cards">'+card('TỔNG RM SG10','1.001','Theo báo cáo tổng RM tháng 10')+card('AU T10','94.370','HĐ có KTV AU trong snapshot; cần đối chiếu tổng SG10')+card('RM ĐÃ GHÉP AU','227','227 mã HĐ trong tab chi tiết hiện có')+card('TỶ LỆ CÁ NHÂN','TẠM TÍNH','227/1.001 RM: chưa đủ dữ liệu toàn tháng')+'</div>'+panel('RM / AU THEO KTV · NHÓM CÓ TỶ LỆ CAO NHẤT TRONG TẬP ĐÃ GHÉP',realRows(['#','KTV AU T10','AU T10','RM đã ghép','RM/AU tạm tính'],display))+'<p class="muted">Ghép theo SỐ HỢP ĐỒNG từ tab chi tiết RM T10 → cột Acc NV địa bàn của AU T10. KHÔNG map theo KTV triển khai. Chỉ có 227/1.001 RM đối soát được trong tab chi tiết hiện có, nên không gọi đây là tỷ lệ RM tháng 10 chính thức.</p>'+panel('QUY TẮC TỔNG THEO ĐỘI VÀ SG10','<p class="rule">Tổng RM theo Đội trưởng và SG10 phải lấy trực tiếp từ file Tổng hợp RM SG10, không cộng tổng tỷ lệ KTV. Bảng RMĐT trong file hiện chưa có AU và RM đầy đủ tại cột tháng 10; chưa công bố tỷ lệ team khi chưa đối soát kỳ.</p>');
+}
+return previousRMRender(type);
+};
+
 const stage=document.getElementById('stage');
 stage.innerHTML=slides.map((s,i)=>'<section class="'+(i===0?'active':'')+'" aria-label="Slide '+(i+1)+'"><div class="eyebrow">PKT SG10 · '+s.tag+' <span class="pill" style="float:right">'+String(i+1).padStart(2,'0')+' / 07</span></div><h1>'+s.title+'</h1><p class="sub">'+s.desc+'</p>'+render(s.type)+'<div class="foot"><span>FPT TELECOM · PHÒNG KỸ THUẬT SG10</span><span>REVIEW 02.11.2026 · CHƯA PUBLISH</span></div></section>').join('');
 let current=0;function show(n){current=(n+slides.length)%slides.length;document.querySelectorAll('section').forEach((x,i)=>x.classList.toggle('active',i===current));document.getElementById('count').textContent=String(current+1).padStart(2,'0')+' / 07'};document.getElementById('prev').onclick=()=>show(current-1);document.getElementById('next').onclick=()=>show(current+1);document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')show(current+1);if(e.key==='ArrowLeft')show(current-1)});
