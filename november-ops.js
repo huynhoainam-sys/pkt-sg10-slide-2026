@@ -133,12 +133,14 @@ const s12=document.querySelector('.scene-close');if(s12){const o=document.create
  const coverScene=document.querySelector('.scene-cover');
  if(coverScene){
   const coverTitle=coverScene.querySelector('.cover-copy .slide-title');
-  if(coverTitle)coverTitle.textContent='HỌP PKT THÁNG 11';
+  if(coverTitle)coverTitle.innerHTML='HỌP PKT <span>THÁNG 11</span>';
   const lead=coverScene.querySelector('.cover-copy .lead');
   if(lead)lead.remove();
   coverScene.querySelector('.cover-copy .tag')?.remove();
   coverScene.querySelector('.cover-meta')?.remove();
   coverScene.querySelector('.cover-bullets')?.remove();
+  if(!coverScene.querySelector('.sg10-cover-subtitle')){const sub=document.createElement('p');sub.className='sg10-cover-subtitle';sub.innerHTML='<strong>KẾT QUẢ THÁNG 10</strong><span>BÁN HÀNG</span><span>CLDV &amp; CSAT</span><span>THU HỒI</span><span>RM NON THÁNG</span><span>TRỌNG TÂM T11</span>';coverTitle?.insertAdjacentElement('afterend',sub);}
+
   const coverPoints=coverScene.querySelectorAll('.cover-bullets .focus');
   if(coverPoints[0])coverPoints[0].innerHTML='<i>01</i><b>Đánh giá kết quả bán hàng, CLDV, thu hồi và RM nguồn bán PKT SG10.</b>';
   if(coverPoints[1])coverPoints[1].innerHTML='<i>02</i><b>Xác định cảnh báo, trách nhiệm và trọng tâm triển khai tháng 11.</b>';
