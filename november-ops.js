@@ -35,8 +35,7 @@ window.addEventListener('load',()=>{
   const active=scenes.indexOf(document.querySelector('#scenes>.scene.active'));const count=document.getElementById('v8Count');if(count&&active>=0)count.textContent=String(active>hidden?active:active+1).padStart(2,'0')+' / 12';
   document.querySelectorAll('[aria-label*="Kickoff"],button').forEach(el=>{if(/Kickoff T9|Kickoff.*poster|Kickoff · Thi đua/i.test(el.textContent||el.getAttribute('aria-label')||''))el.style.display='none';});
  }
- const observer=new MutationObserver(()=>syncKickoffHidden());observer.observe(document.body,{childList:true,subtree:true});
- syncKickoffHidden();
+ syncKickoffHidden();[150,600,1500].forEach(ms=>setTimeout(syncKickoffHidden,ms));
 });
 
 })();
