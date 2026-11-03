@@ -12,7 +12,8 @@ const targets=[
  ['.scene-rm-sales','RM nguồn bán']
 ];
 function openFor(scene,team){
- const leader=(typeof DATA!=='undefined'&&DATA.teams)?DATA.teams.find(t=>t.code===team)?.leader:undefined;
+ const canonical=x=>String(x||'').toUpperCase().replace(/LOC(LV)?2?$/,'LOC').replace(/[^A-Z0-9]/g,'');
+ const leader=(typeof DATA!=='undefined'&&DATA.teams)?DATA.teams.find(t=>canonical(t.code)===canonical(team)||canonical(t.leader)===canonical(team))?.leader:undefined;
  if(scene.matches('.scene-sales')){if(typeof openSalesMonth==='function')openSalesMonth('oct',team==='Tất cả'?'Tất cả':leader||team);return}
  if(scene.matches('.scene-staff')){if(typeof openStaff==='function')openStaff(team==='Tất cả'?'Tất cả':leader||team);return}
  if(scene.matches('.scene-csat,.scene-alerts')){window.openSG10CLDVTeam?.(team);return}
