@@ -1,5 +1,5 @@
 {
-  "version": "V38",
+  "version": "V39",
   "updated": "2026-11-03",
   "entry": "meeting.html",
   "template": "SG10 meeting: 10 active scenes; recovery visual template used for CLDV",
@@ -49,17 +49,17 @@
     "Navigation and detail dialogs"
   ],
   "scenes": [
-    "Mở đầu",
-    "Kết quả PTTB",
-    "Báo cáo KTV",
-    "CLDV/CSAT",
-    "Cảnh báo CLDV",
-    "Thu hồi tổng quan",
-    "Theo dõi thu hồi",
-    "Hướng dẫn AM",
-    "Kế hoạch hành động",
-    "Cảm ơn"
+    "Họp Phòng Kỹ thuật SG10",
+    "Kết quả bán hàng tháng 10",
+    "Kết quả bán hàng theo KTV",
+    "Chất lượng dịch vụ tháng 10",
+    "Phân tích CLDV theo đội",
+    "Kết quả thu hồi tháng 10",
+    "Nhân sự cần theo sát",
+    "Nghiệm thu tập điểm",
+    "Trọng tâm thực hiện tháng 11",
+    "Cảm ơn & trao đổi"
   ],
   "displayHarmony": "display-harmony-20261103.css",
-  "notes": "CLDV 04/05 reuse recovery slide 06/07 HTML/CSS structure. GSafe 2 scenes excluded; source retained. Ten active scenes after Kickoff retirement."
+  "notes": "QA tiêu đề, cỡ chữ, màu nhấn và rule KPI. Không thay đổi dữ liệu."
 }
