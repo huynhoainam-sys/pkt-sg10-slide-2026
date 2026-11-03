@@ -241,3 +241,60 @@
 #stage .scene-close .nov-focus-card:nth-child(2) p strong{color:#08834d}
 #stage .scene-close .nov-focus-message{bottom:12px!important;padding:9px 13px!important;font-size:12px!important}
 #stage .scene-close .nov-focus-message small{font-size:10px!important}
+
+/* V38 — slide 04/05 directly inherit recovery slide 06/07 layout and visual language. */
+#stage .scene-csat .cldv-recovery-layout,
+#stage .scene-alerts .cldv-recovery-layout{
+ position:absolute;inset:0;z-index:11;pointer-events:none;color:#103461;
+ font-family:"SG10 Inter","Segoe UI",Arial,sans-serif;
+}
+#stage .scene-csat .cldv-recovery-layout *,
+#stage .scene-alerts .cldv-recovery-layout *{pointer-events:auto}
+#stage .scene-csat,
+#stage .scene-alerts{background:linear-gradient(90deg,rgba(247,252,255,.94) 0%,rgba(247,252,255,.90) 40%,rgba(247,252,255,.70) 66%,rgba(247,252,255,.42)),url("./assets/recall-summary.jpg") center/cover no-repeat!important}
+#stage .scene-alerts{background:linear-gradient(90deg,rgba(247,252,255,.94) 0%,rgba(247,252,255,.90) 40%,rgba(247,252,255,.70) 66%,rgba(247,252,255,.42)),url("./assets/recall-followup.jpg") center/cover no-repeat!important}
+#stage .scene-csat .cldv-recovery-layout .recall-head,
+#stage .scene-alerts .cldv-recovery-layout .recall-head{top:126px;left:76px;right:76px}
+#stage .scene-csat .cldv-recovery-layout .recall-head .slide-title,
+#stage .scene-alerts .cldv-recovery-layout .recall-head .slide-title{font-size:48px!important;font-weight:850!important;line-height:1.12!important}
+#stage .cldv-recovery-layout .recall-head p{font-size:18px;color:#56738b}
+#stage .scene-csat .cldv-recovery-layout .recall-kpis{top:234px;left:76px;right:76px;gap:14px;height:129px;grid-template-columns:repeat(5,minmax(0,1fr))}
+#stage .scene-csat .cldv-recovery-layout .recall-metric{min-width:0;height:129px;padding:17px 18px;background:rgba(255,255,255,.94)!important;border:1px solid #d4e6f3!important;border-radius:13px!important}
+#stage .scene-csat .cldv-recovery-layout .recall-metric>span{font-size:13px!important;line-height:1.2;min-height:26px}
+#stage .scene-csat .cldv-recovery-layout .recall-metric>b{font-size:37px!important;line-height:1.05!important;margin:5px 0}
+#stage .scene-csat .cldv-recovery-layout .recall-metric>small{font-size:12px!important;line-height:1.3}
+#stage .scene-csat .cldv-recovery-layout .recall-overview-layout{top:386px;bottom:105px;left:76px;right:76px;gap:23px;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr)}
+#stage .cldv-recovery-layout :is(.recall-team-panel,.recall-warehouse,.recall-people-panel){background:rgba(255,255,255,.94)!important;border:1px solid #d1e3f1!important;border-radius:14px!important;box-shadow:0 12px 26px rgba(35,84,124,.09)!important;min-width:0}
+#stage .scene-csat .cldv-recovery-layout .recall-team-panel,
+#stage .scene-csat .cldv-recovery-layout .recall-warehouse{padding:19px 20px}
+#stage .cldv-recovery-layout .recall-panel-heading h2{font-size:22px!important}
+#stage .cldv-recovery-layout .recall-caption{font-size:14px;line-height:1.35;margin:11px 0 14px}
+#stage .cldv-recovery-layout .recall-slide-table{width:100%;table-layout:fixed;border-collapse:collapse}
+#stage .cldv-recovery-layout .recall-slide-table th{font-size:13px;text-align:right;padding:10px 8px;white-space:normal;background:#ecf5fc;color:#395a78}
+#stage .cldv-recovery-layout .recall-slide-table td{font-size:17px;padding:12px 8px;text-align:right;white-space:nowrap;border-bottom:1px solid #dce8f2}
+#stage .cldv-recovery-layout .recall-slide-table td:first-child,
+#stage .cldv-recovery-layout .recall-slide-table th:first-child{text-align:left}
+#stage .cldv-recovery-layout .recall-slide-table .team-mark{font-size:14px;min-width:95px}
+#stage .cldv-recovery-layout .cldv-value{font-weight:900}
+#stage .cldv-recovery-layout .cldv-good{color:#08854d!important}
+#stage .cldv-recovery-layout .cldv-risk{color:#c33d34!important}
+#stage .cldv-recovery-layout .recall-team-note{font-size:14px!important}
+#stage .cldv-recovery-layout .recall-source{bottom:65px;font-size:13px}
+#stage .cldv-recovery-layout .cldv-period-pill{font-size:12px;font-weight:900;letter-spacing:.4px;background:#e6f3fc;border-radius:999px;padding:8px 12px;color:#0066b3}
+#stage .cldv-recovery-layout .recall-warehouse-total{margin-top:19px}
+#stage .cldv-recovery-layout .recall-warehouse-total>b{font-size:56px!important}
+#stage .cldv-recovery-layout .recall-warehouse-row{font-size:16px!important;padding:11px 0}
+#stage .cldv-recovery-layout .recall-warehouse-row>b{font-size:24px!important}
+#stage .cldv-recovery-layout .recall-warehouse-note{font-size:14px!important;line-height:1.45;margin-top:10px}
+#stage .cldv-recovery-layout .cldv-panel-footer{font-size:14px;line-height:1.4;color:#416381;margin-top:auto;padding-top:13px;font-weight:750}
+#stage .scene-alerts .cldv-recovery-layout .recall-people-layout{top:230px;left:76px;right:76px;height:510px;gap:22px;grid-template-columns:repeat(2,minmax(0,1fr))}
+#stage .scene-alerts .cldv-recovery-layout .recall-people-panel{padding:20px 22px}
+#stage .scene-alerts .cldv-recovery-layout .recall-people-title>b{font-size:52px!important}
+#stage .scene-alerts .cldv-recovery-layout .recall-people-title h2{font-size:19px!important}
+#stage .scene-alerts .cldv-recovery-layout .recall-people-title p{font-size:14px!important}
+#stage .scene-alerts .cldv-recovery-layout .cldv-dual-table td{font-size:18px;padding:11px 8px}
+#stage .scene-alerts .cldv-recovery-layout .cldv-dual-table td small{display:block;font-size:11px;color:#6b8297;margin-top:4px}
+#stage .scene-alerts .cldv-recovery-layout .recall-action{top:755px;left:76px;right:76px;height:56px;background:rgba(231,244,253,.94);border-left:5px solid #f37021}
+#stage .scene-alerts .cldv-recovery-layout .recall-action span{font-size:15px}
+#stage .scene-alerts .cldv-recovery-layout .cldv-action-tag{flex:none!important;font-size:13px!important;color:#b94435!important;font-weight:900!important}
+#stage .scene-alerts .cldv-recovery-layout .recall-source{bottom:59px}
