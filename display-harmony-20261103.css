@@ -214,3 +214,30 @@
  background:rgba(236,247,255,.94)!important;
  color:#075b9d!important;
 }
+
+/* V37 — six fully detailed November priorities; readability first. */
+#stage .scene-close .nov-focus-head{margin-bottom:15px!important}
+#stage .scene-close .nov-focus-head h2{font-size:36px!important;line-height:1.05!important}
+#stage .scene-close .nov-focus-head h2 span{font-size:40px!important;margin-top:3px!important}
+#stage .scene-close .nov-focus-grid{
+ width:76%!important;
+ height:480px!important;
+ grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ grid-template-rows:repeat(3,minmax(0,1fr))!important;
+ gap:12px 14px!important;
+}
+#stage .scene-close .nov-focus-card{
+ padding:15px 16px!important;
+ grid-template-columns:34px minmax(0,1fr)!important;
+ gap:9px!important;
+ align-content:start!important;
+ overflow:hidden;
+}
+#stage .scene-close .nov-focus-card .num{font-size:23px!important}
+#stage .scene-close .nov-focus-card h3{font-size:16px!important;line-height:1.2!important;margin:0 0 7px!important}
+#stage .scene-close .nov-focus-card p{font-size:12.8px!important;line-height:1.38!important;margin:0!important;color:#345b78!important}
+#stage .scene-close .nov-focus-card p b,
+#stage .scene-close .nov-focus-card p strong{color:#be5416;font-weight:850}
+#stage .scene-close .nov-focus-card:nth-child(2) p strong{color:#08834d}
+#stage .scene-close .nov-focus-message{bottom:12px!important;padding:9px 13px!important;font-size:12px!important}
+#stage .scene-close .nov-focus-message small{font-size:10px!important}
