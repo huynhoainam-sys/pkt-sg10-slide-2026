@@ -1,5 +1,5 @@
 {
-  "version": "V60",
+  "version": "V62",
   "updated": "2026-11-03",
   "entry": "meeting.html",
   "template": "SG10 11-scene deck; headline KPIs at full SG10 scope; Team details only in modal; GSafe/Kickoff excluded",
@@ -62,7 +62,7 @@
     "Cảm ơn & trao đổi"
   ],
   "displayHarmony": "display-harmony-20261103.css",
-  "notes": "PTTB Team display enhanced: enlarged completed/planned counts and percentages, progress bars semantically colored from actual rendered ratios. Other KPI values preserved.",
+  "notes": "Fixed Team identity palette across slides and popups, separate from KPI performance colors. CLDV count and CSAT 1–2 rate table headings and positions corrected.",
   "rm": {
     "scope": "HCM_10 + Phòng kỹ thuật source sales",
     "source": "dataRM!A:R, X:Y, AY:BG",
@@ -109,5 +109,12 @@
     "watch": "65–<75%",
     "risk": "<65%",
     "scope": "presentation-only, actual team plan completion"
+  },
+  "teamIdentityColors": {
+    "KhangTV1": "#0C5B91",
+    "LocLV2": "#9B550C",
+    "SangH": "#A63D68",
+    "ThinhPT": "#11734A",
+    "KhanhLQ3": "#7043A0"
   }
 }
