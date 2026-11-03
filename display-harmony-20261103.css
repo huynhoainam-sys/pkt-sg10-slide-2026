@@ -108,3 +108,112 @@
 #stage .scene-close .nov-focus-message small{font-size:11px;line-height:1.3}
 /* Prevent text clipping on presentations using the fixed 1600 × 900 canvas. */
 #stage .scene :is(.cldv-insight,.nov-focus-card,.cldv-kpi){min-width:0;overflow-wrap:break-word}
+
+/* V36 — original-asset background restoration and semantic color rules.
+   Do not replace images or KPI source values. */
+#stage .scene-csat .cldv-board,
+#stage .scene-alerts .cldv-detail-board,
+#stage .scene-close .nov-focus-overlay{isolation:isolate}
+/* Use existing telecom imagery in the repository, kept behind live HTML text. */
+#stage .scene-csat .cldv-board::before,
+#stage .scene-alerts .cldv-detail-board::before{
+ content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+ background-size:cover;background-position:right center;background-repeat:no-repeat;
+ opacity:.28;filter:saturate(.86) contrast(.93);
+ -webkit-mask-image:linear-gradient(90deg,transparent 0%,transparent 41%,rgba(0,0,0,.22) 62%,#000 100%);
+ mask-image:linear-gradient(90deg,transparent 0%,transparent 41%,rgba(0,0,0,.22) 62%,#000 100%);
+}
+#stage .scene-csat .cldv-board::before{background-image:url("./assets/recall-summary.jpg")}
+#stage .scene-alerts .cldv-detail-board::before{background-image:url("./assets/recall-followup.jpg")}
+#stage .scene-csat .cldv-board,
+#stage .scene-alerts .cldv-detail-board{
+ background:linear-gradient(90deg,rgba(249,252,255,.99) 0%,rgba(249,252,255,.98) 61%,rgba(240,248,254,.84) 100%)!important;
+}
+/* Unified executive grid: compact header, data-rich central table and action footer. */
+#stage .scene-csat .cldv-head,
+#stage .scene-alerts .cldv-head{padding-bottom:10px;border-bottom:1px solid #c6dae9}
+#stage .scene-csat .cldv-kpis,
+#stage .scene-alerts .cldv-detail-summary{gap:12px}
+#stage .scene-csat .cldv-kpi,
+#stage .scene-alerts .cldv-detail-summary>div{
+ border:1px solid rgba(172,203,226,.94)!important;
+ border-top:4px solid #0072bc!important;
+ border-radius:11px!important;
+ box-shadow:0 5px 12px rgba(15,62,105,.08)!important;
+ background:rgba(255,255,255,.93)!important;
+}
+#stage .scene-csat .cldv-kpi:nth-child(2){border-top-color:#f37021!important}
+#stage .scene-csat .cldv-kpi:nth-child(2) b{color:#bf3b31!important}
+#stage .scene-csat .cldv-kpi:first-child b{color:#0066b3!important}
+#stage .scene-csat .cldv-kpi:nth-child(n+3) b{color:#102d4f!important}
+#stage .scene-csat .cldv-table,
+#stage .scene-alerts .cldv-detail-board table{border-collapse:separate!important;border-spacing:0 6px!important}
+#stage .scene-csat .cldv-table thead th,
+#stage .scene-alerts .cldv-detail-board thead th{color:#315b7c!important;font-weight:900}
+#stage .scene-csat .cldv-table tbody td,
+#stage .scene-alerts .cldv-detail-board tbody td{
+ background:rgba(255,255,255,.95)!important;
+ border-top:1px solid #cbddeb!important;
+ border-bottom:1px solid #cbddeb!important;
+ box-shadow:none!important;
+}
+#stage .scene-csat .cldv-table tbody td:first-child,
+#stage .scene-alerts .cldv-detail-board tbody td:first-child{
+ border-left:4px solid #0072bc!important;color:#102d4f!important;font-weight:900!important;
+}
+#stage .scene-csat .cldv-table tbody td:last-child,
+#stage .scene-alerts .cldv-detail-board tbody td:last-child{border-right:1px solid #cbddeb!important}
+#stage .scene-csat .cldv-table .cldv-rate,
+#stage .scene-alerts .cldv-detail-board strong{font-variant-numeric:tabular-nums}
+/* Semantic KPI palette: CSAT < 3% success, >= 3% risk.
+   Higher evaluation coverage is beneficial; positive/negative deltas depend on KPI. */
+#stage .scene-csat .cldv-table td:nth-child(4) .cldv-rate,
+#stage .scene-alerts .cldv-detail-board td:nth-child(5) strong{color:#bd3e34!important}
+#stage .scene-csat .cldv-table tr:nth-child(n+4) td:nth-child(4) .cldv-rate,
+#stage .scene-alerts .cldv-detail-board tr:nth-child(3) td:nth-child(5) strong,
+#stage .scene-alerts .cldv-detail-board tr:nth-child(4) td:nth-child(5) strong{color:#08834d!important}
+/* Data order on CSAT slide: KhanhLQ3, LocLV2, SangH, KhangTV1, ThinhPT.
+   Green targets for the final two teams. */
+#stage .scene-csat .cldv-table tbody tr:nth-child(4) td:nth-child(4) .cldv-rate,
+#stage .scene-csat .cldv-table tbody tr:nth-child(5) td:nth-child(4) .cldv-rate{color:#08834d!important}
+#stage .scene-alerts .cldv-detail-board tbody tr:nth-child(2) td:nth-child(5) strong,
+#stage .scene-alerts .cldv-detail-board tbody tr:nth-child(3) td:nth-child(5) strong{color:#08834d!important}
+#stage .scene-alerts .cldv-detail-board tbody tr:nth-child(1) td:nth-child(5) strong,
+#stage .scene-alerts .cldv-detail-board tbody tr:nth-child(4) td:nth-child(5) strong,
+#stage .scene-alerts .cldv-detail-board tbody tr:nth-child(5) td:nth-child(5) strong{color:#bd3e34!important}
+#stage .scene-csat .cldv-insight,
+#stage .scene-alerts .cldv-insight{
+ border:1px solid #c8ddeb!important;border-left:4px solid #0072bc!important;
+ border-radius:10px!important;background:rgba(255,255,255,.95)!important;box-shadow:0 4px 12px #0d36500d!important;
+}
+#stage .scene-csat .cldv-insight:nth-child(2),
+#stage .scene-alerts .cldv-insight:nth-child(4){border-left-color:#0b9b60!important}
+#stage .scene-csat .cldv-insight:nth-child(3),
+#stage .scene-alerts .cldv-insight:nth-child(3){border-left-color:#d94739!important}
+#stage .scene-csat .cldv-insight:nth-child(4){border-left-color:#f37021!important}
+/* November priorities: original photograph is no longer washed out;
+   six numbered actions use consistent severity accents. */
+#stage .scene-close .nov-focus-overlay{
+ background:linear-gradient(90deg,rgba(249,252,255,.98) 0%,rgba(249,252,255,.96) 40%,rgba(249,252,255,.76) 59%,rgba(249,252,255,.17) 78%,transparent 91%)!important;
+}
+#stage .scene-close .nov-focus-grid{width:72%}
+#stage .scene-close .nov-focus-card{
+ background:rgba(255,255,255,.94)!important;
+ border:1px solid #bbd3e7!important;border-left:5px solid #0072bc!important;
+ box-shadow:0 8px 22px #0d365018!important;
+}
+#stage .scene-close .nov-focus-card:nth-child(1),
+#stage .scene-close .nov-focus-card:nth-child(3),
+#stage .scene-close .nov-focus-card:nth-child(4){border-left-color:#f37021!important}
+#stage .scene-close .nov-focus-card:nth-child(2),
+#stage .scene-close .nov-focus-card:nth-child(5){border-left-color:#0b9b60!important}
+#stage .scene-close .nov-focus-card:nth-child(6){border-left-color:#0072bc!important}
+#stage .scene-close .nov-focus-card .num{color:#f37021!important}
+#stage .scene-close .nov-focus-card:nth-child(2) .num,
+#stage .scene-close .nov-focus-card:nth-child(5) .num{color:#0b9b60!important}
+#stage .scene-close .nov-focus-card:nth-child(6) .num{color:#0072bc!important}
+#stage .scene-close .nov-focus-message{
+ border:1px solid #afcfe4!important;border-left:5px solid #f37021!important;
+ background:rgba(236,247,255,.94)!important;
+ color:#075b9d!important;
+}
