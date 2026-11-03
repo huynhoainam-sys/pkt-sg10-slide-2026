@@ -15,6 +15,9 @@ const monthClose=[
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
 const rate=(a,b)=>b>0?100*a/b:null;
 const pct=n=>n===null?'—':n.toFixed(2).replace('.',',')+'%';
+// Visual coverage bands, not official KPI thresholds.
+const coverageTone=n=>n===null?'cldv-muted':n<5?'cldv-red':n<6?'cldv-amber':'cldv-green';
+const csatTone=(bad,ev)=>ev<3?'cldv-muted':bad/ev>=.03?'cldv-red':'cldv-green';
 const fraction=(a,b)=>a+' / '+b;
 const risk=x=>x.ev===0?'Chưa đánh giá':x.bad?'Cần recare':x.ev<3?'Mẫu nhỏ':'Theo dõi';
 let selection='Tất cả',sorting='risk',query='';
@@ -34,14 +37,14 @@ function render(){
  const board=document.getElementById('sg10-cldv-detail');
  if(!board)return;
  const month=selection==='Tất cả'?monthClose:monthClose.filter(t=>t.name===selection);
- const tr=month.map(x=>'<tr><td>'+esc(x.name)+'</td><td>'+x.install+'</td><td>'+x.repair+'</td><td>'+x.coverage+'</td><td class="'+(x.bad/x.eval>=.03?'cldv-red':'cldv-green')+'">'+x.csat+' <small>('+fraction(x.bad,x.eval)+')</small></td></tr>').join('');
- if(summary)summary.innerHTML='<div class="cldv-popup-section"><div class="cldv-popup-section-head"><strong>TỔNG HỢP CHỐT 31/10/2026</strong><span>5 Team · nguồn số liệu tổng hợp tháng</span></div><table class="cldv-popup-compact-table"><thead><tr><th>Team</th><th>Triển khai</th><th>Bảo trì</th><th>Đánh giá TK+BT</th><th>CSAT 1–2</th></tr></thead><tbody>'+tr+'</tbody></table></div>';
+ const tr=month.map(x=>'<tr><td><b>'+esc(x.name)+'</b></td><td class="'+coverageTone(parseFloat(x.install.replace(',','.')))+'">'+x.install+'</td><td class="'+coverageTone(parseFloat(x.repair.replace(',','.')))+'">'+x.repair+'</td><td class="'+coverageTone(parseFloat(x.coverage.replace(',','.')))+'">'+x.coverage+'</td><td class="'+csatTone(x.bad,x.eval)+'">'+x.csat+' <small>('+fraction(x.bad,x.eval)+')</small></td></tr>').join('');
+ if(summary)summary.innerHTML='<div class="cldv-popup-section"><div class="cldv-popup-section-head"><strong>TỔNG HỢP CHỐT 31/10/2026</strong><span>Tỷ lệ đánh giá: &lt;5% đỏ · 5–&lt;6% cam · ≥6% xanh</span></div><table class="cldv-popup-compact-table"><thead><tr><th>Team</th><th>Triển khai</th><th>Bảo trì</th><th>Đánh giá TK+BT</th><th>CSAT 1–2</th></tr></thead><tbody>'+tr+'</tbody></table></div>';
  let list=staff.filter(x=>(selection==='Tất cả'||x.team===selection)&&(!query||(x.ktv+' '+x.team).toLowerCase().includes(query))).sort(sorter);
  let bad=list.reduce((n,x)=>n+x.bad,0),without=list.filter(x=>x.ev===0).length;
  board.innerHTML='<div class="cldv-popup-section-head"><strong>DANH SÁCH KTV · DỮ LIỆU ĐẾN 13/10/2026</strong><span>'+list.length+' KTV · '+bad+' lượt CSAT 1–2 · '+without+' chưa có đánh giá</span></div>'+
- '<div class="cldv-popup-scroll"><table class="cldv-popup-compact-table cldv-popup-staff-table"><thead><tr><th>STT</th><th>KTV</th><th>Team</th><th>TK ĐG/Tổng</th><th>BT ĐG/Tổng</th><th>Đánh giá / Tổng</th><th>Tỷ lệ đánh giá</th><th>1–2 sao</th><th>CSAT 1–2</th><th>Trạng thái</th></tr></thead><tbody>'+
- list.map((x,i)=>'<tr><td>'+(i+1)+'</td><td><b>'+esc(x.ktv)+'</b></td><td>'+esc(x.team)+'</td><td>'+fraction(x.de,x.dt)+'</td><td>'+fraction(x.me,x.mt)+'</td><td>'+fraction(x.ev,x.sent)+'</td><td>'+pct(rate(x.ev,x.sent))+'</td><td class="'+(x.bad?'cldv-red':'')+'">'+x.bad+'</td><td class="'+(x.bad?'cldv-red':x.ev?'cldv-green':'')+'">'+pct(rate(x.bad,x.ev))+'</td><td><span class="cldv-status '+(x.bad?'risk':x.ev===0?'zero':'ok')+'">'+risk(x)+'</span></td></tr>').join('')+
- '</tbody></table></div><p class="sg10-team-note"><b>Lưu ý kỳ dữ liệu:</b> bảng tổng hợp phía trên chốt 31/10; bảng KTV là ảnh chụp dữ liệu ngày <b>13/10</b>, chưa phải nhân sự chốt tháng. Không cộng bảng KTV cũ để đối chiếu số tổng 31/10. Xếp hạng ưu tiên xử lý chỉ áp dụng trong kỳ 13/10; CSAT có mẫu nhỏ không đủ để kết luận chất lượng cá nhân.</p>';
+ '<div class="cldv-popup-scroll"><table class="cldv-popup-compact-table cldv-popup-staff-table"><thead><tr><th>STT</th><th>KTV</th><th>Team</th><th>TK ĐG/Tổng</th><th>BT ĐG/Tổng</th><th>Đánh giá / Tổng</th><th>Tỷ lệ đánh giá</th><th>1–2 sao</th><th>CSAT 1–2</th></tr></thead><tbody>'+
+ list.map((x,i)=>'<tr><td>'+(i+1)+'</td><td><b>'+esc(x.ktv)+'</b></td><td>'+esc(x.team)+'</td><td>'+fraction(x.de,x.dt)+'</td><td>'+fraction(x.me,x.mt)+'</td><td>'+fraction(x.ev,x.sent)+'</td><td class="'+coverageTone(rate(x.ev,x.sent))+'">'+pct(rate(x.ev,x.sent))+'</td><td class="'+(x.bad?'cldv-red':'')+'">'+x.bad+'</td><td class="'+csatTone(x.bad,x.ev)+'">'+pct(rate(x.bad,x.ev))+'</td></tr>').join('')+
+ '</tbody></table></div><p class="sg10-team-note"><b>Lưu ý kỳ dữ liệu:</b> bảng tổng hợp phía trên chốt 31/10; bảng KTV là ảnh chụp dữ liệu ngày <b>13/10</b>, chưa phải nhân sự chốt tháng. Không cộng bảng KTV cũ để đối chiếu số tổng 31/10. Xếp hạng ưu tiên xử lý chỉ áp dụng trong kỳ 13/10; Ngưỡng màu tỷ lệ đánh giá chỉ để nhận diện rủi ro, chưa phải KPI chính thức. CSAT dưới 3 lượt đánh giá hiển thị trung tính vì mẫu nhỏ.</p>';
 }
 window.openSG10CLDVTeam=function(team='Tất cả'){
  selection=teams.includes(team)?team:'Tất cả'; sorting='risk';query='';
