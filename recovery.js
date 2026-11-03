@@ -81,7 +81,7 @@ function rmSalesSlide(){
   '<div class="card recall-warehouse rm-action-panel"><div class="recall-panel-heading"><h2>TRỌNG TÂM KIỂM SOÁT</h2></div>'+
    '<div class="rm-duty"><b>01 · TRÁCH NHIỆM PKT</b><p>Nhân sự PKT SG10 bán: rà soát HĐ RM non tháng &lt;3T và 3–&lt;6T, phân tích nguyên nhân từng trường hợp và lập kế hoạch cải thiện chất lượng bán hàng PTTB của cá nhân.</p></div>'+
    '<div class="rm-duty warn"><b>02 · CHẤT LƯỢNG NGUỒN BÁN</b><p>PKT – DVKH tăng cường kiểm soát chất lượng đầu vào. Trường hợp nguồn bán nội bộ phát sinh thuê bao kém chất lượng, nếu có đủ bằng chứng sẽ xử lý nghiêm theo quy định.</p></div>'+
-   '<div class="rm-action-line">NÓI KHÔNG VỚI PTTB KÉM CHẤT LƯỢNG DẪN ĐẾN RM &lt;3T</div>'+
+   '<div class="rm-action-line">NÓI KHÔNG VỚI PTTB KÉM CHẤT LƯỢNG DẪN ĐẾN RM &lt;3T / &lt;6T</div>'+
   '</div></div>'+
  '<p class="recall-source">Nguồn: dataRM!AY:BG · CN chuẩn hóa HCM_10 · Phòng kinh doanh chuẩn hóa = Phòng kỹ thuật · Lũy kế RM 01–10/2026 (chưa gồm T11–T12). Đây là số ca RM, không phải tỷ lệ RM trên số bán.</p>'+footer(8)+'</section>';
 }
