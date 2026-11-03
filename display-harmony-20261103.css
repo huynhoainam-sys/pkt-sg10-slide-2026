@@ -298,3 +298,51 @@
 #stage .scene-alerts .cldv-recovery-layout .recall-action span{font-size:15px}
 #stage .scene-alerts .cldv-recovery-layout .cldv-action-tag{flex:none!important;font-size:13px!important;color:#b94435!important;font-weight:900!important}
 #stage .scene-alerts .cldv-recovery-layout .recall-source{bottom:59px}
+
+/* V39 / typography & semantic colors — 1600x900 slide canvas.
+   Harmonize visible heading sizes without changing the approved layouts. */
+#stage .scene :is(.sales-head .slide-title,.staff-head .slide-title,.recall-head .slide-title,.cldv-recovery-layout .recall-head .slide-title){
+ font-family:"SG10 Inter","Segoe UI",Arial,sans-serif!important;
+ font-size:46px!important;
+ font-weight:850!important;
+ line-height:1.13!important;
+ letter-spacing:-1.15px!important;
+ margin-top:8px!important;
+ color:#102d4f!important;
+ text-wrap:balance!important;
+}
+#stage .scene :is(.sales-head .slide-title,.staff-head .slide-title,.recall-head .slide-title,.cldv-recovery-layout .recall-head .slide-title) span{
+ color:#f37021!important;
+}
+#stage .scene .topbar .eyebrow{
+ font-size:14px!important;font-weight:850!important;
+ letter-spacing:1.5px!important;line-height:1.25!important;
+ color:#0066b3!important;
+}
+#stage .scene :is(.recall-head p,.staff-desc,.sales-head .eyebrow){
+ line-height:1.4!important;
+}
+#stage .scene .recall-head p{font-size:17px!important}
+#stage .scene :is(.recall-panel-heading h2,.recall-people-title h2){
+ font-weight:850!important;color:#102d4f!important
+}
+#stage .scene :is(.recall-metric>span,.recall-slide-table th){
+ font-weight:800!important;
+}
+#stage .scene :is(.recall-metric>b,.recall-warehouse-total>b,.recall-people-title>b){
+ font-variant-numeric:tabular-nums!important;
+ font-weight:900!important;
+}
+/* Risk colors are only used for negative outcomes; never recolor numeric values arbitrarily. */
+#stage .cldv-recovery-layout .cldv-good{color:#098452!important}
+#stage .cldv-recovery-layout .cldv-risk{color:#bf3e34!important}
+#stage .scene-csat .cldv-recovery-layout .recall-metric.red>b{color:#bf3e34!important}
+#stage .scene-csat .cldv-recovery-layout .recall-metric.green>b{color:#098452!important}
+#stage .scene-csat .cldv-recovery-layout .recall-metric.blue>b{color:#0066b3!important}
+#stage .scene-csat .cldv-recovery-layout .recall-metric.orange>b{color:#d35e13!important}
+/* Table typography remains readable while avoiding crowding within the fixed stage. */
+#stage .cldv-recovery-layout .recall-slide-table td{font-size:16px!important}
+#stage .cldv-recovery-layout .recall-slide-table th{font-size:13px!important}
+#stage .cldv-recovery-layout .recall-slide-table .team-mark{font-size:14px!important}
+#stage .scene-close .nov-focus-head h2{font-weight:900!important}
+#stage .scene-close .nov-focus-card h3{font-weight:850!important}
