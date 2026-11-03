@@ -148,3 +148,38 @@
 #stage .scene-cover .cover-copy .slide-title{font-size:82px!important;line-height:1.1!important;letter-spacing:-1.8px!important;font-weight:900!important;color:#102d4f!important;text-wrap:nowrap!important;text-shadow:none!important}
 #stage .scene-cover :is(.cover-bullets,.cover-meta,.cover-copy>.tag,.cover-copy>.lead){display:none!important}
 #stage .scene-cover .topbar .recall-topright .eyebrow{display:none!important}
+
+/* V50 – opening-slide clarity and executive visual hierarchy. */
+#stage .scene-cover .cover-copy{position:relative;isolation:isolate;max-width:1320px!important}
+#stage .scene-cover .cover-copy::before{
+ content:"";position:absolute;z-index:-1;pointer-events:none;
+ top:-34px;left:-30px;right:8%;bottom:-32px;
+ background:linear-gradient(90deg,rgba(241,249,255,.78) 0%,rgba(241,249,255,.44) 52%,rgba(241,249,255,0) 100%);
+ border-radius:26px;
+}
+#stage .scene-cover .cover-copy .slide-title{
+ color:#102d4f!important;font-size:76px!important;font-weight:900!important;
+ line-height:1.1!important;letter-spacing:-1.8px!important;text-wrap:nowrap!important;
+ margin:0 0 24px!important;text-shadow:0 2px 12px rgba(255,255,255,.36)!important;
+}
+#stage .scene-cover .cover-copy .slide-title span{color:#f37021!important}
+#stage .scene-cover .sg10-cover-subtitle{
+ display:flex!important;align-items:center;flex-wrap:wrap;
+ gap:10px;margin:0!important;padding:0!important;
+ font-family:"SG10 Inter","Segoe UI",Arial,sans-serif;
+ font-size:17px!important;font-weight:800!important;line-height:1.35!important;
+ letter-spacing:.18px;color:#16466e!important;
+}
+#stage .scene-cover .sg10-cover-subtitle strong{
+ font-size:17px!important;font-weight:900!important;color:#f37021!important;
+ padding:8px 14px 8px 0;border-right:2px solid rgba(0,102,179,.32);
+}
+#stage .scene-cover .sg10-cover-subtitle span{
+ display:inline-flex;align-items:center;padding:8px 11px;
+ border:1px solid #bdd7e8;border-radius:7px;
+ background:rgba(246,251,255,.91);color:#123d62!important;
+ box-shadow:0 4px 10px rgba(13,52,84,.05);
+}
+#stage .scene-cover .sg10-cover-subtitle span:last-child{
+ background:rgba(255,239,225,.94);border-color:#f5ba8d;color:#a54712!important;
+}
