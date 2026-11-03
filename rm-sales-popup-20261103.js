@@ -11,23 +11,40 @@ const sum=counts('Tất cả');
 function table(team='Tất cả',age='Tất cả'){
 const filtered=rows.filter(r=>(team==='Tất cả'||r.team===team)&&(age==='Tất cả'||r.age===age));
 return '<div class="rm-popup-summary">Tổng <strong>'+filtered.length+'</strong> hợp đồng · <strong>'+filtered.filter(r=>r.age==='<3T').length+'</strong> dưới 3T · <strong>'+filtered.filter(r=>r.age==='3–<6T').length+'</strong> từ 3–&lt;6T</div>'+
-'<div class="rm-popup-table-wrap"><table class="rm-popup-table"><thead><tr><th>Tháng RM</th><th>Hợp đồng</th><th>Tuổi thuê bao</th><th>Sale PKT bán</th><th>Đội trưởng</th><th>Ngày bán</th><th>Ngày RM</th><th>Nguyên nhân ghi nhận</th></tr></thead><tbody>'+
+'<div class="rm-popup-table-wrap"><table class="rm-popup-table"><thead><tr><th>Tháng RM</th><th>Hợp đồng</th><th>Tuổi thuê bao</th><th>Sale PKT bán</th><th>Team</th><th>Ngày bán</th><th>Ngày RM</th><th>Nguyên nhân ghi nhận</th></tr></thead><tbody>'+
 filtered.map(r=>'<tr><td>'+escapeHtml(r.month)+'</td><td><b>'+escapeHtml(r.contract)+'</b></td><td class="'+(r.age==='<3T'?'rm-bad':'rm-warn')+'">'+escapeHtml(r.age)+'</td><td>'+escapeHtml(r.sale)+'</td><td>'+escapeHtml(r.team)+'</td><td>'+escapeHtml(r.opened)+'</td><td>'+escapeHtml(r.closed)+'</td><td>'+escapeHtml(r.reason||'Chưa ghi nhận')+'</td></tr>').join('')+
-'</tbody></table></div><p class="rm-popup-source">Nguồn: dataRM · kỳ 07–10/2026 · CN bán HCM_10 · Phòng kỹ thuật. Đội trưởng theo MAP ĐT - KTV TKM, chuẩn hóa ACC bán. “Chưa map” cần đối soát nhân sự; nguyên nhân là dữ liệu ghi nhận, chưa phải kết luận trách nhiệm.</p>';
+'</tbody></table></div><p class="rm-popup-source">Nguồn: dataRM · kỳ 07–10/2026 · CN bán HCM_10 · Phòng kỹ thuật. Team theo MAP ĐT - KTV TKM, chuẩn hóa ACC bán. “Chưa map” cần đối soát nhân sự; nguyên nhân là dữ liệu ghi nhận, chưa phải kết luận trách nhiệm.</p>';
 }
 function openDetail(team='Tất cả',age='Tất cả'){
-const selector='<div class="rm-popup-controls"><label>Đội trưởng <select id="rmTeamFilter">'+['Tất cả',...order].map(t=>'<option value="'+t+'" '+(t===team?'selected':'')+'>'+t+'</option>').join('')+'</select></label><label>Nhóm tuổi <select id="rmAgeFilter">'+['Tất cả','<3T','3–<6T'].map(t=>'<option value="'+escapeHtml(t)+'" '+(t===age?'selected':'')+'>'+escapeHtml(t)+'</option>').join('')+'</select></label></div><div id="rmPopupData"></div>';
+const selector='<div class="rm-popup-controls"><label>Team <select id="rmTeamFilter">'+['Tất cả',...order].map(t=>'<option value="'+t+'" '+(t===team?'selected':'')+'>'+t+'</option>').join('')+'</select></label><label>Nhóm tuổi <select id="rmAgeFilter">'+['Tất cả','<3T','3–<6T'].map(t=>'<option value="'+escapeHtml(t)+'" '+(t===age?'selected':'')+'>'+escapeHtml(t)+'</option>').join('')+'</select></label></div><div id="rmPopupData"></div>';
 if(typeof openModal!=='function')return;
 openModal('CHI TIẾT RM NON THÁNG · NGUỒN PKT BÁN','RM đến 31/10/2026 · dữ liệu chốt, không realtime',selector);
 const teamEl=document.getElementById('rmTeamFilter'),ageEl=document.getElementById('rmAgeFilter'),result=document.getElementById('rmPopupData');
 const render=()=>{if(result)result.innerHTML=table(teamEl?.value||'Tất cả',ageEl?.value||'Tất cả')};
 teamEl?.addEventListener('change',render);ageEl?.addEventListener('change',render);render();
 }
-window.openRMSalesDetail=openDetail;
+// Public wrapper defined after detail controls.
 slide.querySelectorAll('.rm-kpis .recall-metric').forEach((el,i)=>{
-el.setAttribute('role','button');el.setAttribute('tabindex','0');el.style.cursor='pointer';const activate=()=>openDetail('Tất cả',i===0?'<3T':i===1?'3–<6T':'Tất cả');
+el.setAttribute('role','button');el.setAttribute('tabindex','0');el.style.cursor='pointer';const activate=()=>window.openRMSalesDetail('Tất cả',i===0?'<3T':i===1?'3–<6T':'Tất cả');
 el.addEventListener('click',activate);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate()}})
 });
-const panel=slide.querySelector('.rm-data-panel');if(panel){const b=document.createElement('button');b.type='button';b.className='recall-link rm-detail-button';b.textContent='Xem hợp đồng & đội trưởng ↗';b.addEventListener('click',()=>openDetail());panel.querySelector('.recall-panel-heading')?.appendChild(b);}
-const actions=slide.querySelector('.rm-action-panel');if(actions){const bar=document.createElement('div');bar.className='rm-team-summary';bar.innerHTML='<b>PHÂN BỔ THEO ĐỘI TRƯỞNG</b><div class="rm-team-pills">'+order.filter(x=>counts(x).total).map(t=>'<button type="button" data-team="'+escapeHtml(t)+'">'+escapeHtml(t)+': '+counts(t).total+'</button>').join('')+'</div>';actions.insertBefore(bar,actions.querySelector('.rm-action-line'));bar.querySelectorAll('button').forEach(el=>el.addEventListener('click',()=>openDetail(el.dataset.team)));}
+const panel=slide.querySelector('.rm-data-panel');if(panel){const b=document.createElement('button');b.type='button';b.className='recall-link rm-detail-button';b.textContent='Xem hợp đồng & Team ↗';b.addEventListener('click',()=>window.openRMSalesDetail());panel.querySelector('.recall-panel-heading')?.appendChild(b);}
+// Team distribution belongs in the popup, not on the headline slide.
+function renderTeamDistribution(){
+ const tbody=order.map(t=>{const x=counts(t);return '<tr><td><button type="button" class="rm-team-row-link" data-team="'+escapeHtml(t)+'">'+escapeHtml(t)+'</button></td><td>'+x.u3+'</td><td>'+x.u36+'</td><td><b>'+x.total+'</b></td></tr>'}).join('');
+ return '<div class="rm-team-distro-title">TỔNG HỢP 5 TEAM + CHƯA MAP · T7–T10/2026</div><table class="rm-team-distro"><thead><tr><th>Team</th><th>&lt;3T</th><th>3–&lt;6T</th><th>Tổng &lt;6T</th></tr></thead><tbody>'+tbody+'</tbody><tfoot><tr><td>SG10 nguồn PKT bán</td><td>'+sum.u3+'</td><td>'+sum.u36+'</td><td>'+sum.total+'</td></tr></tfoot></table>';
+}
+const openRmOriginal=openDetail;
+window.openRMSalesDetail=function(team='Tất cả',age='Tất cả'){
+ openRmOriginal(team,age);
+ const holder=document.getElementById('rmPopupData');if(!holder)return;
+ const sourceRender=()=>table(document.getElementById('rmTeamFilter')?.value||'Tất cả',document.getElementById('rmAgeFilter')?.value||'Tất cả');
+ const renderWithTeams=()=>{
+  holder.innerHTML=renderTeamDistribution()+sourceRender();
+  holder.querySelectorAll('.rm-team-row-link').forEach(b=>b.addEventListener('click',()=>{const select=document.getElementById('rmTeamFilter');if(select)select.value=b.dataset.team;renderWithTeams()}));
+ };
+ document.getElementById('rmTeamFilter')?.addEventListener('change',renderWithTeams);
+ document.getElementById('rmAgeFilter')?.addEventListener('change',renderWithTeams);
+ renderWithTeams();
+};
 })();
