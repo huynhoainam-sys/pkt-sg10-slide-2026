@@ -1,5 +1,5 @@
 {
-  "version": "V44",
+  "version": "V45",
   "updated": "2026-11-03",
   "entry": "meeting.html",
   "template": "SG10 11-scene deck; headline KPIs at full SG10 scope; Team details only in modal; GSafe/Kickoff excluded",
@@ -62,7 +62,7 @@
     "Cảm ơn & trao đổi"
   ],
   "displayHarmony": "display-harmony-20261103.css",
-  "notes": "Projector QA: increased visual contrast and font hierarchy; fullscreen compact Team/personnel popups; three RM age KPIs; retain original data, Team-specific drilldown. JS code validated, browser layout validation pending.",
+  "notes": "RM sales-origin totals YTD January–October 2026, including all available 2026 data; 5 Team and Chưa map in full year popup. No November–December source data. All figures are counts, not rates.",
   "rm": {
     "scope": "HCM_10 + Phòng kỹ thuật source sales",
     "source": "dataRM!A:R, X:Y, AY:BG",
@@ -78,11 +78,17 @@
       "between3and6": 12,
       "under6": 14
     },
-    "popupJulyOctober": {
-      "total": 42,
-      "mapped": 34,
-      "unmapped": 8
+    "mode": "snapshot",
+    "period": "2026-01 through 2026-10",
+    "ytd2026": {
+      "under3": 18,
+      "between3and6": 69,
+      "under6": 87
     },
-    "mode": "snapshot"
+    "popupJanuaryOctober": {
+      "total": 87,
+      "mapped": 70,
+      "unmapped": 17
+    }
   }
 }
