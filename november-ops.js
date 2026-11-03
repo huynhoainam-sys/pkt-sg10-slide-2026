@@ -118,6 +118,16 @@ const s12=document.querySelector('.scene-close');if(s12){const o=document.create
  rename('.scene-recall-people','NHÂN SỰ <span>CẦN THEO SÁT</span>','THEO DÕI THU HỒI');
  const guide=document.querySelector('.scene-am-guide .nov-overlay .nov-head h2');
  if(guide)guide.textContent='NGHIỆM THU TẬP ĐIỂM · 7 ẢNH BẮT BUỘC';
+ const coverScene=document.querySelector('.scene-cover');
+ if(coverScene){
+  const coverTitle=coverScene.querySelector('.cover-copy .slide-title');
+  if(coverTitle)coverTitle.innerHTML='KẾT QUẢ <span>VẬN HÀNH THÁNG 10</span><br>TRỌNG TÂM <span>THÁNG 11</span>';
+  const lead=coverScene.querySelector('.cover-copy .lead');
+  if(lead)lead.textContent='Bán hàng · Chất lượng dịch vụ · Thu hồi thiết bị · Kiểm soát RM non tháng.';
+  const coverPoints=coverScene.querySelectorAll('.cover-bullets .focus');
+  if(coverPoints[0])coverPoints[0].innerHTML='<i>01</i><b>Đánh giá kết quả bán hàng, CLDV, thu hồi và RM nguồn bán PKT SG10.</b>';
+  if(coverPoints[1])coverPoints[1].innerHTML='<i>02</i><b>Xác định cảnh báo, trách nhiệm và trọng tâm triển khai tháng 11.</b>';
+ }
  const cover=document.querySelector('.scene-cover .topbar .eyebrow');
  if(cover)cover.textContent='HỌP PHÒNG KỸ THUẬT SG10';
  const thanks=document.querySelector('.scene-thanks .topbar .eyebrow');
