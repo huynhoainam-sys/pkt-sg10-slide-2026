@@ -1,0 +1,123 @@
+
+/* V44 visual QA pass — meeting projection: type clarity, accessible contrast,
+   safe-zone spacing, full-viewport compact data popups. */
+#stage .scene{color:#102d4f}
+#stage .scene :is(.slide-title,h1,h2,h3){text-shadow:none!important;-webkit-text-stroke:0!important}
+#stage .scene :is(.recall-head p,.sales-head p,.staff-head p,.recall-caption,.recall-source,.recall-team-note){color:#385b78!important}
+#stage .scene :is(.recall-head .slide-title,.sales-head .slide-title,.staff-head .slide-title){max-width:1220px}
+#stage .scene :is(.recall-head .slide-title,.sales-head .slide-title,.staff-head .slide-title) span{color:#dc631b!important}
+#stage .scene .recall-panel-heading h2{font-size:20px!important;line-height:1.22!important;letter-spacing:0!important}
+#stage .scene :is(.recall-warehouse-note,.recall-team-note,.recall-caption){line-height:1.4!important}
+#stage .scene .recall-slide-table th{color:#365c79!important;font-size:13.5px!important;font-weight:850!important}
+#stage .scene .recall-slide-table td{color:#153d5c!important;font-weight:650!important}
+#stage .scene .recall-metric>span{color:#385a73!important;font-weight:850!important}
+#stage .scene .recall-metric>small{color:#3e617d!important}
+#stage .scene .recall-metric.red>b{color:#b92d38!important}
+#stage .scene .recall-metric.orange>b{color:#b95112!important}
+#stage .scene .recall-metric.green>b{color:#087845!important}
+#stage .scene .recall-metric.blue>b{color:#075da4!important}
+#stage .scene .sg10-team-drill{
+ top:180px!important;right:76px!important;
+ width:410px;min-height:38px;gap:8px;padding:6px 9px;
+ background:rgba(246,252,255,.98)!important;border-color:#96bdd9!important;
+ box-shadow:0 7px 18px #0d365022!important;
+}
+#stage .scene .sg10-team-drill label{font-size:12px!important;color:#184c75!important}
+#stage .scene .sg10-team-drill select{font-size:13px!important;color:#123f65!important}
+#stage .scene .sg10-team-drill button{font-size:13px!important;background:#0066b3!important;white-space:nowrap}
+#stage .scene :is(.recall-head p,.sales-head p,.staff-head p){max-width:850px}
+#stage .scene-rm-sales .recall-head .slide-title{font-size:43px!important;max-width:1350px}
+#stage .scene-rm-sales .recall-head p{font-size:17px!important;max-width:830px}
+#stage .scene-rm-sales .rm-kpis{top:238px!important;height:124px!important;gap:18px!important}
+#stage .scene-rm-sales .rm-kpis .recall-metric{height:124px!important;padding:14px 20px!important}
+#stage .scene-rm-sales .rm-kpis .recall-metric>b{font-size:41px!important;color:#102d4f}
+#stage .scene-rm-sales .rm-kpis .recall-metric.red>b{color:#b92d38!important}
+#stage .scene-rm-sales .rm-kpis .recall-metric.orange>b{color:#b95112!important}
+#stage .scene-rm-sales .rm-layout{top:381px!important;bottom:108px!important;gap:20px!important}
+#stage .scene-rm-sales .rm-layout .card{padding:17px 21px!important}
+#stage .scene-rm-sales .rm-month-table td{padding:12px!important;font-size:21px!important}
+#stage .scene-rm-sales .recall-team-note{font-size:13px!important}
+#stage .scene-rm-sales .rm-action-panel{gap:9px!important}
+#stage .scene-rm-sales .rm-duty{padding:12px 14px!important;background:#f4f9fd!important}
+#stage .scene-rm-sales .rm-duty>b{font-size:15px!important;color:#123e60!important}
+#stage .scene-rm-sales .rm-duty p{font-size:14px!important;line-height:1.38!important;color:#315c7a!important}
+#stage .scene-rm-sales .rm-action-line{font-size:13.5px!important;line-height:1.25!important;background:#ffefe3!important;color:#a64208!important;padding:10px 13px!important}
+#stage .scene-close .nov-focus-card p{font-size:13px!important;line-height:1.37!important;color:#365973!important}
+#stage .scene-close .nov-focus-card h3{font-size:17px!important;color:#102d4f!important}
+#stage .scene-cover .cover-copy .slide-title{font-size:54px!important;max-width:1150px!important}
+#stage .scene-cover .cover-copy .lead{font-size:21px!important;color:#e7f4ff!important}
+/* Fullscreen modal over the presentation, with fixed title and compact rows. */
+#modalback{inset:0!important;padding:4px!important;display:flex;align-items:center;justify-content:center;z-index:10000!important}
+#modalback .modal{
+ width:calc(100vw - 8px)!important;max-width:none!important;
+ height:calc(100vh - 8px)!important;max-height:none!important;
+ min-height:0!important;border-radius:8px!important;
+ box-shadow:0 18px 70px #07182e66!important;
+ display:flex!important;flex-direction:column!important;
+ overflow:hidden!important;background:#fff!important;
+}
+#modalback .modal-top{
+ flex:0 0 auto!important;padding:8px 18px!important;
+ background:#eff7fd!important;border-bottom:1px solid #bad4e6!important;
+ min-height:54px!important;
+}
+#modalback #modal-title{font-size:22px!important;line-height:1.2!important;color:#0b3556!important;font-weight:900!important}
+#modalback #modal-sub{font-size:12px!important;line-height:1.35!important;color:#476a84!important}
+#modalback #detail-controls{padding:5px 16px!important;min-height:36px!important;gap:8px!important;flex:0 0 auto!important}
+#modalback #detailSearch{font-size:13px!important;padding:5px 10px!important}
+#modalback #modal-body{
+ flex:1 1 auto!important;min-height:0!important;
+ overflow:auto!important;padding:8px 14px 10px!important;
+ scrollbar-gutter:auto!important;background:#fff!important;
+}
+#modal-body .modal-toolbar{margin:0 0 6px!important;gap:7px!important}
+#modal-body .pill{font-size:12.5px!important;line-height:18px!important;padding:5px 9px!important}
+#modal-body :is(.info-row,.rm-popup-controls,.sg10-team-control){margin:0 0 6px!important;gap:9px!important}
+#modal-body .info-chip{padding:5px 10px!important;min-width:110px!important}
+#modal-body .info-chip b{font-size:19px!important}
+#modal-body .table-shell{
+ max-height:calc(100vh - 190px)!important;
+ border-radius:6px!important;overflow:auto!important;
+ margin:0!important;
+}
+#modal-body .data-table tbody tr,
+#modal-body .data-table tbody tr td,
+#modal-body .data-table tbody td.num,
+#modal-body .data-table tbody td.num.strong,
+#modal-body .data-table.balanced-columns tbody td{
+ height:27px!important;min-height:27px!important;
+ padding:3px 7px!important;font-size:12.5px!important;
+ line-height:19px!important;font-weight:600!important;
+}
+#modal-body .data-table th,#modal-body .data-table thead th{
+ height:31px!important;min-height:31px!important;
+}
+#modal-body .data-table .col-sort,#modal-body .balanced-columns .col-sort{
+ min-height:31px!important;padding:5px 7px!important;
+ line-height:19px!important;font-size:12.5px!important;
+}
+#modal-body .data-table .team-mark{
+ font-size:11.5px!important;line-height:16px!important;padding:2px 5px!important;
+}
+#modal-body .data-table .recall-leader{font-size:11px!important;line-height:18px!important}
+#modal-body .data-table td .mini-note,#modal-body .data-table td .recall-account{font-size:10px!important;line-height:18px!important}
+#modal-body .data-table td.num.strong{font-weight:850!important}
+#modal-body .data-table td.danger{color:#b12d37!important;font-weight:800!important}
+#modal-body .data-table td.ok{color:#097b48!important;font-weight:800!important}
+#modal-body .data-table td.recall-orange{color:#ae540b!important;font-weight:800!important}
+#modal-body :is(.note,.table-note,.detail-description,.sales-note,.rm-popup-source,.sg10-team-note){font-size:11.5px!important;line-height:1.32!important;margin:4px 0 6px!important}
+#modalback .rm-popup-controls select,#modalback .sg10-team-control select{padding:5px 9px!important;font-size:13px!important}
+#modalback .rm-team-distro th,#modalback .rm-team-distro td{padding:5px 9px!important;font-size:12px!important}
+#modalback .rm-popup-summary{margin:3px 0 6px!important;padding:7px 10px!important;font-size:13px!important}
+#modalback .rm-popup-table-wrap{max-height:calc(100vh - 310px)!important;overflow:auto!important}
+#modalback .rm-popup-table{min-width:960px!important;font-size:12px!important}
+#modalback .rm-popup-table th{padding:7px 8px!important;font-size:12px!important}
+#modalback .rm-popup-table td{padding:5px 8px!important;font-size:12px!important;line-height:1.25!important}
+#modalback .sg10-team-detail-table td{padding:8px 11px!important;font-size:14px!important}
+#modalback .sg10-team-detail-table th{padding:8px 11px!important}
+@media(max-height:720px){
+ #modalback .modal-top{padding:6px 14px!important;min-height:44px!important}
+ #modalback #modal-title{font-size:18px!important}
+ #modal-body .table-shell{max-height:calc(100vh - 145px)!important}
+ #modalback .rm-popup-table-wrap{max-height:calc(100vh - 260px)!important}
+}
