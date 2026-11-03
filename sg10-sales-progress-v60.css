@@ -1,0 +1,62 @@
+/* V60 — PTTB Team progress: bigger figures and semantic color bands. */
+#stage .scene-sales .team-panel .team-panel-head h2{
+ font-size:26px!important;font-weight:900!important;color:#10365a!important;letter-spacing:-.4px!important
+}
+#stage .scene-sales .team-panel .teambar{
+ --sg10-progress-color:#d14b4b;--sg10-progress-tint:rgba(209,75,75,.09);
+ display:grid!important;grid-template-columns:170px minmax(0,1fr) 112px!important;
+ align-items:center!important;column-gap:17px!important;
+ padding:12px 15px!important;min-height:73px!important;
+ border-left:5px solid var(--sg10-progress-color)!important;
+ border-bottom:1px solid #d9e6ee!important;
+ background:var(--sg10-progress-tint)!important;
+ border-radius:11px!important;margin:4px 0!important;
+}
+#stage .scene-sales .team-panel .teambar.sg10-progress-excellent{
+ --sg10-progress-color:#07824a;--sg10-progress-tint:rgba(9,163,91,.10)
+}
+#stage .scene-sales .team-panel .teambar.sg10-progress-good{
+ --sg10-progress-color:#0876bd;--sg10-progress-tint:rgba(8,118,189,.09)
+}
+#stage .scene-sales .team-panel .teambar.sg10-progress-watch{
+ --sg10-progress-color:#c47116;--sg10-progress-tint:rgba(243,144,28,.11)
+}
+#stage .scene-sales .team-panel .teambar.sg10-progress-risk{
+ --sg10-progress-color:#c53640;--sg10-progress-tint:rgba(197,54,64,.10)
+}
+#stage .scene-sales .team-panel .teambar>b{
+ color:#123d62!important;font-weight:850!important;font-size:20px!important
+}
+#stage .scene-sales .team-panel .teambar .pct{
+ font-size:33px!important;line-height:1.06!important;font-weight:950!important;
+ text-align:right!important;color:var(--sg10-progress-color)!important;
+ font-variant-numeric:tabular-nums!important;letter-spacing:-.6px!important
+}
+#stage .scene-sales .team-panel .teambar .micro{
+ margin:6px 0 0!important;color:#365b76!important;
+ font-size:14px!important;line-height:1.2!important
+}
+#stage .scene-sales .team-panel .teambar .sg10-progress-value{
+ color:var(--sg10-progress-color)!important;
+ font-size:25px!important;line-height:1!important;
+ font-weight:900!important;font-variant-numeric:tabular-nums!important
+}
+#stage .scene-sales .team-panel .teambar .sg10-progress-value span{
+ font-size:19px!important;font-weight:750!important;color:#355c78!important
+}
+#stage .scene-sales .team-panel .teambar .sg10-progress-unit{
+ font-size:12px!important;font-weight:800!important;color:#4a6d86!important
+}
+#stage .scene-sales .team-panel .teambar .bluebar{
+ height:16px!important;border-radius:999px!important;
+ overflow:hidden!important;background:#d9e7f0!important
+}
+#stage .scene-sales .team-panel .teambar .bluebar>*{
+ background:var(--sg10-progress-color)!important;border-radius:999px!important
+}
+#stage .scene-sales .team-panel .teambar:hover{
+ filter:brightness(.985);box-shadow:0 5px 15px rgba(18,65,104,.12)!important
+}
+#stage .scene-sales .team-panel .teambar:focus-visible{
+ outline:3px solid var(--sg10-progress-color)!important;outline-offset:1px!important
+}
