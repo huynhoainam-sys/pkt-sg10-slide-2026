@@ -1,0 +1,88 @@
+/* V59 · SG10 projector QA: safeguard photo guide and semantic KPI warnings. */
+#stage .scene-am-guide .nov-guide-media{
+ position:relative;width:100%;height:100%;min-width:0;min-height:0;
+ overflow:hidden;border:1px solid #b9d4e7;border-radius:14px;
+ background:linear-gradient(145deg,#f8fcff 0%,#eaf4fb 100%);
+}
+#stage .scene-am-guide .nov-guide-fallback{
+ display:flex;flex-direction:column;height:100%;padding:30px 34px 24px;
+ color:#123b5e;background:linear-gradient(145deg,#f9fcff,#e7f2fb);
+}
+#stage .scene-am-guide .nov-guide-fallback-title{
+ font-size:30px;font-weight:900;line-height:1.2;letter-spacing:-.5px;color:#103b60
+}
+#stage .scene-am-guide .nov-guide-fallback-sub{
+ font-size:17px;line-height:1.4;color:#476c87;margin:8px 0 25px;font-weight:650
+}
+#stage .scene-am-guide .nov-guide-angles{
+ flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ grid-template-rows:repeat(4,minmax(0,1fr));gap:12px;
+}
+#stage .scene-am-guide .nov-guide-angle{
+ display:flex;align-items:center;gap:16px;min-height:0;
+ background:rgba(255,255,255,.95);border:1px solid #c8ddea;border-left:5px solid #0072bc;
+ border-radius:11px;padding:10px 17px;box-shadow:0 4px 12px #164c7910;
+}
+#stage .scene-am-guide .nov-guide-angle strong{
+ font-size:25px;line-height:1;font-weight:900;color:#f37021;min-width:39px
+}
+#stage .scene-am-guide .nov-guide-angle span{
+ font-size:18px;font-weight:800;color:#143c5e;line-height:1.25
+}
+#stage .scene-am-guide .nov-guide-fallback-foot{
+ font-size:14px;font-weight:850;color:#075c9b;line-height:1.35;
+ border-top:1px solid #c6deec;margin-top:18px;padding-top:14px
+}
+#stage .scene-am-guide .nov-guide-original{
+ position:absolute;inset:0;height:100%;width:100%;object-fit:contain;
+ background:#fff;border:0;border-radius:0
+}
+#stage .scene-am-guide .nov-guide-media.has-image .nov-guide-fallback{visibility:hidden}
+/* CLDV coverage: low evaluation is a warning; CSAT >=3% is risk. */
+#stage .cldv-recovery-layout .cldv-caution{color:#ab5f13!important;font-weight:900!important}
+#stage .cldv-recovery-layout .cldv-risk{color:#b52e38!important;font-weight:900!important}
+#stage .cldv-recovery-layout .cldv-good{color:#087747!important;font-weight:900!important}
+#stage .cldv-recovery-layout .recall-slide-table td .cldv-value{font-size:18px!important}
+#stage .scene-csat .cldv-recovery-layout .recall-slide-table td:nth-child(4) .cldv-risk,
+#stage .scene-alerts .cldv-recovery-layout .recall-slide-table td:nth-child(2) .cldv-risk{
+ background:rgba(252,229,230,.75);border-radius:5px;padding:4px 6px
+}
+/* Team percentage ranking: compare with the current SG10 baseline, never raw totals. */
+#stage .scene-recall .recall-overview-table .metric-tone.sg10-kpi-risk,
+#modalback .recovery-detail-board td.sg10-kpi-risk{
+ background:#fff0f0!important;color:#b42b38!important;font-weight:900!important;
+ box-shadow:inset 3px 0 0 #d84c55!important
+}
+#stage .scene-recall .recall-overview-table .metric-tone.sg10-kpi-good,
+#modalback .recovery-detail-board td.sg10-kpi-good{
+ background:#e7f6ed!important;color:#087945!important;font-weight:900!important;
+}
+#stage .scene-recall .recall-overview-table .metric-tone.sg10-kpi-warn{
+ background:#fff2e4!important;color:#ae5710!important;font-weight:900!important
+}
+#stage .scene-recall .recall-overview-table .metric-tone.sg10-kpi-neutral,
+#modalback .recovery-detail-board td.sg10-kpi-neutral{
+ background:#eff5f8!important;color:#496b82!important;font-weight:750!important
+}
+/* Highlight flagged KTV, not every item on the leaderboard. */
+#stage .scene-recall-people .recall-risk-table tbody tr.sg10-warning-row{
+ background:rgba(255,237,236,.96)!important;
+ box-shadow:inset 4px 0 #ca3b48!important
+}
+#stage .scene-recall-people .recall-risk-table tbody tr.sg10-warning-row td:last-child,
+#stage .scene-recall-people .recall-risk-table tbody tr.sg10-warning-row td:nth-last-child(2){
+ color:#b52e38!important;font-weight:900!important
+}
+#stage .scene-recall-people .recall-zero-table tbody tr.sg10-pending-row{
+ background:rgba(255,248,235,.92)!important;
+ box-shadow:inset 4px 0 #f37021!important;
+}
+#stage .scene-recall-people .recall-zero-table tbody tr.sg10-pending-row td:nth-child(3){
+ color:#a9530d!important;font-weight:900!important;
+}
+#stage .scene-recall-people .recall-risk-table td,
+#stage .scene-recall-people .recall-zero-table td{font-size:17px!important;line-height:1.2!important}
+#stage .scene-recall-people .recall-risk-table th,
+#stage .scene-recall-people .recall-zero-table th{font-size:14px!important}
+#stage .scene-recall-people .recall-people-title h2{color:#102d4f!important;font-size:21px!important}
+#stage .scene-recall-people .recall-people-title p{color:#3b5c74!important;font-size:14px!important}
