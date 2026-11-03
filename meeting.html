@@ -6,12 +6,13 @@
 main{width:min(540px,calc(100% - 36px));background:#102e4f;border:1px solid #31516d;padding:34px;border-radius:20px;box-shadow:0 20px 80px #0005}
 .small{letter-spacing:2px;font-size:12px;color:#79dce5;font-weight:bold}h1{font-size:27px;margin:16px 0 8px}p{color:#bcd0e4;line-height:1.5;font-size:14px}progress{width:100%;height:12px;accent-color:#F37021;margin:18px 0 8px}#state{font-size:13px;color:#9fcae3}a{color:#80dce8}
 </style></head>
-<body><main><div class="small">FPT TELECOM / PKT SG10</div><h1>HỌP PHÒNG KỸ THUẬT · 10/2026</h1><p>Đang tải bài trình chiếu 13 slide và dữ liệu chi tiết. Vui lòng giữ trang mở trong giây lát.</p><progress id="bar" value="0" max="14"></progress><div id="state">Chuẩn bị nội dung…</div></main>
+<body><main><div class="small">FPT TELECOM / PKT SG10</div><h1>HỌP PHÒNG KỸ THUẬT · 10/2026</h1><p>Đang tải bài trình chiếu 12 slide và dữ liệu chi tiết. Vui lòng giữ trang mở trong giây lát.</p><progress id="bar" value="0" max="14"></progress><div id="state">Chuẩn bị nội dung…</div></main>
 <script src="./cldv-sync-20261013.js?v=35"></script>
+<script src="./hide-kickoff-sync.js?v=1"></script>
 <script src="./operations-sync-20261015.js?v=20261102-v28"></script>
 <script>
 (async()=>{
- const total=14, buildVersion='sg10-month-close-v30-20261103', bar=document.getElementById('bar'), status=document.getElementById('state');
+ const total=14, buildVersion='sg10-month-close-v31-20261103', bar=document.getElementById('bar'), status=document.getElementById('state');
  try{
   const parts=new Array(total);let completed=0;
   const jobs=Array.from({length:total},(_,i)=>i);
@@ -28,7 +29,7 @@ main{width:min(540px,calc(100% - 36px));background:#102e4f;border:1px solid #315
   }
   await Promise.all(Array.from({length:concurrency},()=>worker()));
   status.textContent='Đang ghép và kiểm tra nội dung…';
-   let html=window.applySG10Oct15(window.applyCLDV13(parts.join('')));
+   let html=window.applyHideKickoff(window.applySG10Oct15(window.applyCLDV13(parts.join(''))));
   const recoveryResponse=await fetch('./recovery.js?v=20261102-v28');
   if(!recoveryResponse.ok)throw Error('Không tải được phần điều hướng');
   const recoveryScript=window.applyCLDV13Index(await recoveryResponse.text());
