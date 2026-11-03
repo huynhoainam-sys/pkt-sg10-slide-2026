@@ -1,5 +1,5 @@
 {
-  "version": "V59",
+  "version": "V60",
   "updated": "2026-11-03",
   "entry": "meeting.html",
   "template": "SG10 11-scene deck; headline KPIs at full SG10 scope; Team details only in modal; GSafe/Kickoff excluded",
@@ -62,7 +62,7 @@
     "Cảm ơn & trao đổi"
   ],
   "displayHarmony": "display-harmony-20261103.css",
-  "notes": "Visual QA for 11-scene deck: fixed empty 7-photo guide with fallback content, CLDV percentage semantic colors, recovery Team relative-baseline colors and KTV warning row highlighting. Existing source KPI counts preserved; screenshot verification pending.",
+  "notes": "PTTB Team display enhanced: enlarged completed/planned counts and percentages, progress bars semantically colored from actual rendered ratios. Other KPI values preserved.",
   "rm": {
     "scope": "HCM_10 + Phòng kỹ thuật source sales",
     "source": "dataRM!A:R, X:Y, AY:BG",
@@ -102,5 +102,12 @@
     "failed": 1426,
     "rule": "recovered = warehouse + waitingWarehouse; total = recovered + pending + failed",
     "staff": 83
+  },
+  "pttbTeamColors": {
+    "excellent": "≥85%",
+    "good": "75–<85%",
+    "watch": "65–<75%",
+    "risk": "<65%",
+    "scope": "presentation-only, actual team plan completion"
   }
 }
