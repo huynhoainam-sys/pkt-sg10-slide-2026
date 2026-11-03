@@ -28,13 +28,22 @@
 #stage .scene-gsafe-maintenance .g6-tile.g6-tests{grid-column:1/-1}
 #stage .scene-gsafe-maintenance .g6-card-head{margin-bottom:10px}
 /* November sections: a shared content rectangle, matching cards and legible table rows. */
-#stage .scene :is(.cldv-board,.cldv-detail-board,.nov-overlay,.nov-focus-overlay){
+/* Maintain the original content rail; separate data boards from photographic scenes. */
+#stage .scene :is(.cldv-board,.cldv-detail-board,.nov-overlay){
  inset:70px 65px 73px 65px!important;
- padding:20px 24px 18px!important;
+ padding:24px 27px 20px!important;
  border:1px solid rgba(190,215,232,.84)!important;
  border-radius:16px!important;
- background:linear-gradient(105deg,rgba(249,252,255,.97),rgba(243,249,254,.94))!important;
+ background:linear-gradient(110deg,rgba(249,252,255,.97),rgba(243,249,254,.91))!important;
  box-shadow:0 12px 30px rgba(15,52,87,.09)!important;
+}
+#stage .scene .nov-focus-overlay{
+ inset:70px 65px 73px 65px!important;
+ padding:24px 27px 20px!important;
+ border:1px solid rgba(190,215,232,.77)!important;
+ border-radius:16px!important;
+ background:linear-gradient(90deg,rgba(249,252,255,.97) 0%,rgba(249,252,255,.94) 45%,rgba(249,252,255,.72) 65%,rgba(249,252,255,.14) 86%,rgba(249,252,255,0) 100%)!important;
+ box-shadow:none!important;
 }
 #stage .scene :is(.cldv-head,.nov-head){min-width:0;gap:16px}
 #stage .scene :is(.cldv-head h2,.nov-head h2){line-height:1.14!important}
@@ -51,3 +60,51 @@
 #stage .scene .nov-focus-message{left:24px;right:24px}
 #stage .scene :is(.nov-action,.recall-link,.g6-tile){touch-action:manipulation}
 @media(prefers-reduced-motion:reduce){#stage .scene *{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* V35 — screenshot-driven restoration of the approved SG10 visual rhythm.
+   Slides 04 and 05: distribute content over the usable 16:9 stage. */
+#stage .scene-csat .cldv-board,
+#stage .scene-alerts .cldv-detail-board{display:flex!important;flex-direction:column!important;gap:0}
+#stage .scene-csat .cldv-head,
+#stage .scene-alerts .cldv-head{min-height:63px;flex:none;align-items:center}
+#stage .scene-csat .cldv-kpis{margin:12px 0 20px;gap:14px}
+#stage .scene-csat .cldv-kpi{min-height:118px;display:flex;flex-direction:column;justify-content:center;padding:15px 18px}
+#stage .scene-csat .cldv-kpi b{font-size:31px;line-height:1.2;margin:5px 0}
+#stage .scene-csat .cldv-kpi span{font-size:12px}
+#stage .scene-csat .cldv-table{border-spacing:0 8px!important;font-size:13px}
+#stage .scene-csat .cldv-table th{font-size:12px}
+#stage .scene-csat .cldv-table td{padding:12px 13px!important;height:65px;font-size:13px;vertical-align:middle}
+#stage .scene-csat .cldv-table .cldv-rate{font-size:17px}
+#stage .scene-csat .cldv-insights{margin-top:16px;gap:13px}
+#stage .scene-csat .cldv-insight{min-height:93px;padding:17px}
+#stage .scene-csat .cldv-insight b{font-size:14px;margin-bottom:7px}
+#stage .scene-csat .cldv-insight span{font-size:12px;line-height:1.4}
+#stage .scene-csat .cldv-foot{margin-top:12px;font-size:12px}
+#stage .scene-alerts .cldv-detail-summary{margin:12px 0 20px;gap:14px}
+#stage .scene-alerts .cldv-detail-summary>div{min-height:103px;display:flex;flex-direction:column;justify-content:center;padding:16px 18px}
+#stage .scene-alerts .cldv-detail-summary b{font-size:29px;line-height:1.18;margin-top:5px}
+#stage .scene-alerts .cldv-detail-summary span{font-size:12px}
+#stage .scene-alerts .cldv-detail-board table{border-spacing:0 8px!important;font-size:13px}
+#stage .scene-alerts .cldv-detail-board th{font-size:12px;padding:3px 13px 8px}
+#stage .scene-alerts .cldv-detail-board td{height:68px;padding:12px 13px!important;vertical-align:middle}
+#stage .scene-alerts .cldv-detail-board strong{font-size:17px}
+#stage .scene-alerts .cldv-detail-board small{font-size:11px;margin-top:5px}
+#stage .scene-alerts .cldv-insights{margin-top:16px;gap:13px}
+#stage .scene-alerts .cldv-insight{min-height:92px;padding:16px}
+#stage .scene-alerts .cldv-insight b{font-size:14px;margin-bottom:7px}
+#stage .scene-alerts .cldv-insight span{font-size:12px;line-height:1.45}
+#stage .scene-alerts .cldv-foot{margin-top:13px;font-size:12px}
+/* Slide 11: restore photographic balance and replace the overly dense compact cards. */
+#stage .scene-close .nov-focus-overlay{background:linear-gradient(90deg,rgba(249,252,255,.97) 0%,rgba(249,252,255,.93) 46%,rgba(249,252,255,.68) 66%,rgba(249,252,255,.08) 86%,transparent 100%)!important}
+#stage .scene-close .nov-focus-head{width:70%;margin:0 0 24px}
+#stage .scene-close .nov-focus-head h2{font-size:39px!important;line-height:1.07!important}
+#stage .scene-close .nov-focus-head h2 span{font-size:44px;margin-top:6px}
+#stage .scene-close .nov-focus-grid{width:73%;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));height:445px;gap:15px 17px}
+#stage .scene-close .nov-focus-card{min-height:0;padding:19px 20px;gap:12px;grid-template-columns:42px minmax(0,1fr);align-content:start;border-color:rgba(183,210,230,.88)!important}
+#stage .scene-close .nov-focus-card .num{font-size:27px}
+#stage .scene-close .nov-focus-card h3{font-size:18px;line-height:1.28;margin-bottom:10px}
+#stage .scene-close .nov-focus-card p{font-size:14px;line-height:1.48}
+#stage .scene-close .nov-focus-message{left:27px;right:27px;bottom:16px;padding:12px 16px;font-size:14px;line-height:1.35}
+#stage .scene-close .nov-focus-message small{font-size:11px;line-height:1.3}
+/* Prevent text clipping on presentations using the fixed 1600 × 900 canvas. */
+#stage .scene :is(.cldv-insight,.nov-focus-card,.cldv-kpi){min-width:0;overflow-wrap:break-word}
