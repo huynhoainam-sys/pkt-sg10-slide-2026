@@ -1,6 +1,6 @@
 {
-  "version": "V28",
-  "updated": "2026-11-02",
+  "version": "V34",
+  "updated": "2026-11-03",
   "entry": "meeting.html",
   "template": "Original SG10 meeting, preserved 13 scenes",
   "sources": {
@@ -62,5 +62,7 @@
     "GSafe lắp đặt/bảo trì",
     "Kế hoạch hành động",
     "Cảm ơn"
-  ]
+  ],
+  "displayHarmony": "display-harmony-20261103.css",
+  "notes": "Layout harmonization only; content, KPI data and images retained"
 }
