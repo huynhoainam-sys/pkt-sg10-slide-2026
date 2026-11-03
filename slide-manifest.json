@@ -1,5 +1,5 @@
 {
-  "version": "V35",
+  "version": "V36",
   "updated": "2026-11-03",
   "entry": "meeting.html",
   "template": "Original SG10 meeting, preserved 13 scenes",
@@ -64,5 +64,5 @@
     "Cảm ơn"
   ],
   "displayHarmony": "display-harmony-20261103.css",
-  "notes": "Screenshot-guided layout correction for CLDV slides 04/05 and November action slide 11; original content retained"
+  "notes": "Restore existing telecom imagery, rebalance 04/05/11, semantic colors for evaluation coverage and CSAT thresholds; preserve source KPI values"
 }
