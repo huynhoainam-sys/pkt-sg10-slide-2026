@@ -142,3 +142,9 @@
 #stage .scene-alerts .cldv-recovery-layout .cldv-dual-table td{font-size:16px!important}
 #stage .scene :is(.recall-source,.cldv-panel-footer){font-size:13px!important;line-height:1.35!important}
 #modalback:not([style*="display: none"]):not([aria-hidden="true"]) .modal{min-height:0}
+
+/* V46 — one clean meeting cover, preserve existing hero photograph and logo. */
+#stage .scene-cover .cover-copy{max-width:1180px!important}
+#stage .scene-cover .cover-copy .slide-title{font-size:82px!important;line-height:1.1!important;letter-spacing:-1.8px!important;font-weight:900!important;color:#102d4f!important;text-wrap:nowrap!important;text-shadow:none!important}
+#stage .scene-cover :is(.cover-bullets,.cover-meta,.cover-copy>.tag,.cover-copy>.lead){display:none!important}
+#stage .scene-cover .topbar .recall-topright .eyebrow{display:none!important}
