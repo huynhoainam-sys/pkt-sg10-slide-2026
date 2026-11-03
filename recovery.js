@@ -80,7 +80,7 @@ function rmSalesSlide(){
    '<table class="recall-slide-table rm-month-table"><thead><tr><th>Tháng</th><th>&lt;3T</th><th>3–&lt;6T</th><th>Tổng &lt;6T</th></tr></thead><tbody>'+rows+'</tbody></table>'+
    '<div class="recall-team-note"><b>Tháng 10: 14 HĐ dưới 6T</b> · 12 HĐ thuộc nhóm 3–&lt;6T. Cần kiểm tra nguyên nhân rời mạng theo hợp đồng.</div></div>'+
   '<div class="card recall-warehouse rm-action-panel"><div class="recall-panel-heading"><h2>TRỌNG TÂM KIỂM SOÁT</h2></div>'+
-   '<div class="rm-duty"><b>01 · TRÁCH NHIỆM PKT</b><p>Nhân sự PKT SG10 bán: rà soát HĐ RM non trẻ &lt;3T/6T, phân tích nguyên nhân từng trường hợp và lập kế hoạch cải thiện chất lượng bán hàng PTTB của cá nhân.</p></div>'+
+   '<div class="rm-duty"><b>01 · TRÁCH NHIỆM PKT</b><p>Nhân sự PKT SG10 bán: rà soát HĐ RM non tháng &lt;3T và 3–&lt;6T, phân tích nguyên nhân từng trường hợp và lập kế hoạch cải thiện chất lượng bán hàng PTTB của cá nhân.</p></div>'+
    '<div class="rm-duty warn"><b>02 · CHẤT LƯỢNG NGUỒN BÁN</b><p>PKT – DVKH tăng cường kiểm soát chất lượng đầu vào. Trường hợp nguồn bán nội bộ phát sinh thuê bao kém chất lượng, nếu có đủ bằng chứng sẽ xử lý nghiêm theo quy định.</p></div>'+
    '<div class="rm-action-line">NÓI KHÔNG VỚI PTTB KÉM CHẤT LƯỢNG DẪN ĐẾN RM &lt;3T</div>'+
   '</div></div>'+
