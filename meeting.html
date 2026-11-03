@@ -12,7 +12,7 @@ main{width:min(540px,calc(100% - 36px));background:#102e4f;border:1px solid #315
 <script src="./operations-sync-20261015.js?v=20261102-v28"></script>
 <script>
 (async()=>{
- const total=14, buildVersion='sg10-reinforcement-notes-v48-20261103', bar=document.getElementById('bar'), status=document.getElementById('state');
+ const total=14, buildVersion='sg10-recovery-action-v49-20261103', bar=document.getElementById('bar'), status=document.getElementById('state');
  try{
   const parts=new Array(total);let completed=0;
   const jobs=Array.from({length:total},(_,i)=>i);
@@ -30,7 +30,7 @@ main{width:min(540px,calc(100% - 36px));background:#102e4f;border:1px solid #315
   await Promise.all(Array.from({length:concurrency},()=>worker()));
   status.textContent='Đang ghép và kiểm tra nội dung…';
    let html=window.applyHideKickoff(window.applySG10Oct15(window.applyCLDV13(parts.join(''))));
-  const recoveryResponse=await fetch('./recovery.js?v=20261103-v45');
+  const recoveryResponse=await fetch('./recovery.js?v=20261103-v49');
   if(!recoveryResponse.ok)throw Error('Không tải được phần điều hướng');
   const recoveryScript=window.applyCLDV13Index(await recoveryResponse.text());
   if(!html.startsWith('<!doctype html>')||!html.includes('PKT SG10')||html.length<5700000)throw Error('Dữ liệu trình chiếu chưa hoàn chỉnh');
