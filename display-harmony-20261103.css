@@ -346,3 +346,65 @@
 #stage .cldv-recovery-layout .recall-slide-table .team-mark{font-size:14px!important}
 #stage .scene-close .nov-focus-head h2{font-weight:900!important}
 #stage .scene-close .nov-focus-card h3{font-weight:850!important}
+
+/* V40: RM PKT sales, one new scene. Reuses recovery's header, KPI rail,
+   table/panel grid, brand typography, footer and background assets. */
+#stage .scene-rm-sales{
+ background:linear-gradient(100deg,rgba(246,251,255,.95) 0%,rgba(246,251,255,.90) 47%,rgba(246,251,255,.78) 75%,rgba(246,251,255,.65)),url("./assets/recall-summary.jpg") center/cover no-repeat!important;
+ color:#102d4f;
+}
+#stage .scene-rm-sales .recall-head{left:76px;right:76px;top:126px}
+#stage .scene-rm-sales .recall-head .slide-title{font-size:46px!important;font-weight:850!important;line-height:1.13!important;letter-spacing:-1.15px!important;color:#102d4f!important}
+#stage .scene-rm-sales .recall-head .slide-title span{color:#f37021!important}
+#stage .scene-rm-sales .recall-head p{font-size:17px!important;color:#54728a!important}
+#stage .scene-rm-sales .recall-kpis.rm-kpis{
+ top:234px;left:76px;right:76px;height:129px;
+ grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;
+}
+#stage .scene-rm-sales .rm-kpis .recall-metric{
+ min-width:0;min-height:0;height:129px;padding:15px 20px;
+ background:rgba(255,255,255,.94)!important;border:1px solid #cee1f0!important;
+ border-top:4px solid #0072bc!important;border-radius:14px!important;
+ display:flex;flex-direction:column;justify-content:center;
+}
+#stage .scene-rm-sales .rm-kpis .recall-metric.red{border-top-color:#c33d34!important}
+#stage .scene-rm-sales .rm-kpis .recall-metric.orange{border-top-color:#f37021!important}
+#stage .scene-rm-sales .rm-kpis .recall-metric>span{font-size:14px;line-height:1.23;font-weight:850;color:#54728a}
+#stage .scene-rm-sales .rm-kpis .recall-metric>b{font-size:43px;line-height:1.1;margin:7px 0 4px;white-space:nowrap;font-weight:900}
+#stage .scene-rm-sales .rm-kpis .recall-metric>small{font-size:13px;line-height:1.25;color:#5d7991}
+#stage .scene-rm-sales .rm-layout{
+ top:386px;bottom:105px;left:76px;right:76px;
+ grid-template-columns:minmax(0,1.16fr) minmax(0,1fr);gap:22px;
+}
+#stage .scene-rm-sales .rm-layout .card{
+ border:1px solid rgba(202,225,240,.97)!important;border-radius:14px!important;
+ background:rgba(255,255,255,.93)!important;box-shadow:0 12px 28px rgba(32,79,117,.10)!important;
+ padding:20px 23px;min-width:0;overflow:hidden;
+}
+#stage .scene-rm-sales .recall-panel-heading h2{font-size:20px!important;line-height:1.2!important}
+#stage .scene-rm-sales .recall-caption{font-size:13px;line-height:1.35;margin:8px 0 12px}
+#stage .scene-rm-sales .rm-month-table{table-layout:fixed;width:100%;border-collapse:collapse}
+#stage .scene-rm-sales .rm-month-table th{font-size:14px;padding:11px 12px;text-align:right;color:#42617c;background:#ecf5fc}
+#stage .scene-rm-sales .rm-month-table th:first-child,
+#stage .scene-rm-sales .rm-month-table td:first-child{text-align:left}
+#stage .scene-rm-sales .rm-month-table td{font-size:22px;text-align:right;padding:15px 12px;color:#153f61;border-bottom:1px solid #dce7ef;font-variant-numeric:tabular-nums}
+#stage .scene-rm-sales .rm-month-table td.rm-very-early{font-weight:900;color:#be3e34}
+#stage .scene-rm-sales .rm-month-table td.rm-early{font-weight:850;color:#c46a18}
+#stage .scene-rm-sales .recall-team-note{font-size:13px;line-height:1.43;margin-top:auto}
+#stage .scene-rm-sales .rm-action-panel{display:flex;flex-direction:column;gap:10px}
+#stage .scene-rm-sales .rm-duty{
+ border:1px solid #d0e3f0;border-left:4px solid #0072bc;border-radius:11px;
+ background:#f4f9fc;padding:14px 16px;
+}
+#stage .scene-rm-sales .rm-duty.warn{border-left-color:#f37021}
+#stage .scene-rm-sales .rm-duty>b{font-size:15px;color:#103461;font-weight:900}
+#stage .scene-rm-sales .rm-duty p{font-size:14px;line-height:1.47;color:#365c78;margin:7px 0 0;font-weight:550}
+#stage .scene-rm-sales .rm-action-line{
+ border-radius:10px;background:#fff0e5;color:#ac470f;
+ border:1px solid #f5c39d;padding:12px 15px;font-size:15px;font-weight:900;
+ line-height:1.34;margin-top:auto;
+}
+#stage .scene-rm-sales .recall-source{left:76px;right:76px;bottom:62px;font-size:12.5px;line-height:1.35;color:#496b87}
+#stage .scene-cover .cover-copy .slide-title{font-size:58px!important;line-height:1.12!important;letter-spacing:-1.6px!important;text-wrap:balance}
+#stage .scene-cover .cover-copy .lead{font-size:20px!important;line-height:1.5!important}
+#stage .scene-cover .cover-bullets .focus b{font-size:17px;line-height:1.4}
