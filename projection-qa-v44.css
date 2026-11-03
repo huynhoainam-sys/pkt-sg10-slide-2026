@@ -183,3 +183,21 @@
 #stage .scene-cover .sg10-cover-subtitle span:last-child{
  background:rgba(255,239,225,.94);border-color:#f5ba8d;color:#a54712!important;
 }
+
+/* V54 — recovery in exactly three mutually exclusive outcome groups.
+   The fourth card is only the total denominator. Waiting for warehouse
+   is a subset of recovered and never part of pending or failed. */
+#stage .scene-recall .recall-kpis{
+ grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ left:76px!important;right:76px!important;gap:16px!important;
+}
+#stage .scene-recall .recall-kpis .recall-metric{min-width:0!important;overflow:hidden}
+#stage .scene-recall .recall-kpis .recall-metric>span{
+ font-size:15px!important;line-height:1.2!important;
+ white-space:normal!important;font-weight:850!important;
+}
+#stage .scene-recall .recall-kpis .recall-metric>b{font-size:43px!important;line-height:1.1!important}
+#stage .scene-recall .recall-kpis .recall-metric>small{
+ font-size:12.5px!important;line-height:1.3!important;white-space:normal!important;
+}
+#stage .scene-recall .recall-warehouse-row span{font-size:14px!important;line-height:1.3!important}
