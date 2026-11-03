@@ -121,3 +121,24 @@
  #modal-body .table-shell{max-height:calc(100vh - 145px)!important}
  #modalback .rm-popup-table-wrap{max-height:calc(100vh - 260px)!important}
 }
+
+/* Final projector QA: reserve title rail; Team tools must not cover headings. */
+#stage .scene .sg10-team-drill,#stage .scene-rm-sales .sg10-team-drill,
+#stage .scene-sales .sg10-team-drill,#stage .scene-staff .sg10-team-drill,
+#stage .scene-csat .sg10-team-drill,#stage .scene-alerts .sg10-team-drill,
+#stage .scene-recall .sg10-team-drill,#stage .scene-recall-people .sg10-team-drill{
+ top:86px!important;right:76px!important;min-height:37px!important;
+}
+#stage .scene-close .nov-focus-card p{font-size:16px!important;line-height:1.4!important;color:#244b68!important}
+#stage .scene-close .nov-focus-card h3{font-size:19px!important;line-height:1.2!important}
+#stage .scene-close .nov-focus-card{padding:16px 18px!important}
+#stage .scene-close .nov-focus-card .num{font-size:26px!important}
+#stage .scene-close .nov-focus-grid{height:489px!important;gap:12px 14px!important}
+#stage .scene-close .nov-focus-head h2{font-size:38px!important}
+#stage .scene-close .nov-focus-message{font-size:14px!important;line-height:1.3!important}
+#stage .scene-close .nov-focus-message small{font-size:11px!important}
+#stage .scene-rm-sales .rm-month-table th{font-size:15px!important}
+#stage .scene-csat .cldv-recovery-layout .recall-metric>small{font-size:13px!important}
+#stage .scene-alerts .cldv-recovery-layout .cldv-dual-table td{font-size:16px!important}
+#stage .scene :is(.recall-source,.cldv-panel-footer){font-size:13px!important;line-height:1.35!important}
+#modalback:not([style*="display: none"]):not([aria-hidden="true"]) .modal{min-height:0}
