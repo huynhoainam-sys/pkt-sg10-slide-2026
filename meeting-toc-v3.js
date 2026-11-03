@@ -13,16 +13,14 @@
     {cls:'scene-staff',title:'Báo cáo PTTB theo KTV',detail:'Theo dõi từng đội · Hỗ trợ KTV chưa Online',group:'BÁN HÀNG'},
     {cls:'scene-kickoff',title:'Kickoff · Thi đua',detail:'Kết quả tháng 9 · Chương trình tháng 10',group:'BÁN HÀNG'},
     {cls:'scene-csat',title:'Chất lượng dịch vụ · CSAT',detail:'Tỷ lệ đánh giá · CSAT 1–2 theo đội',group:'CHẤT LƯỢNG'},
-    {cls:'scene-alerts',title:'Cảnh báo CLDV · Recare',detail:'Ca cần chăm sóc lại · KTV chưa có đánh giá',group:'CHẤT LƯỢNG'},
+    {cls:'scene-alerts',title:'Phân tích CLDV theo đội',detail:'Triển khai · Bảo trì · CSAT 1–2',group:'CHẤT LƯỢNG'},
     {cls:'scene-recall',title:'Thu hồi thiết bị · Tổng quan',detail:'Phân công · Đã thu hồi · Không tiếp cận',group:'THU HỒI'},
     {cls:'scene-recall-people',title:'Thu hồi theo đội & KTV',detail:'Nhân sự cần theo sát · Nhập kho thiết bị',group:'THU HỒI'},
-    {cls:'scene-gsafe',title:'GSafe · Nhập trả vật tư',detail:'Nhập MAC · Ghi nguyên nhân · Đối soát',group:'GSAFE'},
-    {cls:'scene-gsafe-maintenance',title:'GSafe · Lắp đặt & bảo trì',detail:'Chuẩn hóa thiết bị · Test tín hiệu và pin',group:'GSAFE'},
-    {cls:'scene-close',title:'Trọng tâm thực hiện tháng 10',detail:'PTTB · CLDV · Thu hồi · GSafe',group:'HÀNH ĐỘNG'},
+    {cls:'scene-close',title:'Trọng tâm thực hiện tháng 11',detail:'6 nhiệm vụ vận hành trọng tâm',group:'HÀNH ĐỘNG'},
     {cls:'scene-thanks',title:'Cảm ơn & trao đổi',detail:'Góp ý · Phối hợp · Triển khai thực tế',group:'KẾT THÚC'}
   ];
   const groups={ 'TỔNG QUAN':'blue', 'BÁN HÀNG':'orange', 'CHẤT LƯỢNG':'pink',
-                 'THU HỒI':'green', 'GSAFE':'cyan', 'HÀNH ĐỘNG':'orange', 'KẾT THÚC':'blue'};
+                 'THU HỒI':'green', 'HÀNH ĐỘNG':'orange', 'KẾT THÚC':'blue'};
 
   function getScenes(){
     // Never assume slide count or order from source: the GSafe maintenance slide is inserted later.
