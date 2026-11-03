@@ -1,8 +1,8 @@
 {
-  "version": "V37",
+  "version": "V38",
   "updated": "2026-11-03",
   "entry": "meeting.html",
-  "template": "Original SG10 meeting, preserved 13 scenes",
+  "template": "SG10 meeting: 10 active scenes; recovery visual template used for CLDV",
   "sources": {
     "pttb": {
       "file": "PKT10 - PTTB 2026 - Master Report.xlsx",
@@ -52,17 +52,14 @@
     "Mở đầu",
     "Kết quả PTTB",
     "Báo cáo KTV",
-    "Kickoff",
     "CLDV/CSAT",
     "Cảnh báo CLDV",
     "Thu hồi tổng quan",
     "Theo dõi thu hồi",
-    "GSafe nhập trả",
     "Hướng dẫn AM",
-    "GSafe lắp đặt/bảo trì",
     "Kế hoạch hành động",
     "Cảm ơn"
   ],
   "displayHarmony": "display-harmony-20261103.css",
-  "notes": "Expanded November slide 11 with all six operational priorities and balanced six-card layout; KPI data unchanged"
+  "notes": "CLDV 04/05 reuse recovery slide 06/07 HTML/CSS structure. GSafe 2 scenes excluded; source retained. Ten active scenes after Kickoff retirement."
 }
