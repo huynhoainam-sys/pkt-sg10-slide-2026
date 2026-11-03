@@ -169,9 +169,6 @@
    Higher evaluation coverage is beneficial; positive/negative deltas depend on KPI. */
 #stage .scene-csat .cldv-table td:nth-child(4) .cldv-rate,
 #stage .scene-alerts .cldv-detail-board td:nth-child(5) strong{color:#bd3e34!important}
-#stage .scene-csat .cldv-table tr:nth-child(n+4) td:nth-child(4) .cldv-rate,
-#stage .scene-alerts .cldv-detail-board tr:nth-child(3) td:nth-child(5) strong,
-#stage .scene-alerts .cldv-detail-board tr:nth-child(4) td:nth-child(5) strong{color:#08834d!important}
 /* Data order on CSAT slide: KhanhLQ3, LocLV2, SangH, KhangTV1, ThinhPT.
    Green targets for the final two teams. */
 #stage .scene-csat .cldv-table tbody tr:nth-child(4) td:nth-child(4) .cldv-rate,
