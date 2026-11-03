@@ -64,8 +64,7 @@ function rmSalesSlide(){
  const metrics=[
   ['RM <3T · Q3','5 HĐ','Quý 3 · T7: 0 · T8: 3 · T9: 2','red'],
   ['RM 3–<6T · Q3','23 HĐ','Quý 3 · T7: 5 · T8: 11 · T9: 7','orange'],
-  ['TỔNG RM <6T · Q3','28 HĐ','Quý 3 · Bao gồm nhóm dưới 3T','blue'],
-  ['RM DƯỚI 6T THÁNG 10','14 HĐ','Đối chiếu · tăng 5 HĐ so T9','orange']
+  ['TỔNG RM <6T · Q3','28 HĐ','Bao gồm 5 HĐ dưới 3T','blue']
  ];
  const tiles=metrics.map(m=>'<div class="card recall-metric '+m[3]+'"><span>'+m[0]+'</span><b>'+m[1]+'</b><small>'+m[2]+'</small></div>').join('');
  const records=[['THÁNG 7','0','5','5'],['THÁNG 8','3','11','14'],['THÁNG 9','2','7','9'],['THÁNG 10','2','12','14']];
