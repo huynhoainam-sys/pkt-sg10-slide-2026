@@ -1,5 +1,5 @@
 {
-  "version": "V45",
+  "version": "V54",
   "updated": "2026-11-03",
   "entry": "meeting.html",
   "template": "SG10 11-scene deck; headline KPIs at full SG10 scope; Team details only in modal; GSafe/Kickoff excluded",
@@ -62,7 +62,7 @@
     "Cảm ơn & trao đổi"
   ],
   "displayHarmony": "display-harmony-20261103.css",
-  "notes": "RM sales-origin totals YTD January–October 2026, including all available 2026 data; 5 Team and Chưa map in full year popup. No November–December source data. All figures are counts, not rates.",
+  "notes": "Recovery 5 Team only: omit unassigned 17 devices, three exclusive statuses, waiting-to-warehouse included in recovered, team and personnel popup reconciled.",
   "rm": {
     "scope": "HCM_10 + Phòng kỹ thuật source sales",
     "source": "dataRM!A:R, X:Y, AY:BG",
@@ -90,5 +90,17 @@
       "mapped": 70,
       "unmapped": 17
     }
+  },
+  "recovery": {
+    "period": "01–31/10/2026",
+    "scope": "5 Team with assignments; Chưa PC excluded",
+    "total": 3541,
+    "recovered": 876,
+    "warehouse": 839,
+    "waitingWarehouse": 37,
+    "pending": 1239,
+    "failed": 1426,
+    "rule": "recovered = warehouse + waitingWarehouse; total = recovered + pending + failed",
+    "staff": 83
   }
 }
