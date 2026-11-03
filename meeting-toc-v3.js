@@ -8,7 +8,7 @@
   if(!deck) { console.warn('[SG10 TOC] Deck not found'); return; }
 
   const catalog=[
-    {cls:'scene-cover',title:'Họp Phòng Kỹ thuật SG10',detail:'Tăng tốc bán hàng · Nâng chất lượng dịch vụ',group:'TỔNG QUAN'},
+    {cls:'scene-cover',title:'Họp PKT tháng 11',detail:'Báo cáo vận hành và trọng tâm triển khai',group:'TỔNG QUAN'},
     {cls:'scene-sales',title:'Kết quả bán hàng tháng 10',detail:'Lũy kế thực hiện · KPI và tiến độ theo đội',group:'BÁN HÀNG'},
     {cls:'scene-staff',title:'Kết quả bán hàng theo KTV',detail:'Theo dõi từng Team · Hỗ trợ KTV chưa Online',group:'BÁN HÀNG'},
     {cls:'scene-kickoff',title:'Kickoff · Thi đua',detail:'Kết quả tháng 9 · Chương trình tháng 10',group:'BÁN HÀNG'},
