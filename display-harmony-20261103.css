@@ -66,34 +66,34 @@
 #stage .scene-csat .cldv-board,
 #stage .scene-alerts .cldv-detail-board{display:flex!important;flex-direction:column!important;gap:0}
 #stage .scene-csat .cldv-head,
-#stage .scene-alerts .cldv-head{min-height:63px;flex:none;align-items:center}
-#stage .scene-csat .cldv-kpis{margin:12px 0 20px;gap:14px}
-#stage .scene-csat .cldv-kpi{min-height:118px;display:flex;flex-direction:column;justify-content:center;padding:15px 18px}
+#stage .scene-alerts .cldv-head{min-height:56px;flex:none;align-items:center}
+#stage .scene-csat .cldv-kpis{margin:10px 0 15px;gap:14px}
+#stage .scene-csat .cldv-kpi{min-height:104px;display:flex;flex-direction:column;justify-content:center;padding:15px 18px}
 #stage .scene-csat .cldv-kpi b{font-size:31px;line-height:1.2;margin:5px 0}
 #stage .scene-csat .cldv-kpi span{font-size:12px}
-#stage .scene-csat .cldv-table{border-spacing:0 8px!important;font-size:13px}
+#stage .scene-csat .cldv-table{border-spacing:0 6px!important;font-size:13px}
 #stage .scene-csat .cldv-table th{font-size:12px}
-#stage .scene-csat .cldv-table td{padding:12px 13px!important;height:65px;font-size:13px;vertical-align:middle}
+#stage .scene-csat .cldv-table td{padding:9px 13px!important;height:56px;font-size:13px;vertical-align:middle}
 #stage .scene-csat .cldv-table .cldv-rate{font-size:17px}
-#stage .scene-csat .cldv-insights{margin-top:16px;gap:13px}
-#stage .scene-csat .cldv-insight{min-height:93px;padding:17px}
+#stage .scene-csat .cldv-insights{margin-top:12px;gap:13px}
+#stage .scene-csat .cldv-insight{min-height:77px;padding:13px}
 #stage .scene-csat .cldv-insight b{font-size:14px;margin-bottom:7px}
 #stage .scene-csat .cldv-insight span{font-size:12px;line-height:1.4}
-#stage .scene-csat .cldv-foot{margin-top:12px;font-size:12px}
-#stage .scene-alerts .cldv-detail-summary{margin:12px 0 20px;gap:14px}
-#stage .scene-alerts .cldv-detail-summary>div{min-height:103px;display:flex;flex-direction:column;justify-content:center;padding:16px 18px}
+#stage .scene-csat .cldv-foot{margin-top:8px;font-size:12px}
+#stage .scene-alerts .cldv-detail-summary{margin:10px 0 15px;gap:14px}
+#stage .scene-alerts .cldv-detail-summary>div{min-height:93px;display:flex;flex-direction:column;justify-content:center;padding:16px 18px}
 #stage .scene-alerts .cldv-detail-summary b{font-size:29px;line-height:1.18;margin-top:5px}
 #stage .scene-alerts .cldv-detail-summary span{font-size:12px}
 #stage .scene-alerts .cldv-detail-board table{border-spacing:0 8px!important;font-size:13px}
 #stage .scene-alerts .cldv-detail-board th{font-size:12px;padding:3px 13px 8px}
-#stage .scene-alerts .cldv-detail-board td{height:68px;padding:12px 13px!important;vertical-align:middle}
+#stage .scene-alerts .cldv-detail-board td{height:56px;padding:9px 13px!important;vertical-align:middle}
 #stage .scene-alerts .cldv-detail-board strong{font-size:17px}
 #stage .scene-alerts .cldv-detail-board small{font-size:11px;margin-top:5px}
 #stage .scene-alerts .cldv-insights{margin-top:16px;gap:13px}
-#stage .scene-alerts .cldv-insight{min-height:92px;padding:16px}
+#stage .scene-alerts .cldv-insight{min-height:78px;padding:13px}
 #stage .scene-alerts .cldv-insight b{font-size:14px;margin-bottom:7px}
 #stage .scene-alerts .cldv-insight span{font-size:12px;line-height:1.45}
-#stage .scene-alerts .cldv-foot{margin-top:13px;font-size:12px}
+#stage .scene-alerts .cldv-foot{margin-top:9px;font-size:12px}
 /* Slide 11: restore photographic balance and replace the overly dense compact cards. */
 #stage .scene-close .nov-focus-overlay{background:linear-gradient(90deg,rgba(249,252,255,.97) 0%,rgba(249,252,255,.93) 46%,rgba(249,252,255,.68) 66%,rgba(249,252,255,.08) 86%,transparent 100%)!important}
 #stage .scene-close .nov-focus-head{width:70%;margin:0 0 24px}
