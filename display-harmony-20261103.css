@@ -434,3 +434,40 @@
 #modalback .rm-popup-table .rm-bad{color:#c43e33;font-weight:850}
 #modalback .rm-popup-table .rm-warn{color:#ad6418;font-weight:800}
 #modalback .rm-popup-source{font-size:11.5px;color:#547087;line-height:1.5;margin:10px 0}
+
+/* V43 — one summary, Team-specific details exclusively through popups. */
+#stage .scene-rm-sales .rm-kpis{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+#stage .scene-rm-sales .rm-kpis .recall-metric{min-width:0}
+#stage .sg10-team-drill{
+ position:absolute;right:76px;top:183px;z-index:26;
+ display:flex;align-items:center;justify-content:flex-end;gap:9px;
+ border:1px solid rgba(165,198,221,.95);border-radius:11px;
+ background:rgba(248,252,255,.95);box-shadow:0 6px 18px rgba(21,68,106,.08);
+ padding:7px 9px;font-family:"SG10 Inter",Arial,sans-serif;
+}
+#stage .sg10-team-drill label{font-size:11px;letter-spacing:.2px;font-weight:900;color:#35617d}
+#stage .sg10-team-drill select{border:1px solid #bad5e8;border-radius:7px;background:#fff;color:#174568;font-size:12px;font-weight:800;padding:7px 8px;max-width:168px}
+#stage .sg10-team-drill button{border:0;border-radius:7px;background:#0066b3;color:#fff;font-size:12px;font-weight:850;padding:8px 11px;cursor:pointer}
+#stage .sg10-team-drill button:hover{background:#004c87}
+#stage .scene-rm-sales .sg10-team-drill{top:178px}
+#stage .scene-sales .sg10-team-drill,#stage .scene-staff .sg10-team-drill{top:184px}
+#stage .scene-csat .sg10-team-drill,#stage .scene-alerts .sg10-team-drill{top:180px}
+#stage .scene-recall .sg10-team-drill,#stage .scene-recall-people .sg10-team-drill{top:180px}
+#modalback .sg10-team-control{display:flex;align-items:center;gap:12px;padding:10px 0 13px;font-size:14px;font-weight:850;color:#174568}
+#modalback .sg10-team-control select{padding:9px 12px;border:1px solid #b9d6e9;border-radius:8px;background:#f5fbff;color:#153f61}
+#modalback .sg10-team-detail-table{width:100%;border-collapse:collapse;table-layout:fixed;color:#194669}
+#modalback .sg10-team-detail-table th{background:#e9f3fc;color:#284e6a;font-size:13px;text-align:right;padding:13px}
+#modalback .sg10-team-detail-table th:first-child,#modalback .sg10-team-detail-table td:first-child{text-align:left}
+#modalback .sg10-team-detail-table td{padding:13px;text-align:right;font-size:16px;border-bottom:1px solid #dae8f1;font-weight:700}
+#modalback .sg10-team-detail-table td small{display:block;font-size:12px;color:#617b91;font-weight:500;margin-top:4px}
+#modalback .sg10-team-detail-table .sg10-good{color:#08834d}
+#modalback .sg10-team-detail-table .sg10-danger{color:#bf3e34}
+#modalback .sg10-team-note{font-size:12px;line-height:1.5;color:#58758b;margin:14px 0}
+#modalback .rm-team-distro-title{font-weight:900;font-size:13px;color:#143f61;margin:8px 0}
+#modalback .rm-team-distro{border-collapse:collapse;width:100%;max-width:800px;margin-bottom:14px;font-size:13px}
+#modalback .rm-team-distro th{background:#eaf4fc;color:#365978;padding:9px 12px;text-align:right}
+#modalback .rm-team-distro th:first-child,#modalback .rm-team-distro td:first-child{text-align:left}
+#modalback .rm-team-distro td{border-bottom:1px solid #d9e7f1;padding:8px 12px;text-align:right}
+#modalback .rm-team-distro tfoot{background:#dceffc;font-weight:900}
+#modalback .rm-team-row-link{border:0;background:none;color:#0066b3;font-size:13px;font-weight:850;cursor:pointer;padding:3px 0}
+#modalback .rm-team-row-link:hover{text-decoration:underline}
