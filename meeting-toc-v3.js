@@ -16,6 +16,7 @@
     {cls:'scene-alerts',title:'Phân tích CLDV theo đội',detail:'Triển khai · Bảo trì · CSAT 1–2',group:'CHẤT LƯỢNG'},
     {cls:'scene-recall',title:'Kết quả thu hồi tháng 10',detail:'Phân công · Đã thu hồi · Không tiếp cận',group:'THU HỒI'},
     {cls:'scene-recall-people',title:'Nhân sự cần theo sát',detail:'Nhân sự cần theo sát · Nhập kho thiết bị',group:'THU HỒI'},
+    {cls:'scene-rm-sales',title:'Cảnh báo RM dưới 3T/6T – PKT bán',detail:'Theo tuổi thuê bao · Nhân sự bán · Team Đội trưởng',group:'CHẤT LƯỢNG'},
     {cls:'scene-close',title:'Trọng tâm thực hiện tháng 11',detail:'Thu hồi · Gia cố · CL SOS · CL/PTC · Tập điểm · Lịch OFF',group:'HÀNH ĐỘNG'},
     {cls:'scene-thanks',title:'Cảm ơn & trao đổi',detail:'Góp ý · Phối hợp · Triển khai thực tế',group:'KẾT THÚC'}
   ];
@@ -23,7 +24,7 @@
                  'THU HỒI':'green', 'HÀNH ĐỘNG':'orange', 'KẾT THÚC':'blue'};
 
   function getScenes(){
-    // Never assume slide count or order from source: the GSafe maintenance slide is inserted later.
+    // Actual DOM order includes the sales-origin RM warning; hidden GSafe/Kickoff excluded.
     return Array.from(deck.querySelectorAll(':scope > .scene'));
   }
   function itemFor(scene,index){
