@@ -17,7 +17,8 @@ function openFor(scene,team){
  if(scene.matches('.scene-sales')){if(typeof openSalesMonth==='function')openSalesMonth('oct',team==='Tất cả'?'Tất cả':leader||team);return}
  if(scene.matches('.scene-staff')){if(typeof openStaff==='function')openStaff(team==='Tất cả'?'Tất cả':leader||team);return}
  if(scene.matches('.scene-csat,.scene-alerts')){window.openSG10CLDVTeam?.(team);return}
- if(scene.matches('.scene-recall,.scene-recall-people')){if(typeof openRecovery==='function')openRecovery('all',team);return}
+ if(scene.matches('.scene-recall-people')){window.updateRecallPeopleTeam?.(team);if(typeof openRecovery==='function')openRecovery('pending',team);return}
+ if(scene.matches('.scene-recall')){if(typeof openRecovery==='function')openRecovery('all',team);return}
  if(scene.matches('.scene-rm-sales')){window.openRMSalesDetail?.(team);return}
 }
 function install(){
@@ -29,7 +30,13 @@ function install(){
   for(const t of all){const opt=document.createElement('option');opt.value=t;opt.textContent=t==='Tất cả'?'Tổng SG10 · 5 Team':t;select.appendChild(opt)}
   const btn=document.createElement('button');btn.type='button';btn.textContent='Xem chi tiết ↗';
   btn.addEventListener('click',()=>openFor(slide,select.value));
-  select.addEventListener('change',()=>{if(select.value!=='Tất cả')openFor(slide,select.value)});
+  select.addEventListener('change',()=>{
+   if(slide.matches('.scene-recall-people')){
+    window.updateRecallPeopleTeam?.(select.value);
+   }else if(select.value!=='Tất cả'){
+    openFor(slide,select.value);
+   }
+  });
   box.append(caption,select,btn);slide.appendChild(box);
  }
 }
