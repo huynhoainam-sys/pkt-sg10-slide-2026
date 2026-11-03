@@ -1,5 +1,5 @@
 {
-  "version": "V54",
+  "version": "V59",
   "updated": "2026-11-03",
   "entry": "meeting.html",
   "template": "SG10 11-scene deck; headline KPIs at full SG10 scope; Team details only in modal; GSafe/Kickoff excluded",
@@ -62,7 +62,7 @@
     "Cảm ơn & trao đổi"
   ],
   "displayHarmony": "display-harmony-20261103.css",
-  "notes": "Recovery 5 Team only: omit unassigned 17 devices, three exclusive statuses, waiting-to-warehouse included in recovered, team and personnel popup reconciled.",
+  "notes": "Visual QA for 11-scene deck: fixed empty 7-photo guide with fallback content, CLDV percentage semantic colors, recovery Team relative-baseline colors and KTV warning row highlighting. Existing source KPI counts preserved; screenshot verification pending.",
   "rm": {
     "scope": "HCM_10 + Phòng kỹ thuật source sales",
     "source": "dataRM!A:R, X:Y, AY:BG",
