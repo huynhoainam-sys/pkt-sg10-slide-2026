@@ -62,28 +62,28 @@ function gsReturnScene(){return `<section class="scene scene-gsafe" aria-label="
 // Strictly sale-origin; not KTV triển khai or the full HCM_10 sales branch.
 function rmSalesSlide(){
  const metrics=[
-  ['RM <3T · Q3','5 HĐ','Quý 3 · T7: 0 · T8: 3 · T9: 2','red'],
-  ['RM 3–<6T · Q3','23 HĐ','Quý 3 · T7: 5 · T8: 11 · T9: 7','orange'],
-  ['TỔNG RM <6T · Q3','28 HĐ','Bao gồm 5 HĐ dưới 3T','blue']
+  ['RM <3T · LŨY KẾ 2026','18 HĐ','T1–T10 · cảnh báo ưu tiên','red'],
+  ['RM 3–<6T · LŨY KẾ 2026','69 HĐ','T1–T10 · rời mạng non tháng','orange'],
+  ['TỔNG RM <6T · LŨY KẾ 2026','87 HĐ','18 dưới 3T + 69 từ 3–<6T','blue']
  ];
  const tiles=metrics.map(m=>'<div class="card recall-metric '+m[3]+'"><span>'+m[0]+'</span><b>'+m[1]+'</b><small>'+m[2]+'</small></div>').join('');
- const records=[['THÁNG 7','0','5','5'],['THÁNG 8','3','11','14'],['THÁNG 9','2','7','9'],['THÁNG 10','2','12','14']];
+ const records=[['QUÝ 1','8','21','29'],['QUÝ 2','3','13','16'],['QUÝ 3','5','23','28'],['THÁNG 10','2','12','14']];
  const rows=records.map(x=>'<tr><td><b>'+x[0]+'</b></td><td class="num rm-very-early">'+x[1]+'</td><td class="num rm-early">'+x[2]+'</td><td class="num"><b>'+x[3]+'</b></td></tr>').join('');
  return '<section class="scene scene-rm-sales" aria-label="Cảnh báo RM non tháng nguồn bán PKT SG10" aria-hidden="true">'+
  '<div class="topbar">'+logo()+'<div class="recall-topright"><span class="eyebrow">KIỂM SOÁT RỜI MẠNG NON THÁNG</span><span class="tag">--/--</span></div></div>'+
- '<div class="recall-head"><h1 class="slide-title">CẢNH BÁO RM <span>&lt;3T / &lt;6T</span> · PKT BÁN</h1><p>Hợp đồng do PKT SG10 bán · Quý 3/2026 · đối chiếu tháng 10</p></div>'+
+ '<div class="recall-head"><h1 class="slide-title">CẢNH BÁO RM <span>&lt;3T / &lt;6T</span> · PKT BÁN</h1><p>Hợp đồng do nhân sự PKT SG10 bán · Lũy kế T1–T10/2026</p></div>'+
  '<div class="recall-kpis rm-kpis">'+tiles+'</div>'+
  '<div class="recall-overview-layout rm-layout">'+
-  '<div class="card recall-team-panel rm-data-panel"><div class="recall-panel-heading"><h2>DIỄN BIẾN RM THEO TUỔI THUÊ BAO</h2></div>'+
+  '<div class="card recall-team-panel rm-data-panel"><div class="recall-panel-heading"><h2>DIỄN BIẾN RM NĂM 2026</h2></div>'+
    '<p class="recall-caption">Nhóm 3–&lt;6T loại trừ nhóm &lt;3T; tổng &lt;6T không cộng chồng.</p>'+
-   '<table class="recall-slide-table rm-month-table"><thead><tr><th>Tháng</th><th>&lt;3T</th><th>3–&lt;6T</th><th>Tổng &lt;6T</th></tr></thead><tbody>'+rows+'</tbody></table>'+
-   '<div class="recall-team-note"><b>Tháng 10: 14 HĐ dưới 6T</b> · 12 HĐ thuộc nhóm 3–&lt;6T. Cần kiểm tra nguyên nhân rời mạng theo hợp đồng.</div></div>'+
+   '<table class="recall-slide-table rm-month-table"><thead><tr><th>Kỳ RM</th><th>&lt;3T</th><th>3–&lt;6T</th><th>Tổng &lt;6T</th></tr></thead><tbody>'+rows+'</tbody></table>'+
+   '<div class="recall-team-note"><b>Lũy kế T1–T10: 87 HĐ dưới 6T</b> · Quý 3 có 28 HĐ; tháng 10 có 14 HĐ. Xem hợp đồng, Team và nhân sự trong popup.</div></div>'+
   '<div class="card recall-warehouse rm-action-panel"><div class="recall-panel-heading"><h2>TRỌNG TÂM KIỂM SOÁT</h2></div>'+
    '<div class="rm-duty"><b>01 · TRÁCH NHIỆM PKT</b><p>Nhân sự PKT SG10 bán: rà soát HĐ RM non tháng &lt;3T và 3–&lt;6T, phân tích nguyên nhân từng trường hợp và lập kế hoạch cải thiện chất lượng bán hàng PTTB của cá nhân.</p></div>'+
    '<div class="rm-duty warn"><b>02 · CHẤT LƯỢNG NGUỒN BÁN</b><p>PKT – DVKH tăng cường kiểm soát chất lượng đầu vào. Trường hợp nguồn bán nội bộ phát sinh thuê bao kém chất lượng, nếu có đủ bằng chứng sẽ xử lý nghiêm theo quy định.</p></div>'+
    '<div class="rm-action-line">NÓI KHÔNG VỚI PTTB KÉM CHẤT LƯỢNG DẪN ĐẾN RM &lt;3T</div>'+
   '</div></div>'+
- '<p class="recall-source">Nguồn: dataRM!AY:BG · CN chuẩn hóa HCM_10 · Phòng kinh doanh chuẩn hóa = Phòng kỹ thuật · RM đến 31/10/2026. Đây là số ca RM, không phải tỷ lệ RM trên số bán.</p>'+footer(8)+'</section>';
+ '<p class="recall-source">Nguồn: dataRM!AY:BG · CN chuẩn hóa HCM_10 · Phòng kinh doanh chuẩn hóa = Phòng kỹ thuật · Lũy kế RM 01–10/2026 (chưa gồm T11–T12). Đây là số ca RM, không phải tỷ lệ RM trên số bán.</p>'+footer(8)+'</section>';
 }
 
 originalScenes[6].insertAdjacentHTML('beforebegin',recallSlideOverview()+recallSlidePeople());
