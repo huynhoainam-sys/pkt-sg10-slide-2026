@@ -43,7 +43,7 @@ const scoreTeams=[
 ];
 const scoreTone=(val,good)=>'<b class="cldv-value '+(good?'cldv-good':'cldv-risk')+'">'+val+'</b>';
 const scoreCoverageTone=val=>{const n=parseFloat(String(val).replace(',','.'));return '<b class="cldv-value '+(n<5?'cldv-risk':n<6?'cldv-caution':'cldv-good')+'">'+val+'</b>'};
-const scoreTableRows=scoreTeams.map(t=>'<tr><td><span class="team-mark">'+t.name+'</span></td><td><b>'+t.assessed+'</b></td><td class="num">'+scoreCoverageTone(t.evaluation)+'</td><td class="num">'+scoreTone(t.csat,t.good)+'</td><td class="num">'+t.bad+'</td></tr>').join('');
+const scoreTableRows=scoreTeams.map(t=>'<tr><td><span class="team-mark">'+t.name+'</span></td><td><b>'+t.assessed+'</b></td><td class="num">'+scoreCoverageTone(t.evaluation)+'</td><td class="num">'+t.bad+'</td><td class="num">'+scoreTone(t.csat,t.good)+'</td></tr>').join('');
 const scoreRateRows=scoreTeams.map(t=>'<tr><td><span class="team-mark">'+t.name+'</span></td><td class="num">'+scoreCoverageTone(t.install)+'<small>'+t.installCount+'</small></td><td class="num">'+scoreCoverageTone(t.repair)+'<small>'+t.repairCount+'</small></td><td class="num">'+scoreCoverageTone(t.evaluation)+'<small>'+t.assessed+'</small></td></tr>').join('');
 function replaceSceneWithRecoveryDesign(selector,markup){
  const slide=document.querySelector(selector);if(!slide)return;
@@ -64,7 +64,7 @@ replaceSceneWithRecoveryDesign('.scene-csat',`
   <div class="card recall-team-panel">
    <div class="recall-panel-heading"><h2>KẾT QUẢ ĐÁNH GIÁ · 5 TEAM</h2><span class="cldv-period-pill">CHỐT 31/10</span></div>
    <p class="recall-caption">Xếp theo thứ tự Team SG10 · CSAT đỏ khi ≥3%.</p>
-   <table class="recall-slide-table recall-overview-table cldv-inherited-table"><thead><tr><th>Team</th><th>Đánh giá</th><th>Tỷ lệ</th><th>CSAT 1–2</th><th>Ca 1–2</th></tr></thead><tbody>${scoreTableRows}</tbody></table>
+   <table class="recall-slide-table recall-overview-table cldv-inherited-table"><thead><tr><th>Team</th><th>Đánh giá</th><th>Tỷ lệ</th><th>SỐ CA 1–2</th><th>TỈ LỆ CSAT 1–2</th></tr></thead><tbody>${scoreTableRows}</tbody></table>
    <div class="recall-team-note"><b>LocLV2: 7,67%</b> tỷ lệ đánh giá cao nhất. <b>KhanhLQ3: 4,72%</b> CSAT cần ưu tiên.</div>
   </div>
   <div class="card recall-warehouse cldv-insight-panel">
