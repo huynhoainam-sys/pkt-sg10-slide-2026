@@ -1,0 +1,53 @@
+/* SG10 display harmonization — 03/11/2026.
+   Applied after legacy slide styles. Designed for the native 1600 x 900 canvas.
+   Keeps slide data, backgrounds and interactive controls unchanged. */
+#stage .scene{box-sizing:border-box;overflow:hidden}
+#stage .scene *,#stage .scene *::before,#stage .scene *::after{box-sizing:border-box}
+#stage .scene :is(button,a,[role="button"]):focus-visible{outline:3px solid #f37021!important;outline-offset:2px}
+#stage .scene :is(.card,.recall-team-panel,.recall-warehouse,.recall-people-panel,.g6-tile,.gsafe-stage){border-radius:14px}
+#stage .scene :is(.slide-title,.recall-head .slide-title,.g6-heading,.gsafe-title){overflow-wrap:normal;text-wrap:balance}
+#stage .scene :is(.recall-slide-table,.cldv-table,.cldv-detail-board table){font-variant-numeric:tabular-nums}
+/* Recovery overview: five even KPI tiles, balanced table and warehouse panels. */
+#stage .scene-recall .recall-kpis{left:76px;right:76px;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+#stage .scene-recall .recall-kpis .recall-metric{min-width:0;padding:15px 17px}
+#stage .scene-recall .recall-kpis .recall-metric>span{white-space:normal}
+#stage .scene-recall .recall-overview-layout{grid-template-columns:minmax(0,1.78fr) minmax(0,1fr);gap:18px}
+#stage .scene-recall .recall-team-panel,#stage .scene-recall .recall-warehouse{min-width:0;overflow:hidden}
+#stage .scene-recall .recall-overview-table{width:100%;table-layout:fixed}
+#stage .scene-recall .recall-slide-table th,#stage .scene-recall .recall-slide-table td{overflow:hidden;text-overflow:ellipsis}
+#stage .scene-recall-people .recall-people-layout{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+#stage .scene-recall-people .recall-people-panel{min-width:0;overflow:hidden}
+#stage .scene-recall-people .recall-people-title{min-width:0;gap:13px}
+#stage .scene-recall-people .recall-people-title h2{min-width:0}
+/* GSafe: both instructional scenes use the same left content rail and spacing. */
+#stage .scene-gsafe .gsafe-layout{left:76px}
+#stage .scene-gsafe .gsafe-procedure{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+#stage .scene-gsafe .gsafe-stage{min-width:0;padding:20px 21px}
+#stage .scene-gsafe-maintenance .g6-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+#stage .scene-gsafe-maintenance .g6-tile{min-width:0;padding:19px 21px}
+#stage .scene-gsafe-maintenance .g6-tile.g6-tests{grid-column:1/-1}
+#stage .scene-gsafe-maintenance .g6-card-head{margin-bottom:10px}
+/* November sections: a shared content rectangle, matching cards and legible table rows. */
+#stage .scene :is(.cldv-board,.cldv-detail-board,.nov-overlay,.nov-focus-overlay){
+ inset:70px 65px 73px 65px!important;
+ padding:20px 24px 18px!important;
+ border:1px solid rgba(190,215,232,.84)!important;
+ border-radius:16px!important;
+ background:linear-gradient(105deg,rgba(249,252,255,.97),rgba(243,249,254,.94))!important;
+ box-shadow:0 12px 30px rgba(15,52,87,.09)!important;
+}
+#stage .scene :is(.cldv-head,.nov-head){min-width:0;gap:16px}
+#stage .scene :is(.cldv-head h2,.nov-head h2){line-height:1.14!important}
+#stage .scene .cldv-kpis{grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
+#stage .scene .cldv-kpi{min-width:0;padding:11px 13px}
+#stage .scene .cldv-kpi b{font-size:25px;line-height:1.15}
+#stage .scene .cldv-table{width:100%;table-layout:fixed;border-spacing:0 5px!important}
+#stage .scene .cldv-table th,#stage .scene .cldv-table td{padding:8px 11px;line-height:1.24}
+#stage .scene .cldv-insights{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+#stage .scene .cldv-insight{min-width:0;padding:11px 12px}
+#stage .scene .nov-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+#stage .scene .nov-card{min-width:0;min-height:115px}
+#stage .scene .nov-focus-head,#stage .scene .nov-focus-grid{width:75%}
+#stage .scene .nov-focus-message{left:24px;right:24px}
+#stage .scene :is(.nov-action,.recall-link,.g6-tile){touch-action:manipulation}
+@media(prefers-reduced-motion:reduce){#stage .scene *{animation-duration:.01ms!important;transition-duration:.01ms!important}}
