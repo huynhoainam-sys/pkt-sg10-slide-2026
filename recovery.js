@@ -214,7 +214,7 @@ function openRecovery(mode='all',team='Tất cả'){
  openModal('THU HỒI THIẾT BỊ SG10',`${RECALL.period}, phân công theo ngày tạo. Đơn vị: thiết bị.`, '<div id="recovery-detail"></div>');
  renderRecovery();
 }
-function changeRecovery(mode){recallMode=mode;recallTeam='Tất cả';if($('detailSearch'))$('detailSearch').value='';renderRecovery()}
+function changeRecovery(mode){recallMode=mode;if($('detailSearch'))$('detailSearch').value='';renderRecovery()}
 function changeRecoveryTeam(team){recallTeam=team;renderRecovery()}
 
 function renderRecovery(){
