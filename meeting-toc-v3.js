@@ -10,13 +10,13 @@
   const catalog=[
     {cls:'scene-cover',title:'Họp Phòng Kỹ thuật SG10',detail:'Tăng tốc bán hàng · Nâng chất lượng dịch vụ',group:'TỔNG QUAN'},
     {cls:'scene-sales',title:'Kết quả bán hàng tháng 10',detail:'Lũy kế thực hiện · KPI và tiến độ theo đội',group:'BÁN HÀNG'},
-    {cls:'scene-staff',title:'Kết quả bán hàng theo KTV',detail:'Theo dõi từng đội · Hỗ trợ KTV chưa Online',group:'BÁN HÀNG'},
+    {cls:'scene-staff',title:'Kết quả bán hàng theo KTV',detail:'Theo dõi từng Team · Hỗ trợ KTV chưa Online',group:'BÁN HÀNG'},
     {cls:'scene-kickoff',title:'Kickoff · Thi đua',detail:'Kết quả tháng 9 · Chương trình tháng 10',group:'BÁN HÀNG'},
-    {cls:'scene-csat',title:'Chất lượng dịch vụ tháng 10',detail:'Tỷ lệ đánh giá · CSAT 1–2 theo đội',group:'CHẤT LƯỢNG'},
-    {cls:'scene-alerts',title:'Phân tích CLDV theo đội',detail:'Triển khai · Bảo trì · CSAT 1–2',group:'CHẤT LƯỢNG'},
+    {cls:'scene-csat',title:'Chất lượng dịch vụ tháng 10',detail:'Tỷ lệ đánh giá · CSAT 1–2 theo Team',group:'CHẤT LƯỢNG'},
+    {cls:'scene-alerts',title:'Phân tích CLDV theo Team',detail:'Triển khai · Bảo trì · CSAT 1–2',group:'CHẤT LƯỢNG'},
     {cls:'scene-recall',title:'Kết quả thu hồi tháng 10',detail:'Phân công · Đã thu hồi · Không tiếp cận',group:'THU HỒI'},
     {cls:'scene-recall-people',title:'Nhân sự cần theo sát',detail:'Nhân sự cần theo sát · Nhập kho thiết bị',group:'THU HỒI'},
-    {cls:'scene-rm-sales',title:'Cảnh báo RM dưới 3T/6T – PKT bán',detail:'Theo tuổi thuê bao · Nhân sự bán · Team Đội trưởng',group:'CHẤT LƯỢNG'},
+    {cls:'scene-rm-sales',title:'Cảnh báo RM <3T / <6T · PKT bán',detail:'Theo tuổi thuê bao · Nhân sự bán · Team phụ trách',group:'CHẤT LƯỢNG'},
     {cls:'scene-close',title:'Trọng tâm thực hiện tháng 11',detail:'Thu hồi · Gia cố · CL SOS · CL/PTC · Tập điểm · Lịch OFF',group:'HÀNH ĐỘNG'},
     {cls:'scene-thanks',title:'Cảm ơn & trao đổi',detail:'Góp ý · Phối hợp · Triển khai thực tế',group:'KẾT THÚC'}
   ];
