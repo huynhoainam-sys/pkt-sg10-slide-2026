@@ -1,5 +1,5 @@
 {
-  "version": "V43",
+  "version": "V44",
   "updated": "2026-11-03",
   "entry": "meeting.html",
   "template": "SG10 11-scene deck; headline KPIs at full SG10 scope; Team details only in modal; GSafe/Kickoff excluded",
@@ -62,7 +62,7 @@
     "Cảm ơn & trao đổi"
   ],
   "displayHarmony": "display-harmony-20261103.css",
-  "notes": "Terminology Team; all four numeric themes (sales, CLDV, recovery, RM) have Team-specific popup selectors; preserve SG10 master totals. Staff-level CLDV end-month source not embedded.",
+  "notes": "Projector QA: increased visual contrast and font hierarchy; fullscreen compact Team/personnel popups; three RM age KPIs; retain original data, Team-specific drilldown. JS code validated, browser layout validation pending.",
   "rm": {
     "scope": "HCM_10 + Phòng kỹ thuật source sales",
     "source": "dataRM!A:R, X:Y, AY:BG",
