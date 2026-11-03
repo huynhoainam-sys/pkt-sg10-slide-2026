@@ -47,7 +47,7 @@
 #stage .scene-cover .cover-copy .slide-title{font-size:54px!important;max-width:1150px!important}
 #stage .scene-cover .cover-copy .lead{font-size:21px!important;color:#e7f4ff!important}
 /* Fullscreen modal over the presentation, with fixed title and compact rows. */
-#modalback{inset:0!important;padding:4px!important;display:flex;align-items:center;justify-content:center;z-index:10000!important}
+#modalback{inset:0!important;padding:4px!important;align-items:center;justify-content:center;z-index:10000!important}
 #modalback .modal{
  width:calc(100vw - 8px)!important;max-width:none!important;
  height:calc(100vh - 8px)!important;max-height:none!important;
