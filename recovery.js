@@ -57,7 +57,40 @@ function gsReturnScene(){return `<section class="scene scene-gsafe" aria-label="
 <div class="gsafe-requirements"><span class="gsafe-shield">✓</span><strong>YÊU CẦU KTV</strong><span>Đúng vật tư · Đúng MAC · Đúng nguyên nhân · Ghi rõ lỗi khi chọn “Khác”</span></div></div>
 <div class="gsafe-footnote">Dự kiến công bố cùng MBX 2.7 · Thời điểm phát hành theo thông báo chính thức.</div>${footer(8)}</section>`;}
 
+
+// RM non-tháng source cohort: dataRM!AY:BG, Chi nhánh bán HCM_10 + Phòng kỹ thuật.
+// Strictly sale-origin; not KTV triển khai or the full HCM_10 sales branch.
+function rmSalesSlide(){
+ const metrics=[
+  ['RM DƯỚI 3 THÁNG','5 HĐ','Quý 3 · T7: 0 · T8: 3 · T9: 2','red'],
+  ['RM TỪ 3 ĐẾN DƯỚI 6T','23 HĐ','Quý 3 · T7: 5 · T8: 11 · T9: 7','orange'],
+  ['TỔNG RM DƯỚI 6T','28 HĐ','Quý 3 · Bao gồm nhóm dưới 3T','blue'],
+  ['RM DƯỚI 6T THÁNG 10','14 HĐ','Tăng 5 HĐ so tháng 9','red']
+ ];
+ const tiles=metrics.map(m=>'<div class="card recall-metric '+m[3]+'"><span>'+m[0]+'</span><b>'+m[1]+'</b><small>'+m[2]+'</small></div>').join('');
+ const records=[['THÁNG 7','0','5','5'],['THÁNG 8','3','11','14'],['THÁNG 9','2','7','9'],['THÁNG 10','2','12','14']];
+ const rows=records.map(x=>'<tr><td><b>'+x[0]+'</b></td><td class="num rm-very-early">'+x[1]+'</td><td class="num rm-early">'+x[2]+'</td><td class="num"><b>'+x[3]+'</b></td></tr>').join('');
+ return '<section class="scene scene-rm-sales" aria-label="Cảnh báo RM non tháng nguồn bán PKT SG10" aria-hidden="true">'+
+ '<div class="topbar">'+logo()+'<div class="recall-topright"><span class="eyebrow">KIỂM SOÁT RỜI MẠNG NON THÁNG</span><span class="tag">--/--</span></div></div>'+
+ '<div class="recall-head"><h1 class="slide-title">CẢNH BÁO RM <span>DƯỚI 3T / 6T</span></h1><p>Hợp đồng do PKT SG10 bán · Quý 3/2026 · đối chiếu tháng 10</p></div>'+
+ '<div class="recall-kpis rm-kpis">'+tiles+'</div>'+
+ '<div class="recall-overview-layout rm-layout">'+
+  '<div class="card recall-team-panel rm-data-panel"><div class="recall-panel-heading"><h2>DIỄN BIẾN RM THEO TUỔI THUÊ BAO</h2></div>'+
+   '<p class="recall-caption">Nhóm 3–&lt;6T loại trừ nhóm &lt;3T; tổng &lt;6T không cộng chồng.</p>'+
+   '<table class="recall-slide-table rm-month-table"><thead><tr><th>Tháng</th><th>&lt;3T</th><th>3–&lt;6T</th><th>Tổng &lt;6T</th></tr></thead><tbody>'+rows+'</tbody></table>'+
+   '<div class="recall-team-note"><b>Tháng 10: 14 HĐ dưới 6T</b> · 12 HĐ thuộc nhóm 3–&lt;6T. Cần kiểm tra nguyên nhân rời mạng theo hợp đồng.</div></div>'+
+  '<div class="card recall-warehouse rm-action-panel"><div class="recall-panel-heading"><h2>TRỌNG TÂM KIỂM SOÁT</h2></div>'+
+   '<div class="rm-duty"><b>01 · TRÁCH NHIỆM PKT</b><p>KÝ · KÉO · THU HỒI CÔNG NỢ · XÁC MINH RỜI MẠNG. Rà soát từng HĐ non tháng; yêu cầu kế hoạch khắc phục với trường hợp tái diễn.</p></div>'+
+   '<div class="rm-duty warn"><b>02 · CHẤT LƯỢNG NGUỒN BÁN</b><p>PKT, KD và DVKH cùng kiểm soát bán vào. Kiến nghị siết quản lý sale nội bộ, đối chiếu nguyên nhân trước khi quy trách nhiệm.</p></div>'+
+   '<div class="rm-action-line">NÓI KHÔNG VỚI PTTB KÉM CHẤT LƯỢNG DẪN ĐẾN RM &lt;3T</div>'+
+  '</div></div>'+
+ '<p class="recall-source">Nguồn: dataRM!AY:BG · CN chuẩn hóa HCM_10 · Phòng kinh doanh chuẩn hóa = Phòng kỹ thuật · RM đến 31/10/2026. Đây là số ca RM, không phải tỷ lệ RM trên số bán.</p>'+footer(8)+'</section>';
+}
+
 originalScenes[6].insertAdjacentHTML('beforebegin',recallSlideOverview()+recallSlidePeople());
+originalScenes[6].insertAdjacentHTML('beforebegin',rmSalesSlide());
+// Remove retired kickoff from the active DOM to keep navigation and total pages coherent.
+const retiredKickoff=document.querySelector('#scenes > .scene-kickoff');if(retiredKickoff)retiredKickoff.remove();
 // GSafe slides retired from active deck; helper retained for reversible restore.
 const allScenes=Array.from(document.querySelectorAll('#scenes > .scene'));
 if(allScenes.length!==originalScenes.length+2)console.warn('SG10 deck: unexpected slide count', {original:originalScenes.length,actual:allScenes.length});
