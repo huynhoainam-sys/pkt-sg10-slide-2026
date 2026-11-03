@@ -13,6 +13,8 @@ window.applyCLDV13=function(html){
  for(const [before,after] of replacements)html=html.split(before).join(after);
  html=html.replace('"csatSnapshot":"13/10/2026"','"csatSnapshot":"31/10/2026"');
  const oct31=[["CLDV 13/10","CLDV 31/10"],["13.10.2026","31.10.2026"],["13/10/2026","31/10/2026"],["5,67%","3,25%"],["5.67%","3.25%"],["8 lượt 1–2 sao / 141 đánh giá","15 lượt 1–2 sao / 461 đánh giá"],["4,43%","6,58%"],["4.43%","6.58%"],["141/3.185 lượt gửi","461/7.011 lượt gửi"],["7 KTV có CSAT 1–2","4 KTV LocLV có CSAT 1–2"],["22 KTV chưa có đánh giá","1/17 KTV LocLV chưa có đánh giá"],["KTV CHƯA CÓ ĐÁNH GIÁ","LOCLV CHƯA CÓ ĐÁNH GIÁ"],["color:var(--orange)\">22</div>","color:var(--orange)\">1/17</div>"],["<b class=\"knumber orange num\">26</b>","<b class=\"knumber orange num\">1/17</b>"],["<b class=\"knumber orange num\">22</b>","<b class=\"knumber orange num\">1/17</b>"],["Cần tăng mời đánh giá","Trong 17 KTV LocLV được cung cấp"],["7 KTV cần recare","4 KTV LocLV cần recare"],["7 KTV có CSAT 1–2","4 KTV LocLV có CSAT 1–2"],["Danh sách 22 KTV","Danh sách 1/17 KTV LocLV"],["22 KTV chưa đánh giá","1/17 KTV LocLV chưa đánh giá"],["DANH SÁCH CẢNH BÁO","CẢNH BÁO LOCLV (17 KTV)"],["Nguồn: CLDV lần 2 & CSAT 1–2","Nguồn: CLDV lần 2 & CSAT 1–2 • Chốt 31/10"]];for(const [a,b] of oct31)html=html.split(a).join(b);
+ const kick=html.indexOf('<section class="scene scene-kickoff');
+ if(kick>=0){const nextScene=html.indexOf('<section class="scene ',kick+30);if(nextScene>kick)html=html.slice(0,kick)+html.slice(nextScene);}
  return html;
 };
 window.applyCLDV13Index=function(js){return js.replace('4,41% và 6,78%','6,58% và 3,25%').replace('4,43% và 5,67%','6,58% và 3,25%').replace('7 + 26 KTV','4 + 1 KTV LocLV').replace('7 + 22 KTV','4 + 1 KTV LocLV');};
