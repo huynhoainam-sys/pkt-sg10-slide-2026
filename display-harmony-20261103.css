@@ -408,3 +408,29 @@
 #stage .scene-cover .cover-copy .slide-title{font-size:58px!important;line-height:1.12!important;letter-spacing:-1.6px!important;text-wrap:balance}
 #stage .scene-cover .cover-copy .lead{font-size:20px!important;line-height:1.5!important}
 #stage .scene-cover .cover-bullets .focus b{font-size:17px;line-height:1.4}
+
+/* V41 — RM sales popup, filter controls and leader distribution.
+   Mirrors SG10 recovery details; status colors only for age bands. */
+#stage .scene-rm-sales .rm-team-summary{border-top:1px solid #c5daeb;margin-top:3px;padding-top:12px}
+#stage .scene-rm-sales .rm-team-summary>b{display:block;font-size:12px;color:#375e7b;letter-spacing:.35px;margin-bottom:8px}
+#stage .scene-rm-sales .rm-team-pills{display:flex;flex-wrap:wrap;gap:6px}
+#stage .scene-rm-sales .rm-team-pills button{border:1px solid #a7cce2;border-radius:8px;padding:6px 9px;background:#f1f8fd;color:#165483;font:750 11px "SG10 Inter",Arial,sans-serif;cursor:pointer}
+#stage .scene-rm-sales .rm-team-pills button:hover{background:#dceffa;border-color:#0072bc}
+#stage .scene-rm-sales .rm-detail-button{font-size:12px!important;white-space:nowrap;padding:7px 10px!important}
+#stage .scene-rm-sales .rm-data-panel .recall-panel-heading{gap:10px}
+#stage .scene-rm-sales .rm-duty{padding:10px 12px!important}
+#stage .scene-rm-sales .rm-duty>b{font-size:13.5px!important}
+#stage .scene-rm-sales .rm-duty p{font-size:12.6px!important;line-height:1.35!important;margin:5px 0 0!important}
+#stage .scene-rm-sales .rm-action-line{font-size:12.5px!important;line-height:1.25!important;padding:9px 11px!important}
+#modalback .rm-popup-controls{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+#modalback .rm-popup-controls label{display:flex;align-items:center;gap:8px;color:#123c60;font-size:14px;font-weight:750}
+#modalback .rm-popup-controls select{min-width:145px;padding:9px 10px;border:1px solid #bad4e7;border-radius:8px;background:#f6fbff;color:#143e5c;font-size:14px}
+#modalback .rm-popup-summary{margin:6px 0 12px;padding:12px 14px;border-radius:9px;background:#e7f3fb;color:#12395a;font-size:14px}
+#modalback .rm-popup-table-wrap{width:100%;max-height:51vh;overflow:auto;border:1px solid #c8dce9;border-radius:9px}
+#modalback .rm-popup-table{width:100%;min-width:990px;border-collapse:collapse;font-size:12.5px;color:#234966}
+#modalback .rm-popup-table th{position:sticky;top:0;background:#103c5e;color:#fff;z-index:1;text-align:left;padding:11px 10px;white-space:nowrap}
+#modalback .rm-popup-table td{padding:10px;border-bottom:1px solid #d5e5ee;vertical-align:top;line-height:1.42}
+#modalback .rm-popup-table tr:nth-child(even){background:#f1f7fc}
+#modalback .rm-popup-table .rm-bad{color:#c43e33;font-weight:850}
+#modalback .rm-popup-table .rm-warn{color:#ad6418;font-weight:800}
+#modalback .rm-popup-source{font-size:11.5px;color:#547087;line-height:1.5;margin:10px 0}
