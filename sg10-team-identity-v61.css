@@ -1,0 +1,60 @@
+/* V61 · Team identity is fixed across all 11 slides and popups.
+   KPI outcome colors (red/amber/green) remain independent. */
+:root{
+ --sg10-team-khang:#0C5B91;--sg10-team-khang-bg:#D6ECFA;
+ --sg10-team-loc:#9B550C;--sg10-team-loc-bg:#FFE9CD;
+ --sg10-team-sang:#A63D68;--sg10-team-sang-bg:#FCE0EA;
+ --sg10-team-thinh:#11734A;--sg10-team-thinh-bg:#DDF6E5;
+ --sg10-team-khanh:#7043A0;--sg10-team-khanh-bg:#F0E3FA;
+}
+#stage .team-mark.khang,#modalback .team-mark.khang,
+.sg10-team-name.sg10-team-khang{--sg10-identity:#0C5B91;--sg10-identity-bg:#D6ECFA}
+#stage .team-mark.loc,#modalback .team-mark.loc,
+.sg10-team-name.sg10-team-loc{--sg10-identity:#9B550C;--sg10-identity-bg:#FFE9CD}
+#stage .team-mark.sang,#modalback .team-mark.sang,
+.sg10-team-name.sg10-team-sang{--sg10-identity:#A63D68;--sg10-identity-bg:#FCE0EA}
+#stage .team-mark.thinh,#modalback .team-mark.thinh,
+.sg10-team-name.sg10-team-thinh{--sg10-identity:#11734A;--sg10-identity-bg:#DDF6E5}
+#stage .team-mark.khanh,#modalback .team-mark.khanh,
+.sg10-team-name.sg10-team-khanh{--sg10-identity:#7043A0;--sg10-identity-bg:#F0E3FA}
+#stage .team-mark:is(.khang,.loc,.sang,.thinh,.khanh),
+#modalback .team-mark:is(.khang,.loc,.sang,.thinh,.khanh),
+#stage .sg10-team-name,#modalback .sg10-team-name{
+ color:var(--sg10-identity)!important;
+ background:var(--sg10-identity-bg)!important;
+ border-radius:7px!important;
+ font-weight:900!important;
+ padding:4px 8px!important;
+ box-decoration-break:clone;
+ -webkit-box-decoration-break:clone;
+}
+#stage .scene-sales .team-panel .teambar>b.sg10-team-name{
+ font-size:20px!important;
+ color:var(--sg10-identity)!important;
+ background:var(--sg10-identity-bg)!important;
+ padding:7px 10px!important;
+ width:max-content;max-width:100%;
+}
+#stage .scene-staff .team-name .team-mark,
+#stage .recall-slide-table .team-mark{
+ color:var(--sg10-identity)!important;
+ background:var(--sg10-identity-bg)!important;
+}
+#modalback .cldv-popup-compact-table td.sg10-team-name{
+ color:var(--sg10-identity)!important;
+ background:var(--sg10-identity-bg)!important;
+}
+#modalback .sg10-team-name.sg10-team-select,
+#stage .sg10-team-name.sg10-team-select{
+ border:1px solid var(--sg10-identity)!important;
+ color:var(--sg10-identity)!important;
+ background:var(--sg10-identity-bg)!important;
+}
+#stage .sg10-team-drill select.sg10-team-all,
+#modalback select.sg10-team-all{
+ background:#fff!important;color:#153f61!important;border-color:#bed8e9!important;
+}
+/* Team row identity stripe only; metric cells keep their KPI warning colors. */
+#modalback .rm-team-row-link.sg10-team-name{
+ border:0!important;color:var(--sg10-identity)!important;background:var(--sg10-identity-bg)!important;
+}
