@@ -1,8 +1,8 @@
 {
-  "version": "V39",
+  "version": "V43",
   "updated": "2026-11-03",
   "entry": "meeting.html",
-  "template": "SG10 meeting: 10 active scenes; recovery visual template used for CLDV",
+  "template": "SG10 11-scene deck; headline KPIs at full SG10 scope; Team details only in modal; GSafe/Kickoff excluded",
   "sources": {
     "pttb": {
       "file": "PKT10 - PTTB 2026 - Master Report.xlsx",
@@ -53,13 +53,36 @@
     "Kết quả bán hàng tháng 10",
     "Kết quả bán hàng theo KTV",
     "Chất lượng dịch vụ tháng 10",
-    "Phân tích CLDV theo đội",
+    "Phân tích CLDV theo Team",
     "Kết quả thu hồi tháng 10",
     "Nhân sự cần theo sát",
+    "Cảnh báo RM <3T / <6T · PKT bán",
     "Nghiệm thu tập điểm",
     "Trọng tâm thực hiện tháng 11",
     "Cảm ơn & trao đổi"
   ],
   "displayHarmony": "display-harmony-20261103.css",
-  "notes": "QA tiêu đề, cỡ chữ, màu nhấn và rule KPI. Không thay đổi dữ liệu."
+  "notes": "Terminology Team; all four numeric themes (sales, CLDV, recovery, RM) have Team-specific popup selectors; preserve SG10 master totals. Staff-level CLDV end-month source not embedded.",
+  "rm": {
+    "scope": "HCM_10 + Phòng kỹ thuật source sales",
+    "source": "dataRM!A:R, X:Y, AY:BG",
+    "teamSource": "MAP ĐT - KTV TKM!A:B",
+    "snapshot": "2026-10-31",
+    "q3": {
+      "under3": 5,
+      "between3and6": 23,
+      "under6": 28
+    },
+    "october": {
+      "under3": 2,
+      "between3and6": 12,
+      "under6": 14
+    },
+    "popupJulyOctober": {
+      "total": 42,
+      "mapped": 34,
+      "unmapped": 8
+    },
+    "mode": "snapshot"
+  }
 }
