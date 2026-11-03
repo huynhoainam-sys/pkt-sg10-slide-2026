@@ -144,7 +144,7 @@ window.__PKT.go=go;window.__PKT.openIndex=openIndex;recallCounter();
 table=function(headers,rows){
  let widths=[];
  if(headers.length===12&&headers[0]==='KTV'&&headers.includes('WiFi 6 + 7 đã TH'))widths=[14,8,6.5,6.5,6.5,6.5,8,8,6.5,7,8,14.5];
- else if(headers.length===11&&headers[0]==='Đội trưởng')widths=[17,8,8,8,8,10,10,7,7,9,8];
+ else if(headers.length===11&&(headers[0]==='Đội trưởng'||headers[0]==='Team'))widths=[17,8,8,8,8,10,10,7,7,9,8];
  else if(headers.length===8&&headers.includes('PTTB tháng 10'))widths=[10,13,9,11,11,12,13,21];
  const cols=widths.length?`<colgroup>${widths.map(w=>`<col style="width:${w}%">`).join('')}</colgroup>`:'';
  return `<div class="table-shell"><table class="data-table ${widths.length?'balanced-columns':''}">${cols}<thead><tr>${headers.map((x,i)=>`<th aria-sort="none"><button type="button" class="col-sort" data-col="${i}" aria-label="Sắp xếp cột ${esc(x)}" title="Nhấp để sắp xếp"><span class="sort-label">${x}</span><span class="sort-indicator" aria-hidden="true">↕</span></button></th>`).join('')}</tr></thead><tbody>${rows.join('')}</tbody></table></div>`;
