@@ -31,7 +31,7 @@ function modal(title,subtitle,body){if(typeof openModal==='function')openModal(t
 window.openNovOps=function(type){
  if(type==='sos')modal('KIỂM SOÁT CL SOS & CL/PTC','Áp dụng từ 03/11/2026',`<div class="nov-modal-grid"><div class="nov-modal-card"><h3>CL SOS · tiếp cận khách hàng</h3><ol><li>Đến nhà và ghi nhận tình trạng thực tế.</li><li>Chưa gặp khách: tiếp tục đủ <b>3 khung giờ khác nhau</b>.</li><li>Vẫn không gặp: phối hợp DVKH xác nhận và đóng phiếu đúng quy định.</li></ol></div><div class="nov-modal-card"><h3>CL/PTC · kiểm soát cuối ngày</h3><p>Rà các phiếu sắp vượt mốc <b>24 giờ / 72 giờ</b>; xử lý ngay hoặc chuyển danh sách theo dõi, không để quá hạn im lặng.</p><p class="nov-alert">Note đúng tình trạng, đúng lần tiếp cận, đúng người chịu trách nhiệm.</p></div></div>`);
  if(type==='recall')modal('KIỂM SOÁT THU HỒI & PHIẾU GIA CỐ','Mốc rà soát trước 10/11/2026',`<div class="nov-modal-grid"><div class="nov-modal-card"><h3>Thu hồi thiết bị</h3><p>Rà soát toàn bộ phiếu trước <b>10/11</b>. Tồn quá ngày 10: <span class="nov-alert">5.000đ / thiết bị</span>.</p><p>Ưu tiên thiết bị WiFi 6/7; cập nhật đúng trạng thái và nhập kho đầy đủ.</p></div><div class="nov-modal-card"><h3>Phiếu gia cố</h3><p>Trước khi trả phiếu phải note đúng thực tế: nhà khóa cửa, không gặp KH/chủ trọ, không liên hệ được…</p><p class="nov-ok">Gia cố thành công: 80.000đ / PTC.</p></div></div>`);
- if(type==='point')modal('KẾ HOẠCH BẢO QUẢN, CẢI TẠO TẬP ĐIỂM','Ưu tiên cao · giao việc từ 03/11/2026',`<div class="nov-modal-grid"><div class="nov-modal-card"><h3>Chỉ tiêu bắt buộc</h3><p><b>6 tháng/lần</b> cho chu kỳ định kỳ.<br><b>≥15%/tháng</b> trên tổng tập điểm quản lý.<br><b>1 báo cáo/tuần</b> theo đội và chi nhánh lên BDH.</p></div><div class="nov-modal-card"><h3>Phân công 5 Đội trưởng</h3><p>KhangTV1 · LocLV2 · SangH · ThinhPT · KhanhLQ3</p><p>Số lượng giao = làm tròn lên (tổng tập điểm × 15%). Chưa điền số tuyệt đối khi chưa có danh sách nguồn.</p></div></div>`);
+ if(type==='point')modal('KẾ HOẠCH BẢO QUẢN, CẢI TẠO TẬP ĐIỂM','Ưu tiên cao · giao việc từ 03/11/2026',`<div class="nov-modal-grid"><div class="nov-modal-card"><h3>Chỉ tiêu bắt buộc</h3><p><b>6 tháng/lần</b> cho chu kỳ định kỳ.<br><b>≥15%/tháng</b> trên tổng tập điểm quản lý.<br><b>1 báo cáo/tuần</b> theo Team và chi nhánh lên BDH.</p></div><div class="nov-modal-card"><h3>Phân công 5 Đội trưởng</h3><p>KhangTV1 · LocLV2 · SangH · ThinhPT · KhanhLQ3</p><p>Số lượng giao = làm tròn lên (tổng tập điểm × 15%). Chưa điền số tuyệt đối khi chưa có danh sách nguồn.</p></div></div>`);
 };
 /* CLDV slides 04–05 inherit the exact recovery slides 06–07 structural components. */
 const scoreTeams=[
@@ -61,7 +61,7 @@ replaceSceneWithRecoveryDesign('.scene-csat',`
  </div>
  <div class="recall-overview-layout">
   <div class="card recall-team-panel">
-   <div class="recall-panel-heading"><h2>KẾT QUẢ ĐÁNH GIÁ · 5 ĐỘI</h2><span class="cldv-period-pill">CHỐT 31/10</span></div>
+   <div class="recall-panel-heading"><h2>KẾT QUẢ ĐÁNH GIÁ · 5 TEAM</h2><span class="cldv-period-pill">CHỐT 31/10</span></div>
    <p class="recall-caption">Xếp theo thứ tự Đội trưởng chuẩn SG10 · CSAT đỏ khi ≥3%.</p>
    <table class="recall-slide-table recall-overview-table cldv-inherited-table"><thead><tr><th>Đội trưởng</th><th>Đánh giá</th><th>Tỷ lệ</th><th>CSAT 1–2</th><th>Ca 1–2</th></tr></thead><tbody>${scoreTableRows}</tbody></table>
    <div class="recall-team-note"><b>LocLV2: 7,67%</b> tỷ lệ đánh giá cao nhất. <b>KhanhLQ3: 4,72%</b> CSAT cần ưu tiên.</div>
@@ -78,8 +78,20 @@ replaceSceneWithRecoveryDesign('.scene-csat',`
  </div>
  <p class="recall-source">Nguồn: tổng hợp CLDV/CSAT 31/10 · 461 lượt đánh giá / 7.011 lượt TK + BT.</p>
 `);
+
+// Live per-Team CLDV detail uses the exact October snapshot used by the five-Team slide.
+window.openSG10CLDVTeam=function(team='Tất cả'){
+ const arr=team==='Tất cả'?scoreTeams:scoreTeams.filter(t=>t.name===team);
+ const escs=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const fmt=arr.map(t=>'<tr><td><b>'+escs(t.name)+'</b></td><td>'+t.install+'<small>'+t.installCount+'</small></td><td>'+t.repair+'<small>'+t.repairCount+'</small></td><td>'+t.evaluation+'<small>'+t.assessed+'</small></td><td class="'+(t.good?'sg10-good':'sg10-danger')+'">'+t.csat+'<small>'+t.bad+'</small></td></tr>').join('');
+ const selector='<div class="sg10-team-control"><label for="sg10CLDVSelect">Chọn Team</label><select id="sg10CLDVSelect">'+['Tất cả',...scoreTeams.map(t=>t.name)].map(t=>'<option value="'+t+'" '+(t===team?'selected':'')+'>'+t+'</option>').join('')+'</select></div>';
+ const tableMarkup='<table class="sg10-team-detail-table"><thead><tr><th>Team</th><th>Triển khai</th><th>Bảo trì</th><th>Tỷ lệ đánh giá</th><th>CSAT 1–2</th></tr></thead><tbody>'+fmt+'</tbody></table><p class="sg10-team-note">Nguồn: thống kê CLDV/CSAT chốt 31/10/2026. Tỷ lệ tính trên mẫu số riêng từng Team; CSAT 1–2 dưới 3% là đạt. Chi tiết KTV cần đối soát từ nguồn CLDV gốc, không suy từ tỷ lệ Team.</p>';
+ if(typeof openModal!=='function')return;
+ openModal('CLDV & CSAT · '+(team==='Tất cả'?'5 TEAM SG10':team),'Dữ liệu chốt 31/10/2026 · không realtime',selector+'<div id="sg10CLDVBody">'+tableMarkup+'</div>');
+ document.getElementById('sg10CLDVSelect')?.addEventListener('change',e=>window.openSG10CLDVTeam(e.target.value));
+};
 replaceSceneWithRecoveryDesign('.scene-alerts',`
- <div class="recall-head"><h1 class="slide-title">PHÂN TÍCH CLDV <span>THEO ĐỘI</span></h1><p>Triển khai & bảo trì · chốt 31/10/2026 · kế thừa bố cục hai bảng theo dõi nhân sự</p></div>
+ <div class="recall-head"><h1 class="slide-title">PHÂN TÍCH CLDV <span>theo Team</span></h1><p>Triển khai & bảo trì · chốt 31/10/2026 · kế thừa bố cục hai bảng theo dõi nhân sự</p></div>
  <div class="recall-people-layout">
   <div class="card recall-people-panel">
    <div class="recall-people-title"><b class="recall-orange">158</b><div><h2>TỶ LỆ ĐÁNH GIÁ TRIỂN KHAI</h2><p>158/2.558 lượt · tỷ lệ 6,18% toàn SG10.</p></div></div>
@@ -113,7 +125,7 @@ const s12=document.querySelector('.scene-close');if(s12){const o=document.create
  rename('.scene-sales','KẾT QUẢ <span>BÁN HÀNG THÁNG 10</span>','KẾT QUẢ BÁN HÀNG');
  rename('.scene-staff','KẾT QUẢ BÁN HÀNG <span>THEO KTV</span>','BÁN HÀNG THEO KTV');
  rename('.scene-csat','CHẤT LƯỢNG DỊCH VỤ <span>THÁNG 10</span>','CHẤT LƯỢNG DỊCH VỤ');
- rename('.scene-alerts','PHÂN TÍCH CLDV <span>THEO ĐỘI</span>','PHÂN TÍCH CLDV');
+ rename('.scene-alerts','PHÂN TÍCH CLDV <span>theo Team</span>','PHÂN TÍCH CLDV');
  rename('.scene-recall','KẾT QUẢ <span>THU HỒI THÁNG 10</span>','KẾT QUẢ THU HỒI');
  rename('.scene-recall-people','NHÂN SỰ <span>CẦN THEO SÁT</span>','THEO DÕI THU HỒI');
  const guide=document.querySelector('.scene-am-guide .nov-overlay .nov-head h2');
