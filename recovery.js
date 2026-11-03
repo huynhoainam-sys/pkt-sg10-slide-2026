@@ -58,9 +58,9 @@ function gsReturnScene(){return `<section class="scene scene-gsafe" aria-label="
 <div class="gsafe-footnote">Dự kiến công bố cùng MBX 2.7 · Thời điểm phát hành theo thông báo chính thức.</div>${footer(8)}</section>`;}
 
 originalScenes[6].insertAdjacentHTML('beforebegin',recallSlideOverview()+recallSlidePeople());
-originalScenes[6].insertAdjacentHTML('beforebegin',gsReturnScene());
+// GSafe slides retired from active deck; helper retained for reversible restore.
 const allScenes=Array.from(document.querySelectorAll('#scenes > .scene'));
-if(allScenes.length!==originalScenes.length+3)console.warn('SG10 deck: unexpected slide count', {original:originalScenes.length,actual:allScenes.length});
+if(allScenes.length!==originalScenes.length+2)console.warn('SG10 deck: unexpected slide count', {original:originalScenes.length,actual:allScenes.length});
 allScenes.forEach((scene,i)=>{
  scene.dataset.page=String(i);scene.setAttribute('aria-label','Slide '+(i+1));scene.setAttribute('aria-hidden',i===active?'false':'true');
  const step=scene.querySelector('.topbar .tag');if(step){step.textContent=String(i+1).padStart(2,'0')+'/'+allScenes.length;step.id='step-display-'+i;}
