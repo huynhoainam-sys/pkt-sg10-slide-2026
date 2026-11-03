@@ -25,7 +25,7 @@ function setIdentity(el,selected){
 function apply(root=document){
  const lookups=[
  '#stage .scene-sales .team-panel .teambar > b',
- '#stage .scene-staff .team-report-row .team-name',
+ '#stage .team-mark',
  '#stage .cldv-recovery-layout .team-mark',
  '#stage .recall-slide-table .team-mark',
  '#stage .sg10-team-drill select',
