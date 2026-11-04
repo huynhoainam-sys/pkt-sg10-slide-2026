@@ -1,1 +1,6 @@
-hello
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>Họp PKT SG10</title></head><body><p>Đang tải bài trình chiếu SG10…</p><script>
+fetch("https://cdn.jsdelivr.net/gh/huynhoainam-sys/pkt-sg10-slide-2026@60766a7313ab2c72d9d3411d2d9f1f97e5b9d3ab/meeting.html")
+.then(r=>{if(!r.ok)throw Error("Không thể tải bản trình chiếu");return r.text()})
+.then(t=>{t=t.replace("operations-sync-20261015.js?v=20261104-v64","operations-sync-20261015.js?v=20261104-v65");document.open();document.write(t);document.close()})
+.catch(e=>{document.body.textContent="Không thể tải slide: "+e.message});
+</script></body></html>
