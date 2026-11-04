@@ -8,17 +8,17 @@
   if(!deck) { console.warn('[SG10 TOC] Deck not found'); return; }
 
   const catalog=[
-    {cls:'scene-cover',title:'Họp PKT tháng 11',detail:'Báo cáo vận hành và trọng tâm triển khai',group:'TỔNG QUAN'},
-    {cls:'scene-sales',title:'Kết quả bán hàng tháng 10',detail:'Lũy kế thực hiện · KPI và tiến độ theo đội',group:'BÁN HÀNG'},
-    {cls:'scene-staff',title:'Kết quả bán hàng theo KTV',detail:'Theo dõi từng Team · Hỗ trợ KTV chưa Online',group:'BÁN HÀNG'},
+    {cls:'scene-cover',title:'HỌP PKT THÁNG 11',detail:'Kết quả tháng 10 · Trọng tâm tháng 11',group:'TỔNG QUAN'},
+    {cls:'scene-sales',title:'Kết quả bán hàng tháng 10',detail:'PTTB bán T10 đã Online · KPI 5 Team',group:'BÁN HÀNG'},
+    {cls:'scene-staff',title:'Kết quả bán hàng theo KTV',detail:'Số liệu T10/2026 · theo Team và KTV',group:'BÁN HÀNG'},
     {cls:'scene-kickoff',title:'Kickoff · Thi đua',detail:'Kết quả tháng 9 · Chương trình tháng 10',group:'BÁN HÀNG'},
     {cls:'scene-csat',title:'Chất lượng dịch vụ tháng 10',detail:'Tỷ lệ đánh giá · CSAT 1–2 theo Team',group:'CHẤT LƯỢNG'},
-    {cls:'scene-alerts',title:'Phân tích CLDV theo Team',detail:'Triển khai · Bảo trì · CSAT 1–2',group:'CHẤT LƯỢNG'},
+    {cls:'scene-alerts',title:'Phân tích CLDV theo Team',detail:'Kết quả T10/2026 · Triển khai · Bảo trì · CSAT 1–2',group:'CHẤT LƯỢNG'},
     {cls:'scene-recall',title:'Kết quả thu hồi tháng 10',detail:'Phân công · Đã thu hồi · Không tiếp cận',group:'THU HỒI'},
-    {cls:'scene-recall-people',title:'Nhân sự cần theo sát',detail:'Nhân sự cần theo sát · Nhập kho thiết bị',group:'THU HỒI'},
-    {cls:'scene-rm-sales',title:'Cảnh báo RM <3T / <6T · PKT bán',detail:'Theo tuổi thuê bao · Nhân sự bán · Team phụ trách',group:'CHẤT LƯỢNG'},
+    {cls:'scene-recall-people',title:'Nhân sự cần theo sát',detail:'Kết quả thu hồi T10 · KTV còn tồn và không thành công',group:'THU HỒI'},
+    {cls:'scene-rm-sales',title:'Cảnh báo RM <3T / <6T · PKT bán',detail:'Lũy kế T1–T10/2026 · Team và nhân sự nguồn PKT',group:'CHẤT LƯỢNG'},
     {cls:'scene-close',title:'Trọng tâm thực hiện tháng 11',detail:'Thu hồi · Gia cố · CL SOS · CL/PTC · Tập điểm · Lịch OFF',group:'HÀNH ĐỘNG'},
-    {cls:'scene-thanks',title:'Cảm ơn & trao đổi',detail:'Góp ý · Phối hợp · Triển khai thực tế',group:'KẾT THÚC'}
+    {cls:'scene-thanks',title:'Cảm ơn & trao đổi',detail:'Họp PKT tháng 11/2026 · Góp ý và triển khai',group:'KẾT THÚC'}
   ];
   const groups={ 'TỔNG QUAN':'blue', 'BÁN HÀNG':'orange', 'CHẤT LƯỢNG':'pink',
                  'THU HỒI':'green', 'HÀNH ĐỘNG':'orange', 'KẾT THÚC':'blue'};
@@ -42,7 +42,7 @@
     const activeIndex=activeSlideIndex(scenes);
     const fmt=n=>String(n+1).padStart(2,'0');
     return {length:scenes.length,html:
-      '<div class="sg10-toc-intro"><span>CHỌN NỘI DUNG ĐỂ CHUYỂN SLIDE</span><strong>'+scenes.length+' SLIDE · HỌP PKT SG10</strong></div>'+
+      '<div class="sg10-toc-intro"><span>CHỌN NỘI DUNG ĐỂ CHUYỂN SLIDE</span><strong>'+scenes.length+' SLIDE · HỌP PKT THÁNG 11/2026</strong></div>'+
       '<div class="sg10-toc-grid" id="sg10-toc-grid" role="group" aria-label="Danh sách '+scenes.length+' slide">'+
       scenes.map((scene,i)=>{
         const x=itemFor(scene,i),selected=i===activeIndex;
@@ -69,7 +69,7 @@
   function showIndex(){
     const result=indexHtml();
     if(typeof openModal!=='function')return;
-    openModal('MỤC LỤC HỌP PKT',result.length+' slide · Chọn mục để chuyển tới đúng trang',result.html);
+    openModal('MỤC LỤC HỌP PKT THÁNG 11',result.length+' slide · Chọn mục để chuyển tới đúng trang',result.html);
     const grid=document.getElementById('sg10-toc-grid');
     grid?.addEventListener('click',event=>{
       const button=event.target.closest('button[data-sg10-slide]');
