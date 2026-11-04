@@ -3,7 +3,7 @@ fetch("https://cdn.jsdelivr.net/gh/huynhoainam-sys/pkt-sg10-slide-2026@60766a731
 .then(r=>{if(!r.ok)throw Error("Không thể tải bản trình chiếu");return r.text()})
 .then(t=>{t=t.replace("operations-sync-20261015.js?v=20261104-v64","operations-sync-20261015.js?v=20261104-v65");t=t.replace("meeting-toc-v3.js?v=46","meeting-toc-v3.js?v=66");
 t=t.replace("</head>",'<link rel="stylesheet" href="./sg10-meeting-period-v66.css?v=66"></head>');
-t=t.replace(/<\\/body>\\s*<\\/html>\\s*$/i,'<script src="./sg10-meeting-period-v66.js?v=66"><\\/script></body></html>');
+t=t.replace("</body></html>",'<script src="./sg10-meeting-period-v66.js?v=66"><\/script></body></html>');
 document.open();document.write(t);document.close()})
 .catch(e=>{document.body.textContent="Không thể tải slide: "+e.message});
 </script></body></html>
