@@ -63,7 +63,7 @@ replaceSceneWithRecoveryDesign('.scene-csat',`
  <div class="recall-overview-layout">
   <div class="card recall-team-panel">
    <div class="recall-panel-heading"><h2>KẾT QUẢ ĐÁNH GIÁ · 5 TEAM</h2><span class="cldv-period-pill">CHỐT 31/10</span></div>
-   <p class="recall-caption">Xếp theo thứ tự Team SG10 · CSAT đỏ khi ≥3%.</p>
+   <p class="recall-caption">Theo 5 Team SG10</p>
    <table class="recall-slide-table recall-overview-table cldv-inherited-table"><thead><tr><th>Team</th><th>TỈ LỆ ĐG</th><th>TL CSAT 1–2</th><th>CSAT 1–2</th></tr></thead><tbody>${scoreTableRows}</tbody></table>
    <div class="recall-team-note"><b>LocLV2: 7,67%</b> tỷ lệ đánh giá cao nhất. <b>KhanhLQ3: 4,72%</b> CSAT cần ưu tiên.</div>
   </div>
@@ -77,7 +77,7 @@ replaceSceneWithRecoveryDesign('.scene-csat',`
    <div class="cldv-panel-footer">Mục tiêu CSAT 1–2: dưới 3%.</div>
   </div>
  </div>
- <p class="recall-source">Nguồn: tổng hợp CLDV/CSAT 31/10 · 461 lượt đánh giá / 7.011 lượt TK + BT.</p>
+ <p class="recall-source">Nguồn: CLDV/CSAT · 31/10 · 461/7.011 lượt TK + BT.</p>
 `);
 
 // Live per-Team CLDV detail uses the exact October snapshot used by the five-Team slide.
@@ -86,17 +86,17 @@ window.openSG10CLDVTeam=function(team='Tất cả'){
  const escs=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const fmt=arr.map(t=>'<tr><td><b>'+escs(t.name)+'</b></td><td>'+t.install+'<small>'+t.installCount+'</small></td><td>'+t.repair+'<small>'+t.repairCount+'</small></td><td>'+t.evaluation+'<small>'+t.assessed+'</small></td><td class="'+(t.good?'sg10-good':'sg10-danger')+'">'+t.csat+'<small>'+t.bad+'</small></td></tr>').join('');
  const selector='<div class="sg10-team-control"><label for="sg10CLDVSelect">Chọn Team</label><select id="sg10CLDVSelect">'+['Tất cả',...scoreTeams.map(t=>t.name)].map(t=>'<option value="'+t+'" '+(t===team?'selected':'')+'>'+t+'</option>').join('')+'</select></div>';
- const tableMarkup='<table class="sg10-team-detail-table"><thead><tr><th>Team</th><th>Triển khai</th><th>Bảo trì</th><th>Tỷ lệ đánh giá</th><th>CSAT 1–2</th></tr></thead><tbody>'+fmt+'</tbody></table><p class="sg10-team-note">Nguồn: thống kê CLDV/CSAT chốt 31/10/2026. Tỷ lệ tính trên mẫu số riêng từng Team; CSAT 1–2 dưới 3% là đạt. Chi tiết KTV cần đối soát từ nguồn CLDV gốc, không suy từ tỷ lệ Team.</p>';
+ const tableMarkup='<table class="sg10-team-detail-table"><thead><tr><th>Team</th><th>Triển khai</th><th>Bảo trì</th><th>Tỷ lệ đánh giá</th><th>CSAT 1–2</th></tr></thead><tbody>'+fmt+'</tbody></table><p class="sg10-team-note">Nguồn: CLDV/CSAT · chốt 31/10/2026 · theo từng Team.</p>';
  if(typeof openModal!=='function')return;
- openModal('CLDV & CSAT · '+(team==='Tất cả'?'5 TEAM SG10':team),'Dữ liệu chốt 31/10/2026 · không realtime',selector+'<div id="sg10CLDVBody">'+tableMarkup+'</div>');
+ openModal('CLDV & CSAT · '+(team==='Tất cả'?'5 TEAM SG10':team),'Chốt 31/10/2026',selector+'<div id="sg10CLDVBody">'+tableMarkup+'</div>');
  document.getElementById('sg10CLDVSelect')?.addEventListener('change',e=>window.openSG10CLDVTeam(e.target.value));
 };
 replaceSceneWithRecoveryDesign('.scene-alerts',`
- <div class="recall-head"><h1 class="slide-title">PHÂN TÍCH CLDV <span>theo Team</span></h1><p>Triển khai & bảo trì · chốt 31/10/2026 · kế thừa bố cục hai bảng theo dõi nhân sự</p></div>
+ <div class="recall-head"><h1 class="slide-title">PHÂN TÍCH CLDV <span>theo Team</span></h1><p>Triển khai & bảo trì · chốt 31/10/2026</p></div>
  <div class="recall-people-layout">
   <div class="card recall-people-panel">
    <div class="recall-people-title"><b class="recall-orange">158</b><div><h2>TỶ LỆ ĐÁNH GIÁ TRIỂN KHAI</h2><p>158/2.558 lượt · tỷ lệ 6,18% toàn SG10.</p></div></div>
-   <p class="recall-caption">So sánh tỷ lệ đánh giá triển khai và bảo trì theo từng Team.</p>
+   <p class="recall-caption">Triển khai & bảo trì theo Team</p>
    <table class="recall-slide-table cldv-dual-table"><thead><tr><th>Team</th><th>Triển khai</th><th>Bảo trì</th><th>Tổng</th></tr></thead><tbody>${scoreRateRows}</tbody></table>
    <div class="cldv-panel-footer"><b>KhanhLQ3:</b> triển khai 8,3% · cao nhất SG10.</div>
   </div>
@@ -108,7 +108,7 @@ replaceSceneWithRecoveryDesign('.scene-alerts',`
   </div>
  </div>
  <div class="recall-action"><b>TRỌNG TÂM</b><span>Đội trưởng thúc đẩy khách hàng đánh giá CLDV; rà soát nguyên nhân CSAT 1–2 và chủ động recare các trường hợp chưa hài lòng.</span><span class="cldv-action-tag">MỤC TIÊU &lt; 3%</span></div>
- <p class="recall-source">Nguồn: báo cáo CLDV/CSAT 31/10 · triển khai 158/2.558 · bảo trì 303/4.453.</p>
+ <p class="recall-source">Nguồn: CLDV/CSAT · 31/10 · TK 158/2.558 · BT 303/4.453.</p>
 `);
 // Removed outdated 10/11 reinforcement ticket button from recovery slide.
 const s9=document.querySelector('.scene-am-guide');if(s9){s9.classList.add('november-guide');const o=document.createElement('section');o.className='nov-overlay';o.innerHTML=`<div class="nov-head"><div><div class="nov-kicker">HƯỚNG DẪN THAO TÁC · ƯU TIÊN CAO</div><h2>NGHIỆM THU TẬP ĐIỂM · 7 ẢNH BẮT BUỘC</h2></div><div class="nov-date">ÁP DỤNG 03/11/2026</div></div><div class="nov-guide-wrap"><div class="nov-guide-media"><div class="nov-guide-fallback"><div class="nov-guide-fallback-title">7 GÓC CHỤP NGHIỆM THU TẬP ĐIỂM</div><div class="nov-guide-fallback-sub">Hướng dẫn kiểm tra đủ góc ảnh trước khi gửi nghiệm thu</div><div class="nov-guide-angles">${['Ảnh tổng quan tập điểm','Ảnh trực diện hộp','Ảnh mặt bên trái','Ảnh mặt bên phải','Mặt trước cassette','Mặt sau cassette','Khung thân hộp'].map((label,i)=>'<div class="nov-guide-angle"><strong>'+String(i+1).padStart(2,'0')+'</strong><span>'+label+'</span></div>').join('')}</div><div class="nov-guide-fallback-foot">KIỂM TRA ĐỦ 7 ẢNH · CHỤP RÕ NÉT · ĐÚNG GÓC · ĐÚNG TẬP ĐIỂM</div></div>${img?'<img class="nov-guide-img nov-guide-original" src="'+img+'" alt="Hướng dẫn chụp 7 ảnh nghiệm thu tập điểm" onload="this.parentElement.classList.add(&quot;has-image&quot;)" onerror="this.remove()">':''}</div><div class="nov-notes"><div class="nov-note"><b>Đủ 7 góc chụp</b>Tổng quan · trực diện · trái · phải · mặt trước cassette · mặt sau cassette · khung thân hộp.</div><div class="nov-note warn"><b>Lưu ý đánh giá AI</b>Chỉ áp dụng tự động cho tập điểm hộp nhựa 16P. Tập điểm cũ: tắt tự động và upload theo hướng dẫn.</div><div class="nov-note"><b>Kết quả chưa đúng?</b>Chọn “Không đồng ý” để TPPKT/Đội trưởng kiểm tra, đánh giá lại trên map.fpt.net.</div></div></div>`;s9.appendChild(o);const guideLabel=s9.querySelector('.topbar .eyebrow');if(guideLabel)guideLabel.textContent='NGHIỆM THU TẬP ĐIỂM';[...s9.children].forEach(x=>{if(x!==o&&!x.classList.contains('topbar')&&!x.classList.contains('footer'))x.style.visibility='hidden';});}
