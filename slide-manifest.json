@@ -1,6 +1,6 @@
 {
-  "version": "V62",
-  "updated": "2026-11-03",
+  "version": "V64",
+  "updated": "2026-11-04",
   "entry": "meeting.html",
   "template": "SG10 11-scene deck; headline KPIs at full SG10 scope; Team details only in modal; GSafe/Kickoff excluded",
   "sources": {
@@ -62,7 +62,7 @@
     "Cảm ơn & trao đổi"
   ],
   "displayHarmony": "display-harmony-20261103.css",
-  "notes": "Fixed Team identity palette across slides and popups, separate from KPI performance colors. CLDV count and CSAT 1–2 rate table headings and positions corrected.",
+  "notes": "Sold-October ever-Online 230 unique contracts. Reconcile Data_MT and DATA_MASTER, dedupe by actual contract, include TRUONGTN3 Nov Online and LUONGPV1 outside roster with clickable personnel link. September is a different Online-date period, marked non-comparable.",
   "rm": {
     "scope": "HCM_10 + Phòng kỹ thuật source sales",
     "source": "dataRM!A:R, X:Y, AY:BG",
@@ -116,5 +116,24 @@
     "SangH": "#A63D68",
     "ThinhPT": "#11734A",
     "KhanhLQ3": "#7043A0"
+  },
+  "salesOct": {
+    "rule": "contract created/sold 2026-10-01 through 2026-10-31 AND Online date present, regardless of Online month; unique contract id",
+    "scope": "81 roster staff + LUONGPV1 outside roster",
+    "total": 230,
+    "roster": 228,
+    "outsideRoster": 2,
+    "teams": {
+      "KhangTV1": 56,
+      "LocLV2": 54,
+      "SangH": 35,
+      "ThinhPT": 41,
+      "KhanhLQ3": 44
+    },
+    "truoongtn3": 2,
+    "luongpv1": 2,
+    "pendingNormal": 3,
+    "terminatedNotCounted": 51,
+    "source": "DATA_MASTER reconciled with Data_MT (MT contains duplicates and is incomplete)"
   }
 }
