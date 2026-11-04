@@ -45,6 +45,16 @@ document.querySelectorAll('#scenes > .scene .footer').forEach(footer=>{
  const first=footer.querySelector(':scope > span');
  if(first)first.innerHTML='<b>FPT TELECOM / PKT SG10</b> · '+month+' <small class="sg10-v66-footer-extra">'+overview+'</small>';
 });
+// Team filtering re-renders slide 07. Reapply only its reporting subtitle.
+if(typeof window.updateRecallPeopleTeam==='function'){
+ const original=window.updateRecallPeopleTeam;
+ window.updateRecallPeopleTeam=function(team){
+  const result=original(team);
+  const scene=document.querySelector('#scenes > .scene-recall-people');
+  if(scene)setHeading(scene,titles[6][1],titles[6][2]);
+  return result;
+ };
+}
 document.title='HỌP PKT THÁNG 11/2026 | FPT TELECOM · PKT SG10';
 window.SG10PeriodLabelsV66={month,overview,slides:titles.length};
 })();
