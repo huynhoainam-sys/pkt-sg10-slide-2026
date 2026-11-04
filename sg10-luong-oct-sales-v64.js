@@ -14,7 +14,7 @@ function install(){
  const target=document.querySelector('#stage .scene-staff .staff-team')||document.querySelector('#stage .scene-sales .team-panel');
  if(!target||target.querySelector('.sg10-luong-link'))return;
  const b=document.createElement('button');b.type='button';b.className='sg10-luong-link';
- b.innerHTML='<span class="sg10-luong-label">NGOÀI ROSTER · TEAM KHANHLQ3</span><strong>LUONGPV1 · '+contracts.length+' HĐ bán T10 đã Online</strong><span class="sg10-luong-arrow">Xem KTV ↗</span>';
+ b.innerHTML='<span class="sg10-luong-label">TEAM KHANHLQ3</span><strong>LUONGPV1 · '+contracts.length+' HĐ bán T10 đã Online</strong><span class="sg10-luong-arrow">Xem KTV ↗</span>';
  b.setAttribute('aria-label','Xem hợp đồng tháng 10 của LUONGPV1, Team KhanhLQ3');
  b.addEventListener('click',openLuong);
  target.appendChild(b);
