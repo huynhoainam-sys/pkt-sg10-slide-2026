@@ -1,10 +1,13 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>HỌP PKT THÁNG 11 · V67</title></head><body><p>Đang tải bài trình chiếu SG10…</p><script>
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>HỌP PKT THÁNG 11 · V68 QA</title></head><body><p>Đang tải bài trình chiếu SG10…</p><script>
 fetch("https://cdn.jsdelivr.net/gh/huynhoainam-sys/pkt-sg10-slide-2026@60766a7313ab2c72d9d3411d2d9f1f97e5b9d3ab/meeting.html").then(r=>{if(!r.ok)throw Error("Không thể tải bản trình chiếu");return r.text()})
 .then(t=>{
 t=t.replace("operations-sync-20261015.js?v=20261104-v64","operations-sync-20261015.js?v=20261104-v68");
 t=t.replace("meeting-toc-v3.js?v=46","meeting-toc-v3.js?v=66");
+t=t.replace("november-ops.js?v=63","november-ops.js?v=20261104-qa1");
+t=t.replace("rm-sales-popup-20261103.js?v=45","rm-sales-popup-20261103.js?v=20261104-qa1");
+t=t.replace("sg10-sales-progress-v60.js?v=60","sg10-sales-progress-v60.js?v=20261104-qa1");
 t=t.replace("sg10-team-identity-v61.css?v=61","sg10-team-identity-v61.css?v=61\"><link rel=\"stylesheet\" href=\"./sg10-meeting-period-v66.css?v=66");
-t=t.replace("sg10-luong-oct-sales-v64.js?v=64","sg10-luong-oct-sales-v64.js?v=64\"><\\/script><script src=\"./sg10-meeting-period-v66.js?v=66");
+t=t.replace("sg10-luong-oct-sales-v64.js?v=64","sg10-luong-oct-sales-v64.js?v=20261104-qa1\"><\\/script><script src=\"./sg10-meeting-period-v66.js?v=20261104-qa1");
 document.open();document.write(t);document.close()
 }).catch(e=>{document.body.textContent="Không thể tải slide: "+e.message});
 </script></body></html>
