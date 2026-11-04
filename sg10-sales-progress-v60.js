@@ -32,7 +32,7 @@ function apply(){
  const note=panel.querySelector('.micro');
  if(note&&!note.dataset.sg10Legend){
   note.dataset.sg10Legend='1';
-  note.textContent='Tỷ lệ hoàn thành kế hoạch · màu theo mức tiến độ';
+  note.textContent='Hoàn thành kế hoạch';
  }
 }
 apply();
