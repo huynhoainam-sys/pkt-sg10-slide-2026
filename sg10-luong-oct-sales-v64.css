@@ -1,0 +1,15 @@
+/* V64 · source-backed LUONGPV1 link in the sales personnel slide. */
+#stage .scene-staff .staff-team{position:relative!important}
+#stage .sg10-luong-link{
+ display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+ border:1px solid #c7dbea;border-left:5px solid #7043a0;
+ border-radius:9px;background:rgba(250,247,255,.96);
+ padding:9px 12px;margin:9px 0 0;width:100%;
+ color:#234465;font-family:inherit;text-align:left;cursor:pointer;
+ box-shadow:0 2px 9px rgba(26,50,84,.06);
+}
+#stage .sg10-luong-label{font-size:11px;color:#7043a0;font-weight:900;letter-spacing:.2px}
+#stage .sg10-luong-link strong{font-size:15px;font-weight:900;color:#183c60}
+#stage .sg10-luong-arrow{margin-left:auto;font-size:12px;font-weight:900;color:#0066b3}
+#stage .sg10-luong-link:hover{border-color:#7043a0;background:#f3ecfc}
+#stage .sg10-luong-link:focus-visible{outline:3px solid #7043a0;outline-offset:2px}
