@@ -1,5 +1,5 @@
 {
-  "version": "V64",
+  "version": "V66",
   "updated": "2026-11-04",
   "entry": "meeting.html",
   "template": "SG10 11-scene deck; headline KPIs at full SG10 scope; Team details only in modal; GSafe/Kickoff excluded",
@@ -49,17 +49,17 @@
     "Navigation and detail dialogs"
   ],
   "scenes": [
-    "Họp Phòng Kỹ thuật SG10",
-    "Kết quả bán hàng tháng 10",
-    "Kết quả bán hàng theo KTV",
-    "Chất lượng dịch vụ tháng 10",
-    "Phân tích CLDV theo Team",
-    "Kết quả thu hồi tháng 10",
-    "Nhân sự cần theo sát",
-    "Cảnh báo RM <3T / <6T · PKT bán",
-    "Nghiệm thu tập điểm",
-    "Trọng tâm thực hiện tháng 11",
-    "Cảm ơn & trao đổi"
+    "HỌP PKT THÁNG 11",
+    "KẾT QUẢ BÁN HÀNG THÁNG 10",
+    "KẾT QUẢ BÁN HÀNG THEO KTV · T10",
+    "CHẤT LƯỢNG DỊCH VỤ THÁNG 10",
+    "PHÂN TÍCH CLDV THEO TEAM · T10",
+    "KẾT QUẢ THU HỒI THÁNG 10",
+    "NHÂN SỰ CẦN THEO SÁT · THU HỒI T10",
+    "CẢNH BÁO RM NON THÁNG · PKT BÁN · T1–T10",
+    "NGHIỆM THU TẬP ĐIỂM · ÁP DỤNG T11",
+    "TRỌNG TÂM THỰC HIỆN THÁNG 11",
+    "CẢM ƠN & TRAO ĐỔI · HỌP T11"
   ],
   "displayHarmony": "display-harmony-20261103.css",
   "notes": "Sold-October ever-Online 230 unique contracts. Reconcile Data_MT and DATA_MASTER, dedupe by actual contract, include TRUONGTN3 Nov Online and LUONGPV1 outside roster with clickable personnel link. September is a different Online-date period, marked non-comparable.",
@@ -135,5 +135,11 @@
     "pendingNormal": 3,
     "terminatedNotCounted": 51,
     "source": "DATA_MASTER reconciled with Data_MT (MT contains duplicates and is incomplete)"
+  },
+  "presentation": {
+    "meetingPeriod": "11/2026",
+    "reportPeriod": "10/2026",
+    "rules": "Meeting, agenda and action-plan labels use November; result, KPI and source snapshots use October",
+    "unchanged": "KPI values, personnel datasets, filters, popup details and color rules"
   }
 }
