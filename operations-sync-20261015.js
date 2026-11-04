@@ -48,6 +48,13 @@ window.applySG10Oct15=function(html){
  html=html.replaceAll("100*p.sep/p.kpi","(p.kpi>0?100*p.sep/p.kpi:0)");
  html=html.replace("staffMode==='Đạt KPI'&&p.oct>=p.kpi","staffMode==='Đạt KPI'&&p.kpi>0&&p.oct>=p.kpi");
  html=html.replaceAll("T10: 229 HĐ","T10 bán đã Online: "+n.total+" HĐ");
+ html=html.replaceAll("T10 chốt tháng: "+n.total+" HĐ · So với 01–13/09: −24 HĐ (−18,9%)","Bán T10 đã Online: "+n.total+" HĐ · lấy ngày bán, không giới hạn ngày Online");
+ html=html.replaceAll("T10 chốt tháng: "+n.total+" HĐ · So 01–13/09: giảm 24 HĐ (18,9%)","Bán T10 đã Online: "+n.total+" HĐ · ngày Online có thể sang T11");
+ html=html.replaceAll("So cùng kỳ","T9 tham khảo*");
+ html=html.replaceAll('<span class="v11-delta ${dcss}">${plusNum(delta)}</span><span class="mini-note">so T9*</span>','<span class="v11-delta zero">—</span><span class="mini-note">khác tiêu chí</span>');
+ html=html.replaceAll("HĐ Online /ngày","HĐ bán T10 đã Online");
+ html=html.replaceAll("KTV Có Online","KTV có HĐ bán đã Online");
+
 
  const inject='\nconst SG10_V28='+JSON.stringify(SG10_OCT15)+';\n'+
  "DATA.snapshot=DATA.summary.snapshot='31/10/2026';DATA.staff=SG10_V28.staff;DATA.teams=SG10_V28.teams;"+
