@@ -13,12 +13,12 @@ const filtered=rows.filter(r=>(team==='Tất cả'||r.team===team)&&(age==='Tấ
 return '<div class="rm-popup-summary">Tổng <strong>'+filtered.length+'</strong> hợp đồng · <strong>'+filtered.filter(r=>r.age==='<3T').length+'</strong> dưới 3T · <strong>'+filtered.filter(r=>r.age==='3–<6T').length+'</strong> từ 3–&lt;6T</div>'+
 '<div class="rm-popup-table-wrap"><table class="rm-popup-table"><thead><tr><th>Tháng RM</th><th>Hợp đồng</th><th>Tuổi thuê bao</th><th>Sale PKT bán</th><th>Team</th><th>Ngày HĐ</th><th>Ngày RM</th><th>Nguyên nhân ghi nhận</th></tr></thead><tbody>'+
 filtered.map(r=>'<tr><td>'+escapeHtml(r.month)+'</td><td><b>'+escapeHtml(r.contract)+'</b></td><td class="'+(r.age==='<3T'?'rm-bad':'rm-warn')+'">'+escapeHtml(r.age)+'</td><td>'+escapeHtml(r.sale)+'</td><td>'+escapeHtml(r.team)+'</td><td>'+escapeHtml(r.opened)+'</td><td>'+escapeHtml(r.closed)+'</td><td>'+escapeHtml(r.reason||'Chưa ghi nhận')+'</td></tr>').join('')+
-'</tbody></table></div><p class="rm-popup-source">Nguồn: dataRM · kỳ 01–10/2026 · CN bán HCM_10 · Phòng kỹ thuật. Team theo MAP ĐT - KTV TKM, chuẩn hóa ACC bán. “Chưa map” cần đối soát nhân sự; nguyên nhân là dữ liệu ghi nhận, chưa phải kết luận trách nhiệm.</p>';
+'</tbody></table></div><p class="rm-popup-source">Nguồn: dataRM · T1–T10/2026 · PKT HCM_10 · Team theo MAP ĐT–KTV.</p>';
 }
 function openDetail(team='Tất cả',age='Tất cả'){
 const selector='<div class="rm-popup-controls"><label>Team <select id="rmTeamFilter">'+['Tất cả',...order].map(t=>'<option value="'+t+'" '+(t===team?'selected':'')+'>'+t+'</option>').join('')+'</select></label><label>Nhóm tuổi <select id="rmAgeFilter">'+['Tất cả','<3T','3–<6T'].map(t=>'<option value="'+escapeHtml(t)+'" '+(t===age?'selected':'')+'>'+escapeHtml(t)+'</option>').join('')+'</select></label></div><div id="rmPopupData"></div>';
 if(typeof openModal!=='function')return;
-openModal('CHI TIẾT RM NON THÁNG · NGUỒN PKT BÁN','Lũy kế 01–10/2026 · dữ liệu chốt, không realtime',selector);
+openModal('CHI TIẾT RM NON THÁNG · NGUỒN PKT BÁN','Lũy kế T1–T10/2026 · dữ liệu chốt',selector);
 const teamEl=document.getElementById('rmTeamFilter'),ageEl=document.getElementById('rmAgeFilter'),result=document.getElementById('rmPopupData');
 const render=()=>{if(result)result.innerHTML=table(teamEl?.value||'Tất cả',ageEl?.value||'Tất cả')};
 teamEl?.addEventListener('change',render);ageEl?.addEventListener('change',render);render();
